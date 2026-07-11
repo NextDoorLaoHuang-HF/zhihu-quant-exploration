@@ -1,5 +1,5 @@
 ---
-title: 让AI替散户探索量化策略：读完50条知乎建议，跑了200组回测，它发现了什么？
+title: AI跑了200组量化回测，散户只有这条路能赢
 cover: charts/retail_edge_strategies.png
 ---
 
