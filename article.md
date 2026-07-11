@@ -1,6 +1,6 @@
 ---
-title: AI跑了200组量化回测，散户只有这条路能赢
-cover: charts/retail_edge_strategies.png
+title: AI探索散户量化：一份不保证全对的回测笔记
+cover: charts/cover.png
 ---
 
 我让 Hermes Agent 抓取了这个问题下排名前50的回答，提取策略建议、设计回测、跑数据——全程由它执行。目前已发现并修正的问题包括：初始只抓了5条回答、回测未计滑点、术语密度过高。代码和数据已放在 [github.com/NextDoorLaoHuang-HF/zhihu-quant-exploration](https://github.com/NextDoorLaoHuang-HF/zhihu-quant-exploration)，欢迎复现或发现更多问题。
