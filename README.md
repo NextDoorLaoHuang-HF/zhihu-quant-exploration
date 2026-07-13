@@ -108,7 +108,7 @@ HTTP_PROXY=PROXY_PLACEHOLDER HTTPS_PROXY=PROXY_PLACEHOLDER python 04_div_fill_ri
 3. **个股抽样**：受限于 API 频率，每次随机抽样 100-150 只。样本量越大，统计显著性越高。
 4. **滑点**：基础回测仅扣佣金（万2.5双边）。文章中有滑点敏感性分析，T5微盘月换手率5.5%，滑点影响约0.4%年化。
 5. **幸存者偏差（重要）**：新浪源 `stock_info_a_code_name()` 不含已退市股票。用腾讯API补充退市股数据（`scripts/fetch_delist_tx.py` 上交所 + `scripts/fetch_delist_sz.py` 深交所，合计199只），按真实比例（150只中6只退市股）重跑（`scripts/rerun_fixed.py`）：T5 年化从 23.9% 降至 -12.9%（含退市无过滤），加 ST过滤+<2元过滤后恢复到 19.0%。幸存者偏差将真实收益高估了约5个百分点。详见 `data/backtest_fixed_all.json`。
-6. **回测引擎修复（2026-07-14）**：三个 bug 修复——①`pct_change(fill_method=None)` 修复退市后收益被pad填充为0%的问题，退市月收益手动设为-100%；②ST过滤改用退市股一律排除（旧版用当前名称做历史过滤存在前视偏差）；③补充深交所退市股（旧版仅有上交所78只）。修复后 T5 含退市+ST+<2元 从 21.9% 下调为 19.0%。详见 `scripts/rerun_fixed.py` 和 `data/backtest_fixed_all.json`。
+6. **回测引擎修复**：三个 bug 修复——①`pct_change(fill_method=None)` 修复退市后收益被pad填充为0%的问题，退市月收益手动设为-100%；②ST过滤改用退市股一律排除（旧版用当前名称做历史过滤存在前视偏差）；③补充深交所退市股（旧版仅有上交所78只）。修复后 T5 含退市+ST+<2元 = 19.0%（旧版为21.9%）。详见 `scripts/rerun_fixed.py` 和 `data/backtest_fixed_all.json`。
 7. **网格交易结论更正**：原文章称"一组都没跑赢"有误。实际 72 组中 21 组网格跑赢买持（胜率 29%），集中在震荡品种（创业板 +5.3%、中证1000 +3.1%、科创50 +4.4%）。单边上涨品种（纳指 -6.0%）网格跑输。`strategy_grid.png` 图中策略线在基准线上方，与原结论矛盾。
 
 ## 图表生成
