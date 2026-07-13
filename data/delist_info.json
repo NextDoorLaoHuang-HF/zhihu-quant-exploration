@@ -1,0 +1,1793 @@
+{
+  "600978": {
+    "name": "*ST宜生",
+    "delist_date": "2021-03-22",
+    "data_start": "2020-01-02",
+    "data_end": "2021-02-22",
+    "n_days": 273,
+    "last_price": 0.52,
+    "exchange": "SH"
+  },
+  "900956": {
+    "name": "东贝Ｂ股",
+    "delist_date": "2020-11-23",
+    "data_start": "2020-01-02",
+    "data_end": "2020-11-04",
+    "n_days": 196,
+    "last_price": 3.07,
+    "exchange": "SH"
+  },
+  "600209": {
+    "name": "退市罗顿",
+    "delist_date": "2022-06-22",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-15",
+    "n_days": 563,
+    "last_price": 1.18,
+    "exchange": "SH"
+  },
+  "600614": {
+    "name": "退市鹏起",
+    "delist_date": "2021-07-22",
+    "data_start": "2020-01-02",
+    "data_end": "2021-07-14",
+    "n_days": 143,
+    "last_price": 0.26,
+    "exchange": "SH"
+  },
+  "600677": {
+    "name": "*ST航通",
+    "delist_date": "2021-03-18",
+    "data_start": "2020-01-02",
+    "data_end": "2020-04-29",
+    "n_days": 77,
+    "last_price": 3.01,
+    "exchange": "SH"
+  },
+  "600804": {
+    "name": "退市鹏博",
+    "delist_date": "2025-07-03",
+    "data_start": "2022-09-21",
+    "data_end": "2025-06-30",
+    "n_days": 640,
+    "last_price": 0.14,
+    "exchange": "SH"
+  },
+  "600565": {
+    "name": "ST迪马",
+    "delist_date": "2024-08-07",
+    "data_start": "2021-11-01",
+    "data_end": "2024-06-21",
+    "n_days": 640,
+    "last_price": 0.85,
+    "exchange": "SH"
+  },
+  "601258": {
+    "name": "*ST庞大",
+    "delist_date": "2023-06-30",
+    "data_start": "2020-09-25",
+    "data_end": "2023-05-24",
+    "n_days": 640,
+    "last_price": 0.4,
+    "exchange": "SH"
+  },
+  "600200": {
+    "name": "退市苏吴",
+    "delist_date": "2025-12-31",
+    "data_start": "2023-04-26",
+    "data_end": "2025-12-29",
+    "n_days": 640,
+    "last_price": 0.29,
+    "exchange": "SH"
+  },
+  "600145": {
+    "name": "退市新亿",
+    "delist_date": "2022-04-28",
+    "data_start": "2020-06-30",
+    "data_end": "2022-04-21",
+    "n_days": 422,
+    "last_price": 0.34,
+    "exchange": "SH"
+  },
+  "600069": {
+    "name": "退市银鸽",
+    "delist_date": "2020-08-28",
+    "data_start": "2020-01-02",
+    "data_end": "2020-08-20",
+    "n_days": 133,
+    "last_price": 0.28,
+    "exchange": "SH"
+  },
+  "600175": {
+    "name": "退市美都",
+    "delist_date": "2020-08-17",
+    "data_start": "2020-01-02",
+    "data_end": "2020-08-07",
+    "n_days": 124,
+    "last_price": 0.21,
+    "exchange": "SH"
+  },
+  "600112": {
+    "name": "*ST天成",
+    "delist_date": "2024-08-15",
+    "data_start": "2021-11-26",
+    "data_end": "2024-07-19",
+    "n_days": 640,
+    "last_price": 0.73,
+    "exchange": "SH"
+  },
+  "600608": {
+    "name": "退市沪科",
+    "delist_date": "2026-07-03",
+    "data_start": "2023-09-22",
+    "data_end": "2026-06-29",
+    "n_days": 640,
+    "last_price": 0.17,
+    "exchange": "SH"
+  },
+  "600532": {
+    "name": "退市未来",
+    "delist_date": "2023-06-28",
+    "data_start": "2020-07-29",
+    "data_end": "2023-06-19",
+    "n_days": 640,
+    "last_price": 0.72,
+    "exchange": "SH"
+  },
+  "600247": {
+    "name": "*ST成城",
+    "delist_date": "2021-03-22",
+    "data_start": "2020-01-02",
+    "data_end": "2021-02-24",
+    "n_days": 275,
+    "last_price": 0.65,
+    "exchange": "SH"
+  },
+  "600290": {
+    "name": "*ST华仪",
+    "delist_date": "2024-01-16",
+    "data_start": "2021-04-30",
+    "data_end": "2023-12-25",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SH"
+  },
+  "600766": {
+    "name": "退市园城",
+    "delist_date": "2024-07-03",
+    "data_start": "2021-09-09",
+    "data_end": "2024-06-26",
+    "n_days": 640,
+    "last_price": 0.42,
+    "exchange": "SH"
+  },
+  "600687": {
+    "name": "退市刚泰",
+    "delist_date": "2021-03-04",
+    "data_start": "2020-01-02",
+    "data_end": "2021-02-24",
+    "n_days": 265,
+    "last_price": 0.3,
+    "exchange": "SH"
+  },
+  "600090": {
+    "name": "退市济堂",
+    "delist_date": "2022-07-07",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-30",
+    "n_days": 563,
+    "last_price": 0.27,
+    "exchange": "SH"
+  },
+  "600555": {
+    "name": "退市海创",
+    "delist_date": "2022-07-14",
+    "data_start": "2020-01-02",
+    "data_end": "2022-07-06",
+    "n_days": 577,
+    "last_price": 0.26,
+    "exchange": "SH"
+  },
+  "600898": {
+    "name": "*ST美讯",
+    "delist_date": "2025-02-10",
+    "data_start": "2022-05-25",
+    "data_end": "2025-01-10",
+    "n_days": 640,
+    "last_price": 0.74,
+    "exchange": "SH"
+  },
+  "600297": {
+    "name": "广汇汽车",
+    "delist_date": "2024-08-28",
+    "data_start": "2021-11-26",
+    "data_end": "2024-07-17",
+    "n_days": 640,
+    "last_price": 0.78,
+    "exchange": "SH"
+  },
+  "900953": {
+    "name": "凯马Ｂ",
+    "delist_date": "2024-07-05",
+    "data_start": "2021-10-21",
+    "data_end": "2024-06-11",
+    "n_days": 640,
+    "last_price": 0.03,
+    "exchange": "SH"
+  },
+  "600870": {
+    "name": "退市厦华",
+    "delist_date": "2022-06-30",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-23",
+    "n_days": 577,
+    "last_price": 0.6,
+    "exchange": "SH"
+  },
+  "600647": {
+    "name": "退市同达",
+    "delist_date": "2024-07-03",
+    "data_start": "2021-08-18",
+    "data_end": "2024-06-26",
+    "n_days": 640,
+    "last_price": 1.52,
+    "exchange": "SH"
+  },
+  "600213": {
+    "name": "*ST亚星",
+    "delist_date": "2024-10-17",
+    "data_start": "2021-12-17",
+    "data_end": "2024-08-15",
+    "n_days": 640,
+    "last_price": 6.36,
+    "exchange": "SH"
+  },
+  "600462": {
+    "name": "退市九有",
+    "delist_date": "2025-07-21",
+    "data_start": "2022-09-26",
+    "data_end": "2025-07-14",
+    "n_days": 640,
+    "last_price": 0.21,
+    "exchange": "SH"
+  },
+  "600070": {
+    "name": "*ST富润",
+    "delist_date": "2025-04-30",
+    "data_start": "2022-08-10",
+    "data_end": "2025-04-10",
+    "n_days": 640,
+    "last_price": 0.42,
+    "exchange": "SH"
+  },
+  "603388": {
+    "name": "*ST元成",
+    "delist_date": "2025-12-05",
+    "data_start": "2023-03-17",
+    "data_end": "2025-11-10",
+    "n_days": 640,
+    "last_price": 0.58,
+    "exchange": "SH"
+  },
+  "600781": {
+    "name": "退市辅仁",
+    "delist_date": "2023-06-28",
+    "data_start": "2020-08-03",
+    "data_end": "2023-06-19",
+    "n_days": 640,
+    "last_price": 0.77,
+    "exchange": "SH"
+  },
+  "600836": {
+    "name": "*ST易连",
+    "delist_date": "2024-07-11",
+    "data_start": "2021-10-26",
+    "data_end": "2024-06-17",
+    "n_days": 640,
+    "last_price": 0.45,
+    "exchange": "SH"
+  },
+  "600634": {
+    "name": "退市富控",
+    "delist_date": "2021-07-22",
+    "data_start": "2020-01-02",
+    "data_end": "2021-07-14",
+    "n_days": 246,
+    "last_price": 0.28,
+    "exchange": "SH"
+  },
+  "603963": {
+    "name": "*ST大药",
+    "delist_date": "2025-03-21",
+    "data_start": "2022-06-14",
+    "data_end": "2025-02-07",
+    "n_days": 640,
+    "last_price": 1.18,
+    "exchange": "SH"
+  },
+  "600093": {
+    "name": "退市易见",
+    "delist_date": "2022-06-23",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-16",
+    "n_days": 530,
+    "last_price": 0.5,
+    "exchange": "SH"
+  },
+  "603157": {
+    "name": "退市拉夏",
+    "delist_date": "2022-05-24",
+    "data_start": "2020-01-02",
+    "data_end": "2022-05-17",
+    "n_days": 557,
+    "last_price": 0.59,
+    "exchange": "SH"
+  },
+  "600701": {
+    "name": "退市工新",
+    "delist_date": "2021-05-06",
+    "data_start": "2020-01-02",
+    "data_end": "2021-04-26",
+    "n_days": 107,
+    "last_price": 0.45,
+    "exchange": "SH"
+  },
+  "600146": {
+    "name": "退市环球",
+    "delist_date": "2022-06-30",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-23",
+    "n_days": 577,
+    "last_price": 0.22,
+    "exchange": "SH"
+  },
+  "600891": {
+    "name": "退市秋林",
+    "delist_date": "2021-05-12",
+    "data_start": "2020-01-02",
+    "data_end": "2021-04-30",
+    "n_days": 67,
+    "last_price": 0.38,
+    "exchange": "SH"
+  },
+  "600652": {
+    "name": "退市游久",
+    "delist_date": "2022-06-21",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-15",
+    "n_days": 576,
+    "last_price": 1.19,
+    "exchange": "SH"
+  },
+  "600086": {
+    "name": "退市金钰",
+    "delist_date": "2021-03-18",
+    "data_start": "2020-01-02",
+    "data_end": "2021-03-10",
+    "n_days": 265,
+    "last_price": 0.16,
+    "exchange": "SH"
+  },
+  "603555": {
+    "name": "ST贵人",
+    "delist_date": "2024-03-29",
+    "data_start": "2021-07-13",
+    "data_end": "2024-03-07",
+    "n_days": 640,
+    "last_price": 0.67,
+    "exchange": "SH"
+  },
+  "600225": {
+    "name": "退市卓朗",
+    "delist_date": "2025-03-06",
+    "data_start": "2022-05-25",
+    "data_end": "2025-02-27",
+    "n_days": 640,
+    "last_price": 0.29,
+    "exchange": "SH"
+  },
+  "600485": {
+    "name": "*ST信威",
+    "delist_date": "2021-06-01",
+    "data_start": "2020-01-02",
+    "data_end": "2020-04-20",
+    "n_days": 71,
+    "last_price": 1.39,
+    "exchange": "SH"
+  },
+  "600122": {
+    "name": "*ST宏图",
+    "delist_date": "2023-06-26",
+    "data_start": "2020-09-29",
+    "data_end": "2023-05-26",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SH"
+  },
+  "605081": {
+    "name": "退市太和",
+    "delist_date": "2026-07-03",
+    "data_start": "2023-09-15",
+    "data_end": "2026-06-29",
+    "n_days": 640,
+    "last_price": 0.4,
+    "exchange": "SH"
+  },
+  "600896": {
+    "name": "退市海医",
+    "delist_date": "2022-07-25",
+    "data_start": "2020-01-02",
+    "data_end": "2022-07-18",
+    "n_days": 577,
+    "last_price": 1.12,
+    "exchange": "SH"
+  },
+  "600767": {
+    "name": "退市运盛",
+    "delist_date": "2023-06-29",
+    "data_start": "2020-09-24",
+    "data_end": "2023-06-20",
+    "n_days": 640,
+    "last_price": 0.42,
+    "exchange": "SH"
+  },
+  "600242": {
+    "name": "退市中昌",
+    "delist_date": "2023-06-29",
+    "data_start": "2020-09-25",
+    "data_end": "2023-06-20",
+    "n_days": 640,
+    "last_price": 0.25,
+    "exchange": "SH"
+  },
+  "600240": {
+    "name": "退市华业",
+    "delist_date": "2020-02-06",
+    "data_start": "2020-01-02",
+    "data_end": "2020-01-23",
+    "n_days": 16,
+    "last_price": 0.41,
+    "exchange": "SH"
+  },
+  "600695": {
+    "name": "退市绿庭",
+    "delist_date": "2022-06-15",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-07",
+    "n_days": 573,
+    "last_price": 0.51,
+    "exchange": "SH"
+  },
+  "600193": {
+    "name": "退市创兴",
+    "delist_date": "2026-07-06",
+    "data_start": "2023-09-20",
+    "data_end": "2026-06-29",
+    "n_days": 640,
+    "last_price": 0.16,
+    "exchange": "SH"
+  },
+  "600696": {
+    "name": "退市岩石",
+    "delist_date": "2026-06-29",
+    "data_start": "2023-09-22",
+    "data_end": "2026-06-22",
+    "n_days": 640,
+    "last_price": 0.74,
+    "exchange": "SH"
+  },
+  "600083": {
+    "name": "*ST博信",
+    "delist_date": "2025-03-05",
+    "data_start": "2022-05-31",
+    "data_end": "2025-01-16",
+    "n_days": 640,
+    "last_price": 0.92,
+    "exchange": "SH"
+  },
+  "600393": {
+    "name": "ST粤泰",
+    "delist_date": "2023-07-18",
+    "data_start": "2020-10-19",
+    "data_end": "2023-06-08",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SH"
+  },
+  "600387": {
+    "name": "退市海越",
+    "delist_date": "2025-07-11",
+    "data_start": "2022-09-22",
+    "data_end": "2025-07-04",
+    "n_days": 640,
+    "last_price": 0.94,
+    "exchange": "SH"
+  },
+  "600421": {
+    "name": "退市华嵘",
+    "delist_date": "2026-06-26",
+    "data_start": "2023-09-13",
+    "data_end": "2026-06-22",
+    "n_days": 640,
+    "last_price": 0.24,
+    "exchange": "SH"
+  },
+  "600291": {
+    "name": "退市西水",
+    "delist_date": "2022-06-14",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-07",
+    "n_days": 577,
+    "last_price": 0.89,
+    "exchange": "SH"
+  },
+  "600074": {
+    "name": "退市保千",
+    "delist_date": "2020-06-03",
+    "data_start": "2020-04-10",
+    "data_end": "2020-05-26",
+    "n_days": 30,
+    "last_price": 0.17,
+    "exchange": "SH"
+  },
+  "600275": {
+    "name": "退市昌鱼",
+    "delist_date": "2022-06-22",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-15",
+    "n_days": 577,
+    "last_price": 0.41,
+    "exchange": "SH"
+  },
+  "900957": {
+    "name": "*ST凌云B",
+    "delist_date": "2025-07-04",
+    "data_start": "2022-10-17",
+    "data_end": "2025-06-09",
+    "n_days": 640,
+    "last_price": 0.086,
+    "exchange": "SH"
+  },
+  "600311": {
+    "name": "*ST荣华",
+    "delist_date": "2023-03-27",
+    "data_start": "2020-07-10",
+    "data_end": "2023-03-02",
+    "n_days": 640,
+    "last_price": 0.61,
+    "exchange": "SH"
+  },
+  "900951": {
+    "name": "退市大化",
+    "delist_date": "2020-08-28",
+    "data_start": "2020-01-02",
+    "data_end": "2020-08-20",
+    "n_days": 132,
+    "last_price": 0.069,
+    "exchange": "SH"
+  },
+  "600091": {
+    "name": "退市明科",
+    "delist_date": "2022-06-21",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-15",
+    "n_days": 575,
+    "last_price": 0.76,
+    "exchange": "SH"
+  },
+  "600139": {
+    "name": "*ST西源",
+    "delist_date": "2023-03-27",
+    "data_start": "2020-07-07",
+    "data_end": "2023-02-27",
+    "n_days": 640,
+    "last_price": 0.74,
+    "exchange": "SH"
+  },
+  "600321": {
+    "name": "正源股份",
+    "delist_date": "2024-06-27",
+    "data_start": "2021-10-12",
+    "data_end": "2024-05-30",
+    "n_days": 640,
+    "last_price": 0.5,
+    "exchange": "SH"
+  },
+  "600856": {
+    "name": "退市中天",
+    "delist_date": "2022-06-22",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-15",
+    "n_days": 562,
+    "last_price": 0.27,
+    "exchange": "SH"
+  },
+  "600355": {
+    "name": "*ST精伦",
+    "delist_date": "2026-04-27",
+    "data_start": "2023-08-09",
+    "data_end": "2026-04-03",
+    "n_days": 640,
+    "last_price": 0.58,
+    "exchange": "SH"
+  },
+  "603996": {
+    "name": "退市中新",
+    "delist_date": "2022-05-24",
+    "data_start": "2020-01-02",
+    "data_end": "2022-05-17",
+    "n_days": 557,
+    "last_price": 0.39,
+    "exchange": "SH"
+  },
+  "600599": {
+    "name": "退市熊猫",
+    "delist_date": "2026-06-26",
+    "data_start": "2023-09-15",
+    "data_end": "2026-06-22",
+    "n_days": 640,
+    "last_price": 0.43,
+    "exchange": "SH"
+  },
+  "600890": {
+    "name": "退市中房",
+    "delist_date": "2022-06-21",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-15",
+    "n_days": 573,
+    "last_price": 0.36,
+    "exchange": "SH"
+  },
+  "601558": {
+    "name": "退市锐电",
+    "delist_date": "2020-07-03",
+    "data_start": "2020-01-02",
+    "data_end": "2020-06-23",
+    "n_days": 96,
+    "last_price": 0.25,
+    "exchange": "SH"
+  },
+  "600385": {
+    "name": "退市金泰",
+    "delist_date": "2022-07-07",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-30",
+    "n_days": 575,
+    "last_price": 1.2,
+    "exchange": "SH"
+  },
+  "600466": {
+    "name": "*ST蓝光",
+    "delist_date": "2023-06-06",
+    "data_start": "2020-09-10",
+    "data_end": "2023-05-09",
+    "n_days": 640,
+    "last_price": 0.4,
+    "exchange": "SH"
+  },
+  "600260": {
+    "name": "*ST凯乐",
+    "delist_date": "2023-02-15",
+    "data_start": "2020-06-10",
+    "data_end": "2023-02-02",
+    "n_days": 640,
+    "last_price": 0.47,
+    "exchange": "SH"
+  },
+  "603133": {
+    "name": "退市碳元",
+    "delist_date": "2024-07-03",
+    "data_start": "2021-09-14",
+    "data_end": "2024-06-26",
+    "n_days": 640,
+    "last_price": 0.29,
+    "exchange": "SH"
+  },
+  "600823": {
+    "name": "*ST世茂",
+    "delist_date": "2024-06-14",
+    "data_start": "2021-09-14",
+    "data_end": "2024-05-15",
+    "n_days": 640,
+    "last_price": 0.43,
+    "exchange": "SH"
+  },
+  "600811": {
+    "name": "*ST东方",
+    "delist_date": "2025-04-30",
+    "data_start": "2022-08-18",
+    "data_end": "2025-04-14",
+    "n_days": 640,
+    "last_price": 0.36,
+    "exchange": "SH"
+  },
+  "000005": {
+    "name": "ST星源",
+    "delist_date": "2024-04-26",
+    "data_start": "2021-07-14",
+    "data_end": "2024-03-05",
+    "n_days": 640,
+    "last_price": 0.83,
+    "exchange": "SZ"
+  },
+  "000018": {
+    "name": "神城A退",
+    "delist_date": "2020-01-07",
+    "data_start": "2020-01-02",
+    "data_end": "2020-01-06",
+    "n_days": 3,
+    "last_price": 0.27,
+    "exchange": "SZ"
+  },
+  "000023": {
+    "name": "*ST深天",
+    "delist_date": "2024-09-02",
+    "data_start": "2021-12-01",
+    "data_end": "2024-07-24",
+    "n_days": 640,
+    "last_price": 1.72,
+    "exchange": "SZ"
+  },
+  "000038": {
+    "name": "大通退",
+    "delist_date": "2023-07-12",
+    "data_start": "2020-09-28",
+    "data_end": "2023-07-11",
+    "n_days": 640,
+    "last_price": 0.52,
+    "exchange": "SZ"
+  },
+  "000040": {
+    "name": "*ST旭蓝",
+    "delist_date": "2025-04-30",
+    "data_start": "2022-04-07",
+    "data_end": "2025-03-31",
+    "n_days": 640,
+    "last_price": 0.49,
+    "exchange": "SZ"
+  },
+  "000046": {
+    "name": "*ST泛海",
+    "delist_date": "2024-02-07",
+    "data_start": "2021-05-13",
+    "data_end": "2023-12-27",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SZ"
+  },
+  "000150": {
+    "name": "*ST宜康",
+    "delist_date": "2023-06-09",
+    "data_start": "2020-09-03",
+    "data_end": "2023-04-27",
+    "n_days": 640,
+    "last_price": 0.51,
+    "exchange": "SZ"
+  },
+  "000413": {
+    "name": "ST旭电",
+    "delist_date": "2024-10-11",
+    "data_start": "2021-10-22",
+    "data_end": "2024-08-14",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "000502": {
+    "name": "绿景退",
+    "delist_date": "2022-06-27",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-24",
+    "n_days": 567,
+    "last_price": 0.59,
+    "exchange": "SZ"
+  },
+  "000540": {
+    "name": "*ST中天",
+    "delist_date": "2023-06-30",
+    "data_start": "2020-09-22",
+    "data_end": "2023-05-18",
+    "n_days": 640,
+    "last_price": 0.4,
+    "exchange": "SZ"
+  },
+  "000584": {
+    "name": "工智退",
+    "delist_date": "2025-07-11",
+    "data_start": "2022-09-06",
+    "data_end": "2025-07-10",
+    "n_days": 640,
+    "last_price": 0.29,
+    "exchange": "SZ"
+  },
+  "000585": {
+    "name": "东电退",
+    "delist_date": "2022-05-24",
+    "data_start": "2020-01-02",
+    "data_end": "2022-05-23",
+    "n_days": 557,
+    "last_price": 0.35,
+    "exchange": "SZ"
+  },
+  "000587": {
+    "name": "*ST金洲",
+    "delist_date": "2023-04-03",
+    "data_start": "2020-06-12",
+    "data_end": "2023-02-02",
+    "n_days": 640,
+    "last_price": 0.72,
+    "exchange": "SZ"
+  },
+  "000606": {
+    "name": "顺利退",
+    "delist_date": "2023-07-06",
+    "data_start": "2020-09-25",
+    "data_end": "2023-07-05",
+    "n_days": 640,
+    "last_price": 0.28,
+    "exchange": "SZ"
+  },
+  "000611": {
+    "name": "天首退",
+    "delist_date": "2022-06-28",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-27",
+    "n_days": 576,
+    "last_price": 1.39,
+    "exchange": "SZ"
+  },
+  "000613": {
+    "name": "东海A退",
+    "delist_date": "2022-06-29",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-28",
+    "n_days": 567,
+    "last_price": 0.58,
+    "exchange": "SZ"
+  },
+  "000616": {
+    "name": "*ST海投",
+    "delist_date": "2023-08-23",
+    "data_start": "2020-10-23",
+    "data_end": "2023-06-13",
+    "n_days": 640,
+    "last_price": 0.85,
+    "exchange": "SZ"
+  },
+  "000622": {
+    "name": "恒立退",
+    "delist_date": "2025-07-16",
+    "data_start": "2022-09-27",
+    "data_end": "2025-07-15",
+    "n_days": 640,
+    "last_price": 0.15,
+    "exchange": "SZ"
+  },
+  "000638": {
+    "name": "*ST万方",
+    "delist_date": "2026-06-03",
+    "data_start": "2023-08-16",
+    "data_end": "2026-04-13",
+    "n_days": 640,
+    "last_price": 0.89,
+    "exchange": "SZ"
+  },
+  "000662": {
+    "name": "天夏退",
+    "delist_date": "2021-04-12",
+    "data_start": "2020-01-02",
+    "data_end": "2021-04-09",
+    "n_days": 280,
+    "last_price": 0.25,
+    "exchange": "SZ"
+  },
+  "000667": {
+    "name": "ST美置",
+    "delist_date": "2023-07-14",
+    "data_start": "2020-09-29",
+    "data_end": "2023-05-25",
+    "n_days": 640,
+    "last_price": 0.58,
+    "exchange": "SZ"
+  },
+  "000673": {
+    "name": "当代退",
+    "delist_date": "2022-07-04",
+    "data_start": "2020-01-02",
+    "data_end": "2022-07-01",
+    "n_days": 577,
+    "last_price": 0.25,
+    "exchange": "SZ"
+  },
+  "000687": {
+    "name": "华讯退",
+    "delist_date": "2022-06-17",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-16",
+    "n_days": 575,
+    "last_price": 0.29,
+    "exchange": "SZ"
+  },
+  "000732": {
+    "name": "ST泰禾",
+    "delist_date": "2023-08-04",
+    "data_start": "2020-10-15",
+    "data_end": "2023-06-02",
+    "n_days": 640,
+    "last_price": 0.43,
+    "exchange": "SZ"
+  },
+  "000760": {
+    "name": "斯太退",
+    "delist_date": "2021-07-23",
+    "data_start": "2020-01-02",
+    "data_end": "2021-07-22",
+    "n_days": 130,
+    "last_price": 0.26,
+    "exchange": "SZ"
+  },
+  "000780": {
+    "name": "ST平能",
+    "delist_date": "2022-01-24",
+    "data_start": "2020-01-02",
+    "data_end": "2021-12-16",
+    "n_days": 462,
+    "last_price": 10.95,
+    "exchange": "SZ"
+  },
+  "000806": {
+    "name": "银河退",
+    "delist_date": "2023-07-06",
+    "data_start": "2020-09-25",
+    "data_end": "2023-07-05",
+    "n_days": 640,
+    "last_price": 0.43,
+    "exchange": "SZ"
+  },
+  "000835": {
+    "name": "长动退",
+    "delist_date": "2022-05-23",
+    "data_start": "2020-01-02",
+    "data_end": "2022-05-20",
+    "n_days": 553,
+    "last_price": 0.35,
+    "exchange": "SZ"
+  },
+  "000836": {
+    "name": "ST富通",
+    "delist_date": "2024-08-12",
+    "data_start": "2021-10-26",
+    "data_end": "2024-06-17",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "000851": {
+    "name": "*ST高鸿",
+    "delist_date": "2025-11-11",
+    "data_start": "2023-02-10",
+    "data_end": "2025-09-26",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SZ"
+  },
+  "000861": {
+    "name": "海印股份",
+    "delist_date": "2024-09-18",
+    "data_start": "2021-12-01",
+    "data_end": "2024-08-05",
+    "n_days": 640,
+    "last_price": 0.62,
+    "exchange": "SZ"
+  },
+  "000918": {
+    "name": "*ST嘉凯",
+    "delist_date": "2023-07-28",
+    "data_start": "2020-09-29",
+    "data_end": "2023-05-31",
+    "n_days": 640,
+    "last_price": 0.49,
+    "exchange": "SZ"
+  },
+  "000939": {
+    "name": "凯迪退",
+    "delist_date": "2020-12-17",
+    "data_start": "2020-11-05",
+    "data_end": "2020-12-16",
+    "n_days": 30,
+    "last_price": 0.15,
+    "exchange": "SZ"
+  },
+  "000961": {
+    "name": "ST中南",
+    "delist_date": "2024-07-11",
+    "data_start": "2021-09-08",
+    "data_end": "2024-05-08",
+    "n_days": 640,
+    "last_price": 0.56,
+    "exchange": "SZ"
+  },
+  "000971": {
+    "name": "*ST高升",
+    "delist_date": "2024-07-24",
+    "data_start": "2021-10-14",
+    "data_end": "2024-06-04",
+    "n_days": 640,
+    "last_price": 0.55,
+    "exchange": "SZ"
+  },
+  "000976": {
+    "name": "*ST华铁",
+    "delist_date": "2024-08-27",
+    "data_start": "2021-09-24",
+    "data_end": "2024-07-25",
+    "n_days": 640,
+    "last_price": 0.41,
+    "exchange": "SZ"
+  },
+  "000982": {
+    "name": "中银绒业",
+    "delist_date": "2024-08-12",
+    "data_start": "2021-11-02",
+    "data_end": "2024-06-21",
+    "n_days": 640,
+    "last_price": 0.18,
+    "exchange": "SZ"
+  },
+  "000996": {
+    "name": "中期退",
+    "delist_date": "2024-06-28",
+    "data_start": "2021-09-10",
+    "data_end": "2024-06-27",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SZ"
+  },
+  "002071": {
+    "name": "长城退",
+    "delist_date": "2021-05-07",
+    "data_start": "2020-01-02",
+    "data_end": "2021-05-06",
+    "n_days": 291,
+    "last_price": 0.31,
+    "exchange": "SZ"
+  },
+  "002089": {
+    "name": "新海退",
+    "delist_date": "2024-04-18",
+    "data_start": "2021-07-13",
+    "data_end": "2024-04-17",
+    "n_days": 640,
+    "last_price": 0.24,
+    "exchange": "SZ"
+  },
+  "002113": {
+    "name": "*ST天润",
+    "delist_date": "2023-08-11",
+    "data_start": "2020-10-22",
+    "data_end": "2023-06-12",
+    "n_days": 640,
+    "last_price": 0.41,
+    "exchange": "SZ"
+  },
+  "002118": {
+    "name": "*ST紫鑫",
+    "delist_date": "2023-08-04",
+    "data_start": "2020-08-26",
+    "data_end": "2023-06-15",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002147": {
+    "name": "新光退",
+    "delist_date": "2022-06-23",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-22",
+    "n_days": 577,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002220": {
+    "name": "天宝退",
+    "delist_date": "2020-08-11",
+    "data_start": "2020-01-02",
+    "data_end": "2020-08-10",
+    "n_days": 128,
+    "last_price": 0.26,
+    "exchange": "SZ"
+  },
+  "002231": {
+    "name": "*ST奥维",
+    "delist_date": "2026-03-27",
+    "data_start": "2023-06-12",
+    "data_end": "2026-01-29",
+    "n_days": 640,
+    "last_price": 0.6,
+    "exchange": "SZ"
+  },
+  "002260": {
+    "name": "德奥退",
+    "delist_date": "2022-06-17",
+    "data_start": "2022-05-05",
+    "data_end": "2022-06-16",
+    "n_days": 30,
+    "last_price": 0.53,
+    "exchange": "SZ"
+  },
+  "002280": {
+    "name": "ST联络",
+    "delist_date": "2024-08-16",
+    "data_start": "2021-11-04",
+    "data_end": "2024-06-26",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002288": {
+    "name": "*ST超华",
+    "delist_date": "2024-08-19",
+    "data_start": "2021-10-28",
+    "data_end": "2024-06-26",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002308": {
+    "name": "*ST威创",
+    "delist_date": "2024-09-27",
+    "data_start": "2021-11-01",
+    "data_end": "2024-08-22",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002325": {
+    "name": "*ST洪涛",
+    "delist_date": "2024-08-15",
+    "data_start": "2021-11-08",
+    "data_end": "2024-06-28",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SZ"
+  },
+  "002336": {
+    "name": "人乐退",
+    "delist_date": "2025-07-04",
+    "data_start": "2022-09-20",
+    "data_end": "2025-07-03",
+    "n_days": 640,
+    "last_price": 0.36,
+    "exchange": "SZ"
+  },
+  "002341": {
+    "name": "ST新纶",
+    "delist_date": "2024-08-23",
+    "data_start": "2021-11-03",
+    "data_end": "2024-07-02",
+    "n_days": 640,
+    "last_price": 0.61,
+    "exchange": "SZ"
+  },
+  "002359": {
+    "name": "北讯退",
+    "delist_date": "2021-07-23",
+    "data_start": "2020-01-02",
+    "data_end": "2021-07-22",
+    "n_days": 144,
+    "last_price": 0.35,
+    "exchange": "SZ"
+  },
+  "002411": {
+    "name": "必康退",
+    "delist_date": "2023-07-12",
+    "data_start": "2020-08-04",
+    "data_end": "2023-07-11",
+    "n_days": 640,
+    "last_price": 0.62,
+    "exchange": "SZ"
+  },
+  "002417": {
+    "name": "深南退",
+    "delist_date": "2023-07-10",
+    "data_start": "2020-09-25",
+    "data_end": "2023-07-07",
+    "n_days": 640,
+    "last_price": 0.45,
+    "exchange": "SZ"
+  },
+  "002433": {
+    "name": "太安退",
+    "delist_date": "2024-07-05",
+    "data_start": "2021-08-12",
+    "data_end": "2024-07-04",
+    "n_days": 640,
+    "last_price": 0.27,
+    "exchange": "SZ"
+  },
+  "002435": {
+    "name": "ST长康",
+    "delist_date": "2024-08-15",
+    "data_start": "2021-11-09",
+    "data_end": "2024-07-01",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002447": {
+    "name": "晨鑫退",
+    "delist_date": "2022-06-27",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-24",
+    "n_days": 577,
+    "last_price": 0.19,
+    "exchange": "SZ"
+  },
+  "002450": {
+    "name": "康得退",
+    "delist_date": "2021-05-31",
+    "data_start": "2021-04-14",
+    "data_end": "2021-05-28",
+    "n_days": 30,
+    "last_price": 0.2,
+    "exchange": "SZ"
+  },
+  "002464": {
+    "name": "众应退",
+    "delist_date": "2022-06-28",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-27",
+    "n_days": 576,
+    "last_price": 0.26,
+    "exchange": "SZ"
+  },
+  "002473": {
+    "name": "圣莱退",
+    "delist_date": "2022-06-22",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-21",
+    "n_days": 576,
+    "last_price": 0.79,
+    "exchange": "SZ"
+  },
+  "002499": {
+    "name": "科林退",
+    "delist_date": "2023-04-18",
+    "data_start": "2020-07-07",
+    "data_end": "2023-04-17",
+    "n_days": 640,
+    "last_price": 0.86,
+    "exchange": "SZ"
+  },
+  "002502": {
+    "name": "ST鼎龙",
+    "delist_date": "2024-09-05",
+    "data_start": "2021-11-24",
+    "data_end": "2024-07-16",
+    "n_days": 640,
+    "last_price": 0.64,
+    "exchange": "SZ"
+  },
+  "002503": {
+    "name": "*ST搜特",
+    "delist_date": "2023-08-11",
+    "data_start": "2020-09-23",
+    "data_end": "2023-05-22",
+    "n_days": 640,
+    "last_price": 0.42,
+    "exchange": "SZ"
+  },
+  "002504": {
+    "name": "*ST弘高",
+    "delist_date": "2023-08-21",
+    "data_start": "2020-10-22",
+    "data_end": "2023-06-12",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SZ"
+  },
+  "002505": {
+    "name": "鹏都农牧",
+    "delist_date": "2024-08-30",
+    "data_start": "2021-11-11",
+    "data_end": "2024-07-02",
+    "n_days": 640,
+    "last_price": 0.36,
+    "exchange": "SZ"
+  },
+  "002509": {
+    "name": "天茂退",
+    "delist_date": "2020-07-20",
+    "data_start": "2020-01-02",
+    "data_end": "2020-07-17",
+    "n_days": 113,
+    "last_price": 0.15,
+    "exchange": "SZ"
+  },
+  "002604": {
+    "name": "龙力退",
+    "delist_date": "2020-07-15",
+    "data_start": "2020-06-01",
+    "data_end": "2020-07-14",
+    "n_days": 30,
+    "last_price": 0.25,
+    "exchange": "SZ"
+  },
+  "002610": {
+    "name": "ST爱康",
+    "delist_date": "2024-08-12",
+    "data_start": "2021-10-27",
+    "data_end": "2024-06-18",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002619": {
+    "name": "*ST艾格",
+    "delist_date": "2022-04-28",
+    "data_start": "2020-01-02",
+    "data_end": "2022-03-31",
+    "n_days": 538,
+    "last_price": 0.56,
+    "exchange": "SZ"
+  },
+  "002621": {
+    "name": "*ST美吉",
+    "delist_date": "2024-08-05",
+    "data_start": "2021-10-22",
+    "data_end": "2024-06-13",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002665": {
+    "name": "ST航高",
+    "delist_date": "2024-08-26",
+    "data_start": "2021-11-05",
+    "data_end": "2024-06-27",
+    "n_days": 640,
+    "last_price": 0.37,
+    "exchange": "SZ"
+  },
+  "002684": {
+    "name": "猛狮退",
+    "delist_date": "2022-06-27",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-24",
+    "n_days": 576,
+    "last_price": 0.69,
+    "exchange": "SZ"
+  },
+  "002699": {
+    "name": "*ST美盛",
+    "delist_date": "2024-06-05",
+    "data_start": "2021-08-30",
+    "data_end": "2024-04-25",
+    "n_days": 640,
+    "last_price": 0.41,
+    "exchange": "SZ"
+  },
+  "002711": {
+    "name": "欧浦退",
+    "delist_date": "2021-07-15",
+    "data_start": "2020-01-02",
+    "data_end": "2021-07-14",
+    "n_days": 108,
+    "last_price": 0.32,
+    "exchange": "SZ"
+  },
+  "002740": {
+    "name": "*ST爱迪",
+    "delist_date": "2024-03-04",
+    "data_start": "2021-06-03",
+    "data_end": "2024-01-19",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SZ"
+  },
+  "002750": {
+    "name": "龙津退",
+    "delist_date": "2025-06-27",
+    "data_start": "2022-09-21",
+    "data_end": "2025-06-26",
+    "n_days": 640,
+    "last_price": 0.59,
+    "exchange": "SZ"
+  },
+  "002770": {
+    "name": "科迪退",
+    "delist_date": "2022-06-23",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-22",
+    "n_days": 576,
+    "last_price": 0.6,
+    "exchange": "SZ"
+  },
+  "002776": {
+    "name": "*ST柏龙",
+    "delist_date": "2024-01-25",
+    "data_start": "2021-03-09",
+    "data_end": "2023-12-26",
+    "n_days": 640,
+    "last_price": 0.4,
+    "exchange": "SZ"
+  },
+  "002781": {
+    "name": "奇信退",
+    "delist_date": "2023-07-05",
+    "data_start": "2020-09-11",
+    "data_end": "2023-07-04",
+    "n_days": 640,
+    "last_price": 0.42,
+    "exchange": "SZ"
+  },
+  "200018": {
+    "name": "神城B退",
+    "delist_date": "2020-01-07",
+    "data_start": "2020-01-02",
+    "data_end": "2020-01-06",
+    "n_days": 3,
+    "last_price": 0.17,
+    "exchange": "SZ"
+  },
+  "200054": {
+    "name": "建车B",
+    "delist_date": "2024-08-22",
+    "data_start": "2021-10-13",
+    "data_end": "2024-06-14",
+    "n_days": 640,
+    "last_price": 1.22,
+    "exchange": "SZ"
+  },
+  "200152": {
+    "name": "山航B退",
+    "delist_date": "2023-07-10",
+    "data_start": "2020-09-10",
+    "data_end": "2023-07-07",
+    "n_days": 640,
+    "last_price": 2.73,
+    "exchange": "SZ"
+  },
+  "200160": {
+    "name": "东沣B退",
+    "delist_date": "2020-07-21",
+    "data_start": "2020-01-02",
+    "data_end": "2020-07-20",
+    "n_days": 112,
+    "last_price": 0.18,
+    "exchange": "SZ"
+  },
+  "200168": {
+    "name": "*ST舜喆B",
+    "delist_date": "2021-05-26",
+    "data_start": "2020-01-02",
+    "data_end": "2021-04-12",
+    "n_days": 308,
+    "last_price": 0.7,
+    "exchange": "SZ"
+  },
+  "200413": {
+    "name": "ST东旭B",
+    "delist_date": "2024-10-11",
+    "data_start": "2021-10-22",
+    "data_end": "2024-08-14",
+    "n_days": 640,
+    "last_price": 0.16,
+    "exchange": "SZ"
+  },
+  "200613": {
+    "name": "东海B退",
+    "delist_date": "2022-06-29",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-28",
+    "n_days": 567,
+    "last_price": 0.3,
+    "exchange": "SZ"
+  },
+  "200771": {
+    "name": "杭汽轮Ｂ",
+    "delist_date": "2025-12-22",
+    "data_start": "2023-03-01",
+    "data_end": "2025-11-04",
+    "n_days": 640,
+    "last_price": 13.3,
+    "exchange": "SZ"
+  },
+  "200986": {
+    "name": "粤华包Ｂ",
+    "delist_date": "2021-07-21",
+    "data_start": "2020-01-02",
+    "data_end": "2021-06-10",
+    "n_days": 337,
+    "last_price": 5.51,
+    "exchange": "SZ"
+  },
+  "300023": {
+    "name": "宝德退",
+    "delist_date": "2022-06-29",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-28",
+    "n_days": 577,
+    "last_price": 1.09,
+    "exchange": "SZ"
+  },
+  "300028": {
+    "name": "金亚退",
+    "delist_date": "2020-08-03",
+    "data_start": "2020-06-18",
+    "data_end": "2020-07-31",
+    "n_days": 30,
+    "last_price": 0.3,
+    "exchange": "SZ"
+  },
+  "300029": {
+    "name": "天龙退",
+    "delist_date": "2026-07-10",
+    "data_start": "2023-09-22",
+    "data_end": "2026-07-09",
+    "n_days": 640,
+    "last_price": 0.12,
+    "exchange": "SZ"
+  },
+  "300064": {
+    "name": "金刚退",
+    "delist_date": "2022-06-27",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-24",
+    "n_days": 567,
+    "last_price": 1.32,
+    "exchange": "SZ"
+  },
+  "300089": {
+    "name": "文化退",
+    "delist_date": "2023-07-13",
+    "data_start": "2020-09-25",
+    "data_end": "2023-07-12",
+    "n_days": 640,
+    "last_price": 0.19,
+    "exchange": "SZ"
+  },
+  "300090": {
+    "name": "盛运退",
+    "delist_date": "2020-08-25",
+    "data_start": "2020-01-02",
+    "data_end": "2020-08-24",
+    "n_days": 128,
+    "last_price": 0.12,
+    "exchange": "SZ"
+  },
+  "300104": {
+    "name": "乐视退",
+    "delist_date": "2020-07-21",
+    "data_start": "2020-06-05",
+    "data_end": "2020-07-20",
+    "n_days": 30,
+    "last_price": 0.18,
+    "exchange": "SZ"
+  },
+  "300108": {
+    "name": "*ST吉药",
+    "delist_date": "2025-05-29",
+    "data_start": "2022-08-26",
+    "data_end": "2025-04-23",
+    "n_days": 640,
+    "last_price": 0.21,
+    "exchange": "SZ"
+  },
+  "300116": {
+    "name": "*ST保力",
+    "delist_date": "2024-07-25",
+    "data_start": "2021-09-16",
+    "data_end": "2024-05-16",
+    "n_days": 640,
+    "last_price": 0.11,
+    "exchange": "SZ"
+  },
+  "300117": {
+    "name": "*ST嘉寓",
+    "delist_date": "2025-04-30",
+    "data_start": "2022-08-05",
+    "data_end": "2025-03-31",
+    "n_days": 640,
+    "last_price": 0.43,
+    "exchange": "SZ"
+  },
+  "300156": {
+    "name": "神雾退",
+    "delist_date": "2020-08-25",
+    "data_start": "2020-01-02",
+    "data_end": "2020-08-24",
+    "n_days": 124,
+    "last_price": 0.12,
+    "exchange": "SZ"
+  },
+  "300178": {
+    "name": "腾邦退",
+    "delist_date": "2022-06-22",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-21",
+    "n_days": 574,
+    "last_price": 0.2,
+    "exchange": "SZ"
+  },
+  "300208": {
+    "name": "中程退",
+    "delist_date": "2025-07-21",
+    "data_start": "2022-09-27",
+    "data_end": "2025-07-18",
+    "n_days": 640,
+    "last_price": 0.28,
+    "exchange": "SZ"
+  },
+  "300216": {
+    "name": "千山退",
+    "delist_date": "2020-09-16",
+    "data_start": "2020-08-05",
+    "data_end": "2020-09-15",
+    "n_days": 30,
+    "last_price": 0.19,
+    "exchange": "SZ"
+  },
+  "300262": {
+    "name": "*ST巴安",
+    "delist_date": "2024-08-19",
+    "data_start": "2021-10-27",
+    "data_end": "2024-06-18",
+    "n_days": 640,
+    "last_price": 0.68,
+    "exchange": "SZ"
+  },
+  "300273": {
+    "name": "和佳退",
+    "delist_date": "2023-07-06",
+    "data_start": "2020-09-25",
+    "data_end": "2023-07-05",
+    "n_days": 640,
+    "last_price": 0.38,
+    "exchange": "SZ"
+  },
+  "300282": {
+    "name": "三盛退",
+    "delist_date": "2024-07-18",
+    "data_start": "2021-09-27",
+    "data_end": "2024-07-17",
+    "n_days": 640,
+    "last_price": 0.13,
+    "exchange": "SZ"
+  },
+  "300297": {
+    "name": "蓝盾退",
+    "delist_date": "2023-07-31",
+    "data_start": "2020-09-23",
+    "data_end": "2023-07-28",
+    "n_days": 640,
+    "last_price": 0.23,
+    "exchange": "SZ"
+  },
+  "300309": {
+    "name": "吉艾退",
+    "delist_date": "2023-05-30",
+    "data_start": "2020-08-27",
+    "data_end": "2023-05-29",
+    "n_days": 640,
+    "last_price": 0.23,
+    "exchange": "SZ"
+  },
+  "300312": {
+    "name": "邦讯退",
+    "delist_date": "2022-07-04",
+    "data_start": "2020-01-02",
+    "data_end": "2022-07-01",
+    "n_days": 577,
+    "last_price": 0.3,
+    "exchange": "SZ"
+  },
+  "300325": {
+    "name": "德威退",
+    "delist_date": "2022-06-28",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-27",
+    "n_days": 576,
+    "last_price": 0.25,
+    "exchange": "SZ"
+  },
+  "300330": {
+    "name": "计通退",
+    "delist_date": "2023-05-24",
+    "data_start": "2020-06-05",
+    "data_end": "2023-05-23",
+    "n_days": 640,
+    "last_price": 2.45,
+    "exchange": "SZ"
+  },
+  "300336": {
+    "name": "新文退",
+    "delist_date": "2023-07-05",
+    "data_start": "2020-09-24",
+    "data_end": "2023-07-04",
+    "n_days": 640,
+    "last_price": 0.25,
+    "exchange": "SZ"
+  },
+  "300344": {
+    "name": "立方退",
+    "delist_date": "2026-04-22",
+    "data_start": "2023-07-10",
+    "data_end": "2026-04-21",
+    "n_days": 640,
+    "last_price": 0.25,
+    "exchange": "SZ"
+  },
+  "300356": {
+    "name": "光一退",
+    "delist_date": "2023-07-13",
+    "data_start": "2020-09-23",
+    "data_end": "2023-07-12",
+    "n_days": 640,
+    "last_price": 1.69,
+    "exchange": "SZ"
+  },
+  "300362": {
+    "name": "天翔退",
+    "delist_date": "2021-08-30",
+    "data_start": "2020-01-02",
+    "data_end": "2021-08-27",
+    "n_days": 108,
+    "last_price": 1.34,
+    "exchange": "SZ"
+  },
+  "300367": {
+    "name": "网力退",
+    "delist_date": "2022-06-30",
+    "data_start": "2020-01-02",
+    "data_end": "2022-06-29",
+    "n_days": 575,
+    "last_price": 0.29,
+    "exchange": "SZ"
+  },
+  "300391": {
+    "name": "长药退",
+    "delist_date": "2026-04-13",
+    "data_start": "2023-06-29",
+    "data_end": "2026-04-10",
+    "n_days": 640,
+    "last_price": 0.19,
+    "exchange": "SZ"
+  },
+  "300392": {
+    "name": "腾信退",
+    "delist_date": "2023-07-10",
+    "data_start": "2020-09-28",
+    "data_end": "2023-07-07",
+    "n_days": 640,
+    "last_price": 0.21,
+    "exchange": "SZ"
+  },
+  "300431": {
+    "name": "暴风退",
+    "delist_date": "2020-11-10",
+    "data_start": "2020-01-02",
+    "data_end": "2020-11-09",
+    "n_days": 146,
+    "last_price": 0.28,
+    "exchange": "SZ"
+  },
+  "300495": {
+    "name": "*ST美尚",
+    "delist_date": "2024-09-20",
+    "data_start": "2021-09-09",
+    "data_end": "2024-05-08",
+    "n_days": 640,
+    "last_price": 0.13,
+    "exchange": "SZ"
+  },
+  "300526": {
+    "name": "中潜退",
+    "delist_date": "2023-07-12",
+    "data_start": "2020-09-10",
+    "data_end": "2023-07-11",
+    "n_days": 640,
+    "last_price": 0.56,
+    "exchange": "SZ"
+  }
+}
