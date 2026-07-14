@@ -106,7 +106,7 @@ print(f"  其中退市股: {len(delist_panel)}只")
 def run_microcap_backtest(prices_df, top_n_list=[5, 10, 20, 50]):
     """小市值策略回测"""
     monthly_prices = prices_df.resample('M').last()
-    monthly_ret = monthly_prices.pct_change()
+    monthly_ret = monthly_prices.pct_change(fill_method=None)
     
     results = {}
     

@@ -1,0 +1,58 @@
+{
+  "run_id": "20260713_194741",
+  "description": "高股息填权研究v2 — 修复版",
+  "fixes": [
+    "股票池不按历史年均分红倒选Top15（去除前视偏差）",
+    "市场基准使用沪深300指数（不再用同一只股票）",
+    "除息日买入者收益不含已除分红",
+    "填权判断用未复权价回到除息前价格（不是total_ret>0）"
+  ],
+  "total_events": 11772,
+  "unique_stocks": 467,
+  "summary": {
+    "5d": {
+      "n_events": 2943,
+      "holder_return_mean": -0.008569536733025709,
+      "entrant_return_mean": 0.010871593328719132,
+      "market_return_mean": 0.004117690445488417,
+      "excess_holder_mean": -0.012687227178514124,
+      "excess_entrant_mean": 0.006753902883230715,
+      "fill_rate": 0.5208970438328236,
+      "excess_holder_median": -0.001663427905283436,
+      "excess_entrant_median": 0.001583043194724465
+    },
+    "20d": {
+      "n_events": 2943,
+      "holder_return_mean": 0.008966491246988537,
+      "entrant_return_mean": 0.028912266208399307,
+      "market_return_mean": 0.00826803755039838,
+      "excess_holder_mean": 0.0006984536965901566,
+      "excess_entrant_mean": 0.02064422865800092,
+      "fill_rate": 0.6928304451240231,
+      "excess_holder_median": -0.00012029678001874988,
+      "excess_entrant_median": 0.006143117373627716
+    },
+    "60d": {
+      "n_events": 2943,
+      "holder_return_mean": 0.03185300112727999,
+      "entrant_return_mean": 0.053069503468128935,
+      "market_return_mean": 0.003965228240379517,
+      "excess_holder_mean": 0.027887772886900482,
+      "excess_entrant_mean": 0.049104275227749426,
+      "fill_rate": 0.7971457696228338,
+      "excess_holder_median": 0.010651234657915905,
+      "excess_entrant_median": 0.020516819441976808
+    },
+    "120d": {
+      "n_events": 2943,
+      "holder_return_mean": 0.0694298888285454,
+      "entrant_return_mean": 0.09113969675475284,
+      "market_return_mean": 0.011334089594108187,
+      "excess_holder_mean": 0.0580957992344372,
+      "excess_entrant_mean": 0.07980560716064464,
+      "fill_rate": 0.8634046890927625,
+      "excess_holder_median": 0.026461581119993437,
+      "excess_entrant_median": 0.04110668166883569
+    }
+  }
+}

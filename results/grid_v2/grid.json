@@ -1,0 +1,5206 @@
+{
+  "run_id": "20260713_201541",
+  "config": {
+    "initial_capital": 100000,
+    "grid_capital": 5000.0,
+    "grid_params": [
+      0.03,
+      0.05,
+      0.08,
+      0.1
+    ],
+    "base_positions": [
+      0.5,
+      0.6,
+      0.7
+    ],
+    "symbols": {
+      "创业板": "sz159915",
+      "半导体": "sh512480",
+      "证券": "sh512880",
+      "中证1000": "sh512100",
+      "科创50": "sh588000",
+      "纳指": "sh513100"
+    },
+    "start_date": "2019-01-01",
+    "cost_scenarios": {
+      "万2.5佣金": 0.00025,
+      "万2.0佣金": 0.0002,
+      "万3.0佣金": 0.0003,
+      "千1.0全成本": 0.001
+    }
+  },
+  "capital_conservation": {
+    "initial_pv": 100000.0,
+    "final_pv": 198551.72,
+    "cash_plus_position": 198551.72,
+    "bh_final": 327843.8,
+    "base_bm_final": 236615.6,
+    "passed": "True"
+  },
+  "scan_results": [
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.03,
+      "base_position": 0.5,
+      "grid_cagr": 0.044405,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.106357,
+      "excess_vs_bh": -0.126684,
+      "excess_vs_base": -0.061952,
+      "trades": 82,
+      "final_value": 138630.61,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.03,
+      "base_position": 0.6,
+      "grid_cagr": 0.065785,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.121378,
+      "excess_vs_bh": -0.105304,
+      "excess_vs_base": -0.055593,
+      "trades": 82,
+      "final_value": 161444.61,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.03,
+      "base_position": 0.7,
+      "grid_cagr": 0.084688,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.135192,
+      "excess_vs_bh": -0.0864,
+      "excess_vs_base": -0.050504,
+      "trades": 82,
+      "final_value": 184258.61,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.05,
+      "base_position": 0.5,
+      "grid_cagr": 0.077879,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.106357,
+      "excess_vs_bh": -0.09321,
+      "excess_vs_base": -0.028478,
+      "trades": 152,
+      "final_value": 175737.72,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.05,
+      "base_position": 0.6,
+      "grid_cagr": 0.095521,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.121378,
+      "excess_vs_bh": -0.075568,
+      "excess_vs_base": -0.025857,
+      "trades": 152,
+      "final_value": 198551.72,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.05,
+      "base_position": 0.7,
+      "grid_cagr": 0.111485,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.135192,
+      "excess_vs_bh": -0.059603,
+      "excess_vs_base": -0.023707,
+      "trades": 152,
+      "final_value": 221365.72,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.08,
+      "base_position": 0.5,
+      "grid_cagr": 0.108868,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.106357,
+      "excess_vs_bh": -0.062221,
+      "excess_vs_base": 0.002511,
+      "trades": 174,
+      "final_value": 217476.72,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.08,
+      "base_position": 0.6,
+      "grid_cagr": 0.12368,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.121378,
+      "excess_vs_bh": -0.047409,
+      "excess_vs_base": 0.002301,
+      "trades": 174,
+      "final_value": 240290.72,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.08,
+      "base_position": 0.7,
+      "grid_cagr": 0.137318,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.135192,
+      "excess_vs_bh": -0.03377,
+      "excess_vs_base": 0.002126,
+      "trades": 174,
+      "final_value": 263104.72,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.1,
+      "base_position": 0.5,
+      "grid_cagr": 0.125635,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.106357,
+      "excess_vs_bh": -0.045453,
+      "excess_vs_base": 0.019278,
+      "trades": 198,
+      "final_value": 243452.64,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.1,
+      "base_position": 0.6,
+      "grid_cagr": 0.139127,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.121378,
+      "excess_vs_bh": -0.031962,
+      "excess_vs_base": 0.017749,
+      "trades": 198,
+      "final_value": 266266.64,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "创业板",
+      "code": "sz159915",
+      "grid_pct": 0.1,
+      "base_position": 0.7,
+      "grid_cagr": 0.151651,
+      "bh_cagr": 0.171089,
+      "base_bm_cagr": 0.135192,
+      "excess_vs_bh": -0.019437,
+      "excess_vs_base": 0.016459,
+      "trades": 198,
+      "final_value": 289080.64,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.03,
+      "base_position": 0.5,
+      "grid_cagr": 0.077856,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.170609,
+      "excess_vs_bh": -0.1809,
+      "excess_vs_base": -0.092753,
+      "trades": 112,
+      "final_value": 170102.84,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.03,
+      "base_position": 0.6,
+      "grid_cagr": 0.111241,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.191633,
+      "excess_vs_bh": -0.147515,
+      "excess_vs_base": -0.080392,
+      "trades": 112,
+      "final_value": 211143.34,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.03,
+      "base_position": 0.7,
+      "grid_cagr": 0.13945,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.210616,
+      "excess_vs_bh": -0.119306,
+      "excess_vs_base": -0.071166,
+      "trades": 112,
+      "final_value": 252183.84,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.05,
+      "base_position": 0.5,
+      "grid_cagr": 0.115349,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.170609,
+      "excess_vs_bh": -0.143407,
+      "excess_vs_base": -0.05526,
+      "trades": 136,
+      "final_value": 216736.5,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.05,
+      "base_position": 0.6,
+      "grid_cagr": 0.142983,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.191633,
+      "excess_vs_bh": -0.115773,
+      "excess_vs_base": -0.04865,
+      "trades": 136,
+      "final_value": 257777.0,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.05,
+      "base_position": 0.7,
+      "grid_cagr": 0.167065,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.210616,
+      "excess_vs_bh": -0.091691,
+      "excess_vs_base": -0.04355,
+      "trades": 136,
+      "final_value": 298817.5,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.08,
+      "base_position": 0.5,
+      "grid_cagr": 0.174512,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.170609,
+      "excess_vs_bh": -0.084244,
+      "excess_vs_base": 0.003903,
+      "trades": 226,
+      "final_value": 312593.01,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.08,
+      "base_position": 0.6,
+      "grid_cagr": 0.195139,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.191633,
+      "excess_vs_bh": -0.063617,
+      "excess_vs_base": 0.003507,
+      "trades": 226,
+      "final_value": 353633.51,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.08,
+      "base_position": 0.7,
+      "grid_cagr": 0.213804,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.210616,
+      "excess_vs_bh": -0.044953,
+      "excess_vs_base": 0.003188,
+      "trades": 226,
+      "final_value": 394674.01,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.1,
+      "base_position": 0.5,
+      "grid_cagr": 0.196872,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.170609,
+      "excess_vs_bh": -0.061884,
+      "excess_vs_base": 0.026263,
+      "trades": 240,
+      "final_value": 357283.0,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.1,
+      "base_position": 0.6,
+      "grid_cagr": 0.215381,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.191633,
+      "excess_vs_bh": -0.043375,
+      "excess_vs_base": 0.023749,
+      "trades": 240,
+      "final_value": 398323.5,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "半导体",
+      "code": "sh512480",
+      "grid_pct": 0.1,
+      "base_position": 0.7,
+      "grid_cagr": 0.232319,
+      "bh_cagr": 0.258756,
+      "base_bm_cagr": 0.210616,
+      "excess_vs_bh": -0.026437,
+      "excess_vs_base": 0.021704,
+      "trades": 240,
+      "final_value": 439364.0,
+      "n_days": 1718,
+      "start_date": "2019-06-12",
+      "end_date": "2026-07-13"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.03,
+      "base_position": 0.5,
+      "grid_cagr": 0.041245,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.033079,
+      "excess_vs_bh": -0.019201,
+      "excess_vs_base": 0.008166,
+      "trades": 290,
+      "final_value": 135508.06,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.03,
+      "base_position": 0.6,
+      "grid_cagr": 0.046813,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.038935,
+      "excess_vs_bh": -0.013632,
+      "excess_vs_base": 0.007879,
+      "trades": 290,
+      "final_value": 141052.06,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.03,
+      "base_position": 0.7,
+      "grid_cagr": 0.052195,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.044583,
+      "excess_vs_bh": -0.008251,
+      "excess_vs_base": 0.007612,
+      "trades": 290,
+      "final_value": 146596.06,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.05,
+      "base_position": 0.5,
+      "grid_cagr": 0.068109,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.033079,
+      "excess_vs_bh": 0.007663,
+      "excess_vs_base": 0.03503,
+      "trades": 365,
+      "final_value": 164110.23,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.05,
+      "base_position": 0.6,
+      "grid_cagr": 0.07284,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.038935,
+      "excess_vs_bh": 0.012394,
+      "excess_vs_base": 0.033905,
+      "trades": 365,
+      "final_value": 169654.23,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.05,
+      "base_position": 0.7,
+      "grid_cagr": 0.077438,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.044583,
+      "excess_vs_bh": 0.016993,
+      "excess_vs_base": 0.032855,
+      "trades": 365,
+      "final_value": 175198.23,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.08,
+      "base_position": 0.5,
+      "grid_cagr": 0.081524,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.033079,
+      "excess_vs_bh": 0.021078,
+      "excess_vs_base": 0.048444,
+      "trades": 292,
+      "final_value": 180255.27,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.08,
+      "base_position": 0.6,
+      "grid_cagr": 0.08589,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.038935,
+      "excess_vs_bh": 0.025445,
+      "excess_vs_base": 0.046956,
+      "trades": 292,
+      "final_value": 185799.27,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.08,
+      "base_position": 0.7,
+      "grid_cagr": 0.090145,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.044583,
+      "excess_vs_bh": 0.0297,
+      "excess_vs_base": 0.045563,
+      "trades": 292,
+      "final_value": 191343.27,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.1,
+      "base_position": 0.5,
+      "grid_cagr": 0.078465,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.033079,
+      "excess_vs_bh": 0.01802,
+      "excess_vs_base": 0.045386,
+      "trades": 217,
+      "final_value": 176458.14,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.1,
+      "base_position": 0.6,
+      "grid_cagr": 0.082912,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.038935,
+      "excess_vs_bh": 0.022467,
+      "excess_vs_base": 0.043977,
+      "trades": 217,
+      "final_value": 182002.14,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "证券",
+      "code": "sh512880",
+      "grid_pct": 0.1,
+      "base_position": 0.7,
+      "grid_cagr": 0.087243,
+      "bh_cagr": 0.060445,
+      "base_bm_cagr": 0.044583,
+      "excess_vs_bh": 0.026797,
+      "excess_vs_base": 0.04266,
+      "trades": 217,
+      "final_value": 187546.14,
+      "n_days": 1823,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.03,
+      "base_position": 0.5,
+      "grid_cagr": 0.036062,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.067477,
+      "excess_vs_bh": -0.079177,
+      "excess_vs_base": -0.031415,
+      "trades": 116,
+      "final_value": 130518.67,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.03,
+      "base_position": 0.6,
+      "grid_cagr": 0.049023,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.078231,
+      "excess_vs_bh": -0.066216,
+      "excess_vs_base": -0.029208,
+      "trades": 116,
+      "final_value": 143306.3,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.03,
+      "base_position": 0.7,
+      "grid_cagr": 0.06085,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.088185,
+      "excess_vs_bh": -0.054389,
+      "excess_vs_base": -0.027336,
+      "trades": 116,
+      "final_value": 155908.59,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.05,
+      "base_position": 0.5,
+      "grid_cagr": 0.060814,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.067477,
+      "excess_vs_bh": -0.054425,
+      "excess_vs_base": -0.006664,
+      "trades": 164,
+      "final_value": 155868.49,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.05,
+      "base_position": 0.6,
+      "grid_cagr": 0.071998,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.078231,
+      "excess_vs_bh": -0.043241,
+      "excess_vs_base": -0.006233,
+      "trades": 164,
+      "final_value": 168656.11,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.05,
+      "base_position": 0.7,
+      "grid_cagr": 0.082322,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.088185,
+      "excess_vs_bh": -0.032916,
+      "excess_vs_base": -0.005863,
+      "trades": 164,
+      "final_value": 181258.41,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.08,
+      "base_position": 0.5,
+      "grid_cagr": 0.102185,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.067477,
+      "excess_vs_bh": -0.013054,
+      "excess_vs_base": 0.034707,
+      "trades": 268,
+      "final_value": 207813.76,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.08,
+      "base_position": 0.6,
+      "grid_cagr": 0.110974,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.078231,
+      "excess_vs_bh": -0.004265,
+      "excess_vs_base": 0.032743,
+      "trades": 268,
+      "final_value": 220601.39,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.08,
+      "base_position": 0.7,
+      "grid_cagr": 0.119214,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.088185,
+      "excess_vs_bh": 0.003975,
+      "excess_vs_base": 0.031028,
+      "trades": 268,
+      "final_value": 233203.69,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.1,
+      "base_position": 0.5,
+      "grid_cagr": 0.108583,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.067477,
+      "excess_vs_bh": -0.006656,
+      "excess_vs_base": 0.041105,
+      "trades": 235,
+      "final_value": 217056.67,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.1,
+      "base_position": 0.6,
+      "grid_cagr": 0.117056,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.078231,
+      "excess_vs_bh": 0.001817,
+      "excess_vs_base": 0.038825,
+      "trades": 235,
+      "final_value": 229844.29,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "中证1000",
+      "code": "sh512100",
+      "grid_pct": 0.1,
+      "base_position": 0.7,
+      "grid_cagr": 0.125015,
+      "bh_cagr": 0.115239,
+      "base_bm_cagr": 0.088185,
+      "excess_vs_bh": 0.009777,
+      "excess_vs_base": 0.03683,
+      "trades": 235,
+      "final_value": 242446.59,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.03,
+      "base_position": 0.5,
+      "grid_cagr": 0.069399,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.040863,
+      "excess_vs_bh": -0.006058,
+      "excess_vs_base": 0.028536,
+      "trades": 322,
+      "final_value": 146052.11,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.03,
+      "base_position": 0.6,
+      "grid_cagr": 0.064556,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.048183,
+      "excess_vs_bh": -0.010902,
+      "excess_vs_base": 0.016373,
+      "trades": 256,
+      "final_value": 142356.53,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.03,
+      "base_position": 0.7,
+      "grid_cagr": 0.06724,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.055272,
+      "excess_vs_bh": -0.008218,
+      "excess_vs_base": 0.011967,
+      "trades": 232,
+      "final_value": 144394.85,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.05,
+      "base_position": 0.5,
+      "grid_cagr": 0.110653,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.040863,
+      "excess_vs_bh": 0.035196,
+      "excess_vs_base": 0.06979,
+      "trades": 315,
+      "final_value": 180846.85,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.05,
+      "base_position": 0.6,
+      "grid_cagr": 0.105107,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.048183,
+      "excess_vs_bh": 0.029649,
+      "excess_vs_base": 0.056924,
+      "trades": 273,
+      "final_value": 175807.19,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.05,
+      "base_position": 0.7,
+      "grid_cagr": 0.09279,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.055272,
+      "excess_vs_bh": 0.017333,
+      "excess_vs_base": 0.037518,
+      "trades": 215,
+      "final_value": 165027.79,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.08,
+      "base_position": 0.5,
+      "grid_cagr": 0.134531,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.040863,
+      "excess_vs_bh": 0.059074,
+      "excess_vs_base": 0.093668,
+      "trades": 234,
+      "final_value": 203921.64,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.08,
+      "base_position": 0.6,
+      "grid_cagr": 0.131964,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.048183,
+      "excess_vs_bh": 0.056506,
+      "excess_vs_base": 0.083781,
+      "trades": 220,
+      "final_value": 201330.24,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.08,
+      "base_position": 0.7,
+      "grid_cagr": 0.127551,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.055272,
+      "excess_vs_bh": 0.052094,
+      "excess_vs_base": 0.072279,
+      "trades": 200,
+      "final_value": 196939.45,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.1,
+      "base_position": 0.5,
+      "grid_cagr": 0.135096,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.040863,
+      "excess_vs_bh": 0.059638,
+      "excess_vs_base": 0.094233,
+      "trades": 189,
+      "final_value": 204495.35,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.1,
+      "base_position": 0.6,
+      "grid_cagr": 0.14002,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.048183,
+      "excess_vs_bh": 0.064563,
+      "excess_vs_base": 0.091838,
+      "trades": 189,
+      "final_value": 209554.55,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "科创50",
+      "code": "sh588000",
+      "grid_pct": 0.1,
+      "base_position": 0.7,
+      "grid_cagr": 0.128875,
+      "bh_cagr": 0.075458,
+      "base_bm_cagr": 0.055272,
+      "excess_vs_bh": 0.053417,
+      "excess_vs_base": 0.073603,
+      "trades": 165,
+      "final_value": 198248.26,
+      "n_days": 1370,
+      "start_date": "2020-11-16",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.03,
+      "base_position": 0.5,
+      "grid_cagr": 0.055439,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.1568,
+      "excess_vs_bh": -0.182619,
+      "excess_vs_base": -0.101361,
+      "trades": 50,
+      "final_value": 150028.28,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.03,
+      "base_position": 0.6,
+      "grid_cagr": 0.088984,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.176187,
+      "excess_vs_bh": -0.149074,
+      "excess_vs_base": -0.087203,
+      "trades": 50,
+      "final_value": 189816.2,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.03,
+      "base_position": 0.7,
+      "grid_cagr": 0.116901,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.193691,
+      "excess_vs_bh": -0.121157,
+      "excess_vs_base": -0.07679,
+      "trades": 50,
+      "final_value": 229604.13,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.05,
+      "base_position": 0.5,
+      "grid_cagr": 0.080576,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.1568,
+      "excess_vs_bh": -0.157482,
+      "excess_vs_base": -0.076223,
+      "trades": 58,
+      "final_value": 179071.28,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.05,
+      "base_position": 0.6,
+      "grid_cagr": 0.109803,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.176187,
+      "excess_vs_bh": -0.128255,
+      "excess_vs_base": -0.066384,
+      "trades": 58,
+      "final_value": 218859.21,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.05,
+      "base_position": 0.7,
+      "grid_cagr": 0.134736,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.193691,
+      "excess_vs_bh": -0.103322,
+      "excess_vs_base": -0.058955,
+      "trades": 58,
+      "final_value": 258647.13,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.08,
+      "base_position": 0.5,
+      "grid_cagr": 0.131952,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.1568,
+      "excess_vs_bh": -0.106106,
+      "excess_vs_base": -0.024847,
+      "trades": 146,
+      "final_value": 253914.4,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.08,
+      "base_position": 0.6,
+      "grid_cagr": 0.154083,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.176187,
+      "excess_vs_bh": -0.083975,
+      "excess_vs_base": -0.022104,
+      "trades": 146,
+      "final_value": 293702.32,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.08,
+      "base_position": 0.7,
+      "grid_cagr": 0.173751,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.193691,
+      "excess_vs_bh": -0.064306,
+      "excess_vs_base": -0.019939,
+      "trades": 146,
+      "final_value": 333490.25,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.1,
+      "base_position": 0.5,
+      "grid_cagr": 0.149493,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.1568,
+      "excess_vs_bh": -0.088565,
+      "excess_vs_base": -0.007307,
+      "trades": 142,
+      "final_value": 285032.31,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.1,
+      "base_position": 0.6,
+      "grid_cagr": 0.169646,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.176187,
+      "excess_vs_bh": -0.068412,
+      "excess_vs_base": -0.006541,
+      "trades": 142,
+      "final_value": 324820.24,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    },
+    {
+      "symbol": "纳指",
+      "code": "sh513100",
+      "grid_pct": 0.1,
+      "base_position": 0.7,
+      "grid_cagr": 0.187762,
+      "bh_cagr": 0.238058,
+      "base_bm_cagr": 0.193691,
+      "excess_vs_bh": -0.050296,
+      "excess_vs_base": -0.005929,
+      "trades": 142,
+      "final_value": 364608.17,
+      "n_days": 1822,
+      "start_date": "2019-01-02",
+      "end_date": "2026-07-10"
+    }
+  ],
+  "cost_sensitivity": [
+    {
+      "cost_label": "万2.5佣金",
+      "cost_rate": 0.00025,
+      "win_count": 21,
+      "total": 72,
+      "win_rate": 0.2917,
+      "detail": [
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.126684,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.105304,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.0864,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.09321,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.075568,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.059603,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.062221,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.047409,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.03377,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.045453,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.031962,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.019437,
+          "trades": 198
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.1809,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.147515,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.119306,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.143407,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.115773,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.091691,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.084244,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.063617,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.044953,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.061884,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043375,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.026437,
+          "trades": 240
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.019201,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.013632,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008251,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.007663,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.012394,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.016993,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.021078,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.025445,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.0297,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.01802,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.022467,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.026797,
+          "trades": 217
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.079177,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.066216,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.054389,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.054425,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043241,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.032916,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.013054,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.004265,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.003975,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006656,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.001817,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.009777,
+          "trades": 235
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006058,
+          "trades": 322
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.010902,
+          "trades": 256
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008218,
+          "trades": 232
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.035196,
+          "trades": 315
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.029649,
+          "trades": 273
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.017333,
+          "trades": 215
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059074,
+          "trades": 234
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.056506,
+          "trades": 220
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.052094,
+          "trades": 200
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059638,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.064563,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.053417,
+          "trades": 165
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.182619,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.149074,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.121157,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.157482,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.128255,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.103322,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.106106,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.083975,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.064306,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.088565,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.068412,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.050296,
+          "trades": 142
+        }
+      ]
+    },
+    {
+      "cost_label": "万2.0佣金",
+      "cost_rate": 0.0002,
+      "win_count": 21,
+      "total": 72,
+      "win_rate": 0.2917,
+      "detail": [
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.126684,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.105304,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.0864,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.09321,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.075568,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.059603,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.062221,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.047409,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.03377,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.045453,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.031962,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.019437,
+          "trades": 198
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.1809,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.147515,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.119306,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.143407,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.115773,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.091691,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.084244,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.063617,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.044953,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.061884,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043375,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.026437,
+          "trades": 240
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.019201,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.013632,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008251,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.007663,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.012394,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.016993,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.021078,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.025445,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.0297,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.01802,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.022467,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.026797,
+          "trades": 217
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.079177,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.066216,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.054389,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.054425,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043241,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.032916,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.013054,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.004265,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.003975,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006656,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.001817,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.009777,
+          "trades": 235
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006058,
+          "trades": 322
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.010902,
+          "trades": 256
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008218,
+          "trades": 232
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.035196,
+          "trades": 315
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.029649,
+          "trades": 273
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.017333,
+          "trades": 215
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059074,
+          "trades": 234
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.056506,
+          "trades": 220
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.052094,
+          "trades": 200
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059638,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.064563,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.053417,
+          "trades": 165
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.182619,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.149074,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.121157,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.157482,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.128255,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.103322,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.106106,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.083975,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.064306,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.088565,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.068412,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.050296,
+          "trades": 142
+        }
+      ]
+    },
+    {
+      "cost_label": "万3.0佣金",
+      "cost_rate": 0.0003,
+      "win_count": 21,
+      "total": 72,
+      "win_rate": 0.2917,
+      "detail": [
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.126684,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.105304,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.0864,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.09321,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.075568,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.059603,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.062221,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.047409,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.03377,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.045453,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.031962,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.019437,
+          "trades": 198
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.1809,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.147515,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.119306,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.143407,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.115773,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.091691,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.084244,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.063617,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.044953,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.061884,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043375,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.026437,
+          "trades": 240
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.019201,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.013632,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008251,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.007663,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.012394,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.016993,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.021078,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.025445,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.0297,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.01802,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.022467,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.026797,
+          "trades": 217
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.079177,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.066216,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.054389,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.054425,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043241,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.032916,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.013054,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.004265,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.003975,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006656,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.001817,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.009777,
+          "trades": 235
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006058,
+          "trades": 322
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.010902,
+          "trades": 256
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008218,
+          "trades": 232
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.035196,
+          "trades": 315
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.029649,
+          "trades": 273
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.017333,
+          "trades": 215
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059074,
+          "trades": 234
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.056506,
+          "trades": 220
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.052094,
+          "trades": 200
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059638,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.064563,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.053417,
+          "trades": 165
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.182619,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.149074,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.121157,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.157482,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.128255,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.103322,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.106106,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.083975,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.064306,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.088565,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.068412,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.050296,
+          "trades": 142
+        }
+      ]
+    },
+    {
+      "cost_label": "千1.0全成本",
+      "cost_rate": 0.001,
+      "win_count": 21,
+      "total": 72,
+      "win_rate": 0.2917,
+      "detail": [
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.126684,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.105304,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.0864,
+          "trades": 82
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.09321,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.075568,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.059603,
+          "trades": 152
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.062221,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.047409,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.03377,
+          "trades": 174
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.045453,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.031962,
+          "trades": 198
+        },
+        {
+          "symbol": "创业板",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.019437,
+          "trades": 198
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.1809,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.147515,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.119306,
+          "trades": 112
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.143407,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.115773,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.091691,
+          "trades": 136
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.084244,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.063617,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.044953,
+          "trades": 226
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.061884,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043375,
+          "trades": 240
+        },
+        {
+          "symbol": "半导体",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.026437,
+          "trades": 240
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.019201,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.013632,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008251,
+          "trades": 290
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.007663,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.012394,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.016993,
+          "trades": 365
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.021078,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.025445,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.0297,
+          "trades": 292
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.01802,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.022467,
+          "trades": 217
+        },
+        {
+          "symbol": "证券",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.026797,
+          "trades": 217
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.079177,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.066216,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.054389,
+          "trades": 116
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.054425,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.043241,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.032916,
+          "trades": 164
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.013054,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.004265,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.003975,
+          "trades": 268
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006656,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.001817,
+          "trades": 235
+        },
+        {
+          "symbol": "中证1000",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.009777,
+          "trades": 235
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.006058,
+          "trades": 322
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.010902,
+          "trades": 256
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.008218,
+          "trades": 232
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.035196,
+          "trades": 315
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.029649,
+          "trades": 273
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.017333,
+          "trades": 215
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059074,
+          "trades": 234
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.056506,
+          "trades": 220
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.052094,
+          "trades": 200
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": 0.059638,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": 0.064563,
+          "trades": 189
+        },
+        {
+          "symbol": "科创50",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": 0.053417,
+          "trades": 165
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.182619,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.149074,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.03,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.121157,
+          "trades": 50
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.157482,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.128255,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.05,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.103322,
+          "trades": 58
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.106106,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.083975,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.08,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.064306,
+          "trades": 146
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.5,
+          "excess_vs_bh": -0.088565,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.6,
+          "excess_vs_bh": -0.068412,
+          "trades": 142
+        },
+        {
+          "symbol": "纳指",
+          "grid_pct": 0.1,
+          "base_position": 0.7,
+          "excess_vs_bh": -0.050296,
+          "trades": 142
+        }
+      ]
+    }
+  ],
+  "walkforward": [
+    {
+      "symbol": "创业板",
+      "years": [
+        {
+          "year": 2021,
+          "symbol": "创业板",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.15533,
+          "trade_grid_return": 0.155547,
+          "trade_bh_return": 0.082313,
+          "trade_excess": 0.073234,
+          "final_value": 115554.68,
+          "trades": 41,
+          "end_cash": 35426.48,
+          "end_shares": 24900,
+          "end_grid": 1,
+          "end_grid_base": 2.976,
+          "inherited": false
+        },
+        {
+          "year": 2022,
+          "symbol": "创业板",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.105821,
+          "trade_grid_return": -0.169726,
+          "trade_bh_return": -0.280841,
+          "trade_excess": 0.111116,
+          "final_value": 95942.07,
+          "trades": 32,
+          "end_cash": 15493.37,
+          "end_shares": 35300,
+          "end_grid": -3,
+          "end_grid_base": 2.976,
+          "inherited": true
+        },
+        {
+          "year": 2023,
+          "symbol": "创业板",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.020345,
+          "trade_grid_return": -0.093504,
+          "trade_bh_return": -0.197827,
+          "trade_excess": 0.104324,
+          "final_value": 86971.13,
+          "trades": 36,
+          "end_cash": 5370.53,
+          "end_shares": 44300,
+          "end_grid": -5,
+          "end_grid_base": 2.976,
+          "inherited": true
+        },
+        {
+          "year": 2024,
+          "symbol": "创业板",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": 0.005871,
+          "trade_grid_return": 0.215344,
+          "trade_bh_return": 0.164505,
+          "trade_excess": 0.050839,
+          "final_value": 105699.85,
+          "trades": 32,
+          "end_cash": 15944.45,
+          "end_shares": 42700,
+          "end_grid": -3,
+          "end_grid_base": 2.976,
+          "inherited": true
+        },
+        {
+          "year": 2025,
+          "symbol": "创业板",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": 0.006385,
+          "trade_grid_return": 0.521625,
+          "trade_bh_return": 0.582477,
+          "trade_excess": -0.060852,
+          "final_value": 160835.51,
+          "trades": 42,
+          "end_cash": 35944.31,
+          "end_shares": 39200,
+          "end_grid": 1,
+          "end_grid_base": 2.976,
+          "inherited": true
+        }
+      ],
+      "cumulative_grid_cagr": 0.099705,
+      "cumulative_bh_cagr": 0.028454,
+      "cumulative_excess": 0.071252
+    },
+    {
+      "symbol": "半导体",
+      "years": [
+        {
+          "year": 2021,
+          "symbol": "半导体",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.137855,
+          "trade_grid_return": 0.259549,
+          "trade_bh_return": 0.215443,
+          "trade_excess": 0.044107,
+          "final_value": 125954.94,
+          "trades": 48,
+          "end_cash": 39894.94,
+          "end_shares": 132400,
+          "end_grid": 2,
+          "end_grid_base": 0.536,
+          "inherited": false
+        },
+        {
+          "year": 2022,
+          "symbol": "半导体",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.100951,
+          "trade_grid_return": -0.206096,
+          "trade_bh_return": -0.358337,
+          "trade_excess": 0.152242,
+          "final_value": 99996.19,
+          "trades": 49,
+          "end_cash": 14712.19,
+          "end_shares": 207000,
+          "end_grid": -3,
+          "end_grid_base": 0.536,
+          "inherited": true
+        },
+        {
+          "year": 2023,
+          "symbol": "半导体",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": 0.013261,
+          "trade_grid_return": 0.038617,
+          "trade_bh_return": -0.038825,
+          "trade_excess": 0.077441,
+          "final_value": 103857.7,
+          "trades": 28,
+          "end_cash": 14332.3,
+          "end_shares": 222700,
+          "end_grid": -3,
+          "end_grid_base": 0.536,
+          "inherited": true
+        },
+        {
+          "year": 2024,
+          "symbol": "半导体",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": 0.018491,
+          "trade_grid_return": 0.308506,
+          "trade_bh_return": 0.27956,
+          "trade_excess": 0.028946,
+          "final_value": 135898.43,
+          "trades": 33,
+          "end_cash": 28989.93,
+          "end_shares": 211700,
+          "end_grid": 0,
+          "end_grid_base": 0.536,
+          "inherited": true
+        },
+        {
+          "year": 2025,
+          "symbol": "半导体",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": 0.013698,
+          "trade_grid_return": 0.405201,
+          "trade_bh_return": 0.52261,
+          "trade_excess": -0.117409,
+          "final_value": 190964.61,
+          "trades": 33,
+          "end_cash": 43759.41,
+          "end_shares": 201100,
+          "end_grid": 3,
+          "end_grid_base": 0.536,
+          "inherited": true
+        }
+      ],
+      "cumulative_grid_cagr": 0.138127,
+      "cumulative_bh_cagr": 0.078695,
+      "cumulative_excess": 0.059432
+    },
+    {
+      "symbol": "证券",
+      "years": [
+        {
+          "year": 2021,
+          "symbol": "证券",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.031462,
+          "trade_grid_return": 0.025206,
+          "trade_bh_return": -0.045977,
+          "trade_excess": 0.071183,
+          "final_value": 102520.56,
+          "trades": 23,
+          "end_cash": 24551.76,
+          "end_shares": 66300,
+          "end_grid": -1,
+          "end_grid_base": 1.232,
+          "inherited": false
+        },
+        {
+          "year": 2022,
+          "symbol": "证券",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.003544,
+          "trade_grid_return": -0.156096,
+          "trade_bh_return": -0.260479,
+          "trade_excess": 0.104384,
+          "final_value": 86517.55,
+          "trades": 27,
+          "end_cash": 9611.05,
+          "end_shares": 88500,
+          "end_grid": -4,
+          "end_grid_base": 1.232,
+          "inherited": true
+        },
+        {
+          "year": 2023,
+          "symbol": "证券",
+          "best_grid_pct": 0.08,
+          "best_base_position": 0.7,
+          "opt_excess": 0.038377,
+          "trade_grid_return": 0.128482,
+          "trade_bh_return": 0.044637,
+          "trade_excess": 0.083845,
+          "final_value": 97633.51,
+          "trades": 46,
+          "end_cash": 9508.11,
+          "end_shares": 97700,
+          "end_grid": -4,
+          "end_grid_base": 1.232,
+          "inherited": true
+        },
+        {
+          "year": 2024,
+          "symbol": "证券",
+          "best_grid_pct": 0.08,
+          "best_base_position": 0.7,
+          "opt_excess": 0.036817,
+          "trade_grid_return": 0.307672,
+          "trade_bh_return": 0.31436,
+          "trade_excess": -0.006689,
+          "final_value": 127672.58,
+          "trades": 28,
+          "end_cash": 29392.58,
+          "end_shares": 84000,
+          "end_grid": 0,
+          "end_grid_base": 1.232,
+          "inherited": true
+        },
+        {
+          "year": 2025,
+          "symbol": "证券",
+          "best_grid_pct": 0.08,
+          "best_base_position": 0.7,
+          "opt_excess": 0.026153,
+          "trade_grid_return": 0.0641,
+          "trade_bh_return": 0.095552,
+          "trade_excess": -0.031453,
+          "final_value": 135856.36,
+          "trades": 24,
+          "end_cash": 28925.06,
+          "end_shares": 88300,
+          "end_grid": 0,
+          "end_grid_base": 1.232,
+          "inherited": true
+        }
+      ],
+      "cumulative_grid_cagr": 0.063203,
+      "cumulative_bh_cagr": 0.011962,
+      "cumulative_excess": 0.05124
+    },
+    {
+      "symbol": "中证1000",
+      "years": [
+        {
+          "year": 2021,
+          "symbol": "中证1000",
+          "best_grid_pct": 0.08,
+          "best_base_position": 0.7,
+          "opt_excess": -0.053525,
+          "trade_grid_return": 0.23282,
+          "trade_bh_return": 0.22252,
+          "trade_excess": 0.0103,
+          "final_value": 123282.04,
+          "trades": 44,
+          "end_cash": 39849.28,
+          "end_shares": 25900,
+          "end_grid": 2,
+          "end_grid_base": 2.641169,
+          "inherited": false
+        },
+        {
+          "year": 2022,
+          "symbol": "中证1000",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.053526,
+          "trade_grid_return": -0.109651,
+          "trade_bh_return": -0.221205,
+          "trade_excess": 0.111554,
+          "final_value": 109764.03,
+          "trades": 29,
+          "end_cash": 26030.23,
+          "end_shares": 33400,
+          "end_grid": -1,
+          "end_grid_base": 2.641169,
+          "inherited": true
+        },
+        {
+          "year": 2023,
+          "symbol": "中证1000",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.002437,
+          "trade_grid_return": -0.01318,
+          "trade_bh_return": -0.075142,
+          "trade_excess": 0.061962,
+          "final_value": 108317.34,
+          "trades": 14,
+          "end_cash": 26651.74,
+          "end_shares": 34400,
+          "end_grid": -1,
+          "end_grid_base": 2.641169,
+          "inherited": true
+        },
+        {
+          "year": 2024,
+          "symbol": "中证1000",
+          "best_grid_pct": 0.08,
+          "best_base_position": 0.7,
+          "opt_excess": 0.008599,
+          "trade_grid_return": 0.087934,
+          "trade_bh_return": 0.028135,
+          "trade_excess": 0.059799,
+          "final_value": 117842.07,
+          "trades": 40,
+          "end_cash": 26608.07,
+          "end_shares": 37700,
+          "end_grid": -1,
+          "end_grid_base": 2.641169,
+          "inherited": true
+        },
+        {
+          "year": 2025,
+          "symbol": "中证1000",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": 0.018173,
+          "trade_grid_return": 0.255427,
+          "trade_bh_return": 0.309605,
+          "trade_excess": -0.054178,
+          "final_value": 147942.14,
+          "trades": 27,
+          "end_cash": 40177.14,
+          "end_shares": 35000,
+          "end_grid": 2,
+          "end_grid_base": 2.641169,
+          "inherited": true
+        }
+      ],
+      "cumulative_grid_cagr": 0.08148,
+      "cumulative_bh_cagr": 0.034639,
+      "cumulative_excess": 0.04684
+    },
+    {
+      "symbol": "科创50",
+      "years": [
+        {
+          "year": 2022,
+          "symbol": "科创50",
+          "best_grid_pct": 0.08,
+          "best_base_position": 0.5,
+          "opt_excess": 0.084467,
+          "trade_grid_return": -0.119077,
+          "trade_bh_return": -0.297234,
+          "trade_excess": 0.178157,
+          "final_value": 88092.27,
+          "trades": 37,
+          "end_cash": 25304.47,
+          "end_shares": 62600,
+          "end_grid": -5,
+          "end_grid_base": 1.42,
+          "inherited": false
+        },
+        {
+          "year": 2023,
+          "symbol": "科创50",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.5,
+          "opt_excess": 0.135196,
+          "trade_grid_return": -0.013228,
+          "trade_bh_return": -0.124846,
+          "trade_excess": 0.111618,
+          "final_value": 86926.98,
+          "trades": 26,
+          "end_cash": 25123.68,
+          "end_shares": 68900,
+          "end_grid": -5,
+          "end_grid_base": 1.42,
+          "inherited": true
+        },
+        {
+          "year": 2024,
+          "symbol": "科创50",
+          "best_grid_pct": 0.08,
+          "best_base_position": 0.5,
+          "opt_excess": 0.115097,
+          "trade_grid_return": 0.245855,
+          "trade_bh_return": 0.180127,
+          "trade_excess": 0.065728,
+          "final_value": 108298.38,
+          "trades": 49,
+          "end_cash": 29714.38,
+          "end_shares": 75200,
+          "end_grid": -4,
+          "end_grid_base": 1.42,
+          "inherited": true
+        },
+        {
+          "year": 2025,
+          "symbol": "科创50",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.5,
+          "opt_excess": 0.107851,
+          "trade_grid_return": 0.306377,
+          "trade_bh_return": 0.40732,
+          "trade_excess": -0.100943,
+          "final_value": 141478.49,
+          "trades": 34,
+          "end_cash": 49373.49,
+          "end_shares": 65000,
+          "end_grid": 0,
+          "end_grid_base": 1.42,
+          "inherited": true
+        }
+      ],
+      "cumulative_grid_cagr": 0.090618,
+      "cumulative_bh_cagr": 0.00532,
+      "cumulative_excess": 0.085298
+    },
+    {
+      "symbol": "纳指",
+      "years": [
+        {
+          "year": 2021,
+          "symbol": "纳指",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.073462,
+          "trade_grid_return": 0.195036,
+          "trade_bh_return": 0.241056,
+          "trade_excess": -0.046021,
+          "final_value": 119503.56,
+          "trades": 16,
+          "end_cash": 39598.35,
+          "end_shares": 76200,
+          "end_grid": 2,
+          "end_grid_base": 0.847071,
+          "inherited": false
+        },
+        {
+          "year": 2022,
+          "symbol": "纳指",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.071234,
+          "trade_grid_return": -0.116175,
+          "trade_bh_return": -0.247047,
+          "trade_excess": 0.130871,
+          "final_value": 105620.19,
+          "trades": 31,
+          "end_cash": 24601.59,
+          "end_shares": 101400,
+          "end_grid": -1,
+          "end_grid_base": 0.847071,
+          "inherited": true
+        },
+        {
+          "year": 2023,
+          "symbol": "纳指",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.007769,
+          "trade_grid_return": 0.380721,
+          "trade_bh_return": 0.513961,
+          "trade_excess": -0.13324,
+          "final_value": 145831.97,
+          "trades": 15,
+          "end_cash": 49277.17,
+          "end_shares": 79600,
+          "end_grid": 4,
+          "end_grid_base": 0.847071,
+          "inherited": true
+        },
+        {
+          "year": 2024,
+          "symbol": "纳指",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.037093,
+          "trade_grid_return": 0.270675,
+          "trade_bh_return": 0.347656,
+          "trade_excess": -0.076981,
+          "final_value": 185305.07,
+          "trades": 31,
+          "end_cash": 64107.47,
+          "end_shares": 74400,
+          "end_grid": 7,
+          "end_grid_base": 0.847071,
+          "inherited": true
+        },
+        {
+          "year": 2025,
+          "symbol": "纳指",
+          "best_grid_pct": 0.1,
+          "best_base_position": 0.7,
+          "opt_excess": -0.049209,
+          "trade_grid_return": 0.156504,
+          "trade_bh_return": 0.159915,
+          "trade_excess": -0.003411,
+          "final_value": 214306.09,
+          "trades": 32,
+          "end_cash": 74171.69,
+          "end_shares": 73600,
+          "end_grid": 9,
+          "end_grid_base": 0.847071,
+          "inherited": true
+        }
+      ],
+      "cumulative_grid_cagr": 0.164681,
+      "cumulative_bh_cagr": 0.172022,
+      "cumulative_excess": -0.007342
+    }
+  ],
+  "overfit_check": {
+    "segment_results": [
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.207024,
+        "grid_cagr": 0.06521,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.175885,
+        "grid_cagr": 0.096349,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.146805,
+        "grid_cagr": 0.125428,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.165396,
+        "grid_cagr": 0.106837,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.136969,
+        "grid_cagr": 0.135265,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.110211,
+        "grid_cagr": 0.162022,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.135468,
+        "grid_cagr": 0.136766,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.108794,
+        "grid_cagr": 0.163439,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.083563,
+        "grid_cagr": 0.18867,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.102415,
+        "grid_cagr": 0.169818,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.077512,
+        "grid_cagr": 0.194721,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.05384,
+        "grid_cagr": 0.218394,
+        "bh_cagr": 0.272233
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.011166,
+        "grid_cagr": 0.081945,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.020877,
+        "grid_cagr": 0.072234,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.021361,
+        "grid_cagr": 0.07175,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.029833,
+        "grid_cagr": 0.122944,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.024669,
+        "grid_cagr": 0.11778,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.020125,
+        "grid_cagr": 0.113236,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.046906,
+        "grid_cagr": 0.140017,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.043323,
+        "grid_cagr": 0.136433,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.03155,
+        "grid_cagr": 0.124661,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.034374,
+        "grid_cagr": 0.127485,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.041739,
+        "grid_cagr": 0.13485,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "创业板",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.048962,
+        "grid_cagr": 0.142072,
+        "bh_cagr": 0.093111
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.1838,
+        "grid_cagr": 0.072174,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.156027,
+        "grid_cagr": 0.099946,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.129623,
+        "grid_cagr": 0.126351,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.160739,
+        "grid_cagr": 0.095234,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.13411,
+        "grid_cagr": 0.121864,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.108716,
+        "grid_cagr": 0.147258,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.104259,
+        "grid_cagr": 0.151714,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.080155,
+        "grid_cagr": 0.175819,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.057023,
+        "grid_cagr": 0.198951,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.070728,
+        "grid_cagr": 0.185245,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.047961,
+        "grid_cagr": 0.208012,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.026041,
+        "grid_cagr": 0.229932,
+        "bh_cagr": 0.255974
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.112627,
+        "grid_cagr": 0.149671,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.098816,
+        "grid_cagr": 0.163482,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.086321,
+        "grid_cagr": 0.175977,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.057901,
+        "grid_cagr": 0.204397,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.057441,
+        "grid_cagr": 0.204857,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.04757,
+        "grid_cagr": 0.214728,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.029658,
+        "grid_cagr": 0.23264,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.009665,
+        "grid_cagr": 0.252633,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.00555,
+        "grid_cagr": 0.256748,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.004677,
+        "grid_cagr": 0.257621,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.01417,
+        "grid_cagr": 0.276468,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "半导体",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.029875,
+        "grid_cagr": 0.292172,
+        "bh_cagr": 0.262298
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.046051,
+        "grid_cagr": 0.047625,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.036796,
+        "grid_cagr": 0.056881,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.027738,
+        "grid_cagr": 0.065939,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.006336,
+        "grid_cagr": 0.087341,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.002112,
+        "grid_cagr": 0.095788,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.0104,
+        "grid_cagr": 0.104077,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.011066,
+        "grid_cagr": 0.104742,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.01919,
+        "grid_cagr": 0.112866,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.027169,
+        "grid_cagr": 0.120845,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.005026,
+        "grid_cagr": 0.098702,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.01326,
+        "grid_cagr": 0.106937,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.021345,
+        "grid_cagr": 0.115021,
+        "bh_cagr": 0.093676
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.041732,
+        "grid_cagr": 0.077661,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.043939,
+        "grid_cagr": 0.079867,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.042614,
+        "grid_cagr": 0.078543,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.053036,
+        "grid_cagr": 0.088964,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.05596,
+        "grid_cagr": 0.091888,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.058832,
+        "grid_cagr": 0.09476,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.042246,
+        "grid_cagr": 0.078174,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.045258,
+        "grid_cagr": 0.081187,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.048217,
+        "grid_cagr": 0.084145,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.040614,
+        "grid_cagr": 0.076543,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.04364,
+        "grid_cagr": 0.079569,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "证券",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.046612,
+        "grid_cagr": 0.082541,
+        "bh_cagr": 0.035928
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.145987,
+        "grid_cagr": 0.061946,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.123411,
+        "grid_cagr": 0.084522,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.102253,
+        "grid_cagr": 0.10568,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.115514,
+        "grid_cagr": 0.092419,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.094423,
+        "grid_cagr": 0.11351,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.074569,
+        "grid_cagr": 0.133364,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.060561,
+        "grid_cagr": 0.147372,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.041829,
+        "grid_cagr": 0.166104,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.024073,
+        "grid_cagr": 0.183859,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.054643,
+        "grid_cagr": 0.15329,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.036142,
+        "grid_cagr": 0.171791,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.018595,
+        "grid_cagr": 0.189338,
+        "bh_cagr": 0.207933
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.030411,
+        "grid_cagr": 0.070351,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.028543,
+        "grid_cagr": 0.068483,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.024887,
+        "grid_cagr": 0.064827,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.044817,
+        "grid_cagr": 0.084756,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.042343,
+        "grid_cagr": 0.082283,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.0372,
+        "grid_cagr": 0.07714,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.048059,
+        "grid_cagr": 0.087999,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.051391,
+        "grid_cagr": 0.091331,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.050004,
+        "grid_cagr": 0.089944,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.05174,
+        "grid_cagr": 0.09168,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.055038,
+        "grid_cagr": 0.094978,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "中证1000",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.058216,
+        "grid_cagr": 0.098156,
+        "bh_cagr": 0.03994
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.091306,
+        "grid_cagr": -0.045346,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.072574,
+        "grid_cagr": -0.064078,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.057677,
+        "grid_cagr": -0.078975,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.119765,
+        "grid_cagr": -0.016887,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.102958,
+        "grid_cagr": -0.033694,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.082969,
+        "grid_cagr": -0.053683,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.131994,
+        "grid_cagr": -0.004658,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.118875,
+        "grid_cagr": -0.017777,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.105646,
+        "grid_cagr": -0.031005,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.130502,
+        "grid_cagr": -0.00615,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.11737,
+        "grid_cagr": -0.019282,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.104129,
+        "grid_cagr": -0.032522,
+        "bh_cagr": -0.136652
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.057194,
+        "grid_cagr": 0.120938,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.045349,
+        "grid_cagr": 0.132782,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.038981,
+        "grid_cagr": 0.139151,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.015049,
+        "grid_cagr": 0.163083,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.016128,
+        "grid_cagr": 0.162004,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.006643,
+        "grid_cagr": 0.171489,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": 0.010994,
+        "grid_cagr": 0.189126,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.024574,
+        "grid_cagr": 0.202706,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.024712,
+        "grid_cagr": 0.202844,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.005528,
+        "grid_cagr": 0.172604,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": 0.008625,
+        "grid_cagr": 0.186756,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "科创50",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": 0.019928,
+        "grid_cagr": 0.19806,
+        "bh_cagr": 0.178132
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.141266,
+        "grid_cagr": 0.048652,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.12054,
+        "grid_cagr": 0.069378,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.100769,
+        "grid_cagr": 0.08915,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.115004,
+        "grid_cagr": 0.074914,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.095478,
+        "grid_cagr": 0.094441,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.076783,
+        "grid_cagr": 0.113136,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.064438,
+        "grid_cagr": 0.12548,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.046967,
+        "grid_cagr": 0.142951,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.030137,
+        "grid_cagr": 0.159781,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.049321,
+        "grid_cagr": 0.140598,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.032406,
+        "grid_cagr": 0.157512,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2019-2022",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.016086,
+        "grid_cagr": 0.173833,
+        "bh_cagr": 0.189918
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.205946,
+        "grid_cagr": 0.076422,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.173296,
+        "grid_cagr": 0.109072,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.03,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.143089,
+        "grid_cagr": 0.139279,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.165979,
+        "grid_cagr": 0.11639,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.136562,
+        "grid_cagr": 0.145806,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.05,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.109057,
+        "grid_cagr": 0.173312,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.12213,
+        "grid_cagr": 0.160238,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.095804,
+        "grid_cagr": 0.186564,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.08,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.070944,
+        "grid_cagr": 0.211424,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.5,
+        "excess_vs_bh": -0.11729,
+        "grid_cagr": 0.165078,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.6,
+        "excess_vs_bh": -0.09128,
+        "grid_cagr": 0.191089,
+        "bh_cagr": 0.282368
+      },
+      {
+        "symbol": "纳指",
+        "period": "2022-2026",
+        "grid_pct": 0.1,
+        "base_position": 0.7,
+        "excess_vs_bh": -0.066692,
+        "grid_cagr": 0.215676,
+        "bh_cagr": 0.282368
+      }
+    ],
+    "best_params_comparison": [
+      {
+        "symbol": "创业板",
+        "p1_grid_pct": 0.1,
+        "p1_base_position": 0.7,
+        "p1_excess": -0.05384,
+        "p2_grid_pct": 0.1,
+        "p2_base_position": 0.7,
+        "p2_excess": 0.048962,
+        "same_params": true
+      },
+      {
+        "symbol": "半导体",
+        "p1_grid_pct": 0.1,
+        "p1_base_position": 0.7,
+        "p1_excess": -0.026041,
+        "p2_grid_pct": 0.1,
+        "p2_base_position": 0.7,
+        "p2_excess": 0.029875,
+        "same_params": true
+      },
+      {
+        "symbol": "证券",
+        "p1_grid_pct": 0.08,
+        "p1_base_position": 0.7,
+        "p1_excess": 0.027169,
+        "p2_grid_pct": 0.05,
+        "p2_base_position": 0.7,
+        "p2_excess": 0.058832,
+        "same_params": false
+      },
+      {
+        "symbol": "中证1000",
+        "p1_grid_pct": 0.1,
+        "p1_base_position": 0.7,
+        "p1_excess": -0.018595,
+        "p2_grid_pct": 0.1,
+        "p2_base_position": 0.7,
+        "p2_excess": 0.058216,
+        "same_params": true
+      },
+      {
+        "symbol": "科创50",
+        "p1_grid_pct": 0.08,
+        "p1_base_position": 0.5,
+        "p1_excess": 0.131994,
+        "p2_grid_pct": 0.08,
+        "p2_base_position": 0.7,
+        "p2_excess": 0.024712,
+        "same_params": false
+      },
+      {
+        "symbol": "纳指",
+        "p1_grid_pct": 0.1,
+        "p1_base_position": 0.7,
+        "p1_excess": -0.016086,
+        "p2_grid_pct": 0.1,
+        "p2_base_position": 0.7,
+        "p2_excess": -0.066692,
+        "same_params": true
+      }
+    ],
+    "stability_check": [
+      {
+        "symbol": "创业板",
+        "best_grid_pct": 0.1,
+        "best_base_position": 0.7,
+        "p1_excess": -0.05384,
+        "p2_excess": 0.048962,
+        "stable": false
+      },
+      {
+        "symbol": "半导体",
+        "best_grid_pct": 0.1,
+        "best_base_position": 0.7,
+        "p1_excess": -0.026041,
+        "p2_excess": 0.029875,
+        "stable": false
+      },
+      {
+        "symbol": "证券",
+        "best_grid_pct": 0.08,
+        "best_base_position": 0.7,
+        "p1_excess": 0.027169,
+        "p2_excess": 0.048217,
+        "stable": true
+      },
+      {
+        "symbol": "中证1000",
+        "best_grid_pct": 0.1,
+        "best_base_position": 0.7,
+        "p1_excess": -0.018595,
+        "p2_excess": 0.058216,
+        "stable": false
+      },
+      {
+        "symbol": "科创50",
+        "best_grid_pct": 0.08,
+        "best_base_position": 0.6,
+        "p1_excess": 0.118875,
+        "p2_excess": 0.024574,
+        "stable": true
+      },
+      {
+        "symbol": "纳指",
+        "best_grid_pct": 0.1,
+        "best_base_position": 0.7,
+        "p1_excess": -0.016086,
+        "p2_excess": -0.066692,
+        "stable": false
+      }
+    ],
+    "p1_win_rate": 0.2778,
+    "p2_win_rate": 0.5556
+  }
+}

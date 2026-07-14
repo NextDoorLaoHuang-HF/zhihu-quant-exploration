@@ -1,0 +1,206 @@
+{
+  "oos_segments": [
+    {
+      "train_end": "2023-01-31",
+      "oos_start": "2023-02-28",
+      "oos_end": "2023-04-30",
+      "cb_ratio": 1.0,
+      "n_oos_months": 3,
+      "metrics": {
+        "cagr": 0.26182105296951597,
+        "annualized_mean": 0.1575488800552639,
+        "total_return": 0.03960383401523648,
+        "annualized_vol": 0.0600776979850066,
+        "sharpe": 2.6224187234101892,
+        "max_drawdown": 0.0,
+        "calmar": 0.0,
+        "n_periods": 3,
+        "years": 0.16701232742629896
+      }
+    },
+    {
+      "train_end": "2023-04-30",
+      "oos_start": "2023-05-31",
+      "oos_end": "2023-07-31",
+      "cb_ratio": 0.15000000000000002,
+      "n_oos_months": 3,
+      "metrics": {
+        "cagr": 0.09988669887286927,
+        "annualized_mean": 0.06493105363570878,
+        "total_return": 0.01602786161498715,
+        "annualized_vol": 0.05921288327694046,
+        "sharpe": 1.0965696997395695,
+        "max_drawdown": -0.009941863238889459,
+        "calmar": 10.04708035835212,
+        "n_periods": 3,
+        "years": 0.16701232742629896
+      }
+    },
+    {
+      "train_end": "2023-07-31",
+      "oos_start": "2023-08-31",
+      "oos_end": "2023-10-31",
+      "cb_ratio": 0.25,
+      "n_oos_months": 3,
+      "metrics": {
+        "cagr": -0.013565437247479162,
+        "annualized_mean": -0.008914355504625493,
+        "total_return": -0.0022785028069273183,
+        "annualized_vol": 0.024856961411775614,
+        "sharpe": -0.35862611511326764,
+        "max_drawdown": -0.0088694562270476,
+        "calmar": -1.5294553465533844,
+        "n_periods": 3,
+        "years": 0.16701232742629896
+      }
+    },
+    {
+      "train_end": "2023-10-31",
+      "oos_start": "2023-11-30",
+      "oos_end": "2024-01-31",
+      "cb_ratio": 1.0,
+      "n_oos_months": 3,
+      "metrics": {
+        "cagr": -0.08165735444787103,
+        "annualized_mean": -0.05735142495849832,
+        "total_return": -0.014356078291633656,
+        "annualized_vol": 0.032325772061372354,
+        "sharpe": -1.7741703075061381,
+        "max_drawdown": -0.01896442309672186,
+        "calmar": -4.305818006242758,
+        "n_periods": 3,
+        "years": 0.16975023443328746
+      }
+    },
+    {
+      "train_end": "2024-01-31",
+      "oos_start": "2024-02-29",
+      "oos_end": "2024-04-30",
+      "cb_ratio": 1.0,
+      "n_oos_months": 3,
+      "metrics": {
+        "cagr": -0.003574281173387872,
+        "annualized_mean": -0.0019995920961008995,
+        "total_return": -0.0005978396210366554,
+        "annualized_vol": 0.034261544029007086,
+        "sharpe": -0.05836257976021078,
+        "max_drawdown": -0.01103283326579585,
+        "calmar": -0.32396765973695174,
+        "n_periods": 3,
+        "years": 0.16701232742629896
+      }
+    },
+    {
+      "train_end": "2024-04-30",
+      "oos_start": "2024-05-31",
+      "oos_end": "2024-07-31",
+      "cb_ratio": 1.0,
+      "n_oos_months": 3,
+      "metrics": {
+        "cagr": 0.09539088429259679,
+        "annualized_mean": 0.06154667179601647,
+        "total_return": 0.015333069049655368,
+        "annualized_vol": 0.03970844050738976,
+        "sharpe": 1.549964466233888,
+        "max_drawdown": -0.008107255637108679,
+        "calmar": 11.766112796045544,
+        "n_periods": 3,
+        "years": 0.16701232742629896
+      }
+    },
+    {
+      "train_end": "2024-07-31",
+      "oos_start": "2024-08-31",
+      "oos_end": "2024-10-31",
+      "cb_ratio": 0.0,
+      "n_oos_months": 3,
+      "metrics": {
+        "cagr": 0.061800412446755715,
+        "annualized_mean": 0.040150213171887564,
+        "total_return": 0.010065374666164306,
+        "annualized_vol": 0.008330178970026894,
+        "sharpe": 4.819850007587284,
+        "max_drawdown": 0.0,
+        "calmar": 0.0,
+        "n_periods": 3,
+        "years": 0.16701232742629896
+      }
+    },
+    {
+      "train_end": "2024-10-31",
+      "oos_start": "2024-11-30",
+      "oos_end": "2024-12-31",
+      "cb_ratio": 0.0,
+      "n_oos_months": 2,
+      "metrics": {
+        "cagr": -0.08568594065479351,
+        "annualized_mean": -0.04507142778902504,
+        "total_return": -0.007574379886813309,
+        "annualized_vol": 0.04287165024323245,
+        "sharpe": -1.0513107737470366,
+        "max_drawdown": 0.0,
+        "calmar": 0.0,
+        "n_periods": 2,
+        "years": 0.08487511721664373
+      }
+    }
+  ],
+  "oos_metrics": {
+    "cagr": 0.030361333804232116,
+    "annualized_mean": 0.029460499248735037,
+    "total_return": 0.05657208858620422,
+    "annualized_vol": 0.03882494436692111,
+    "sharpe": 0.7588033860477443,
+    "max_drawdown": -0.03498042565945969,
+    "calmar": 0.8679520969757427,
+    "n_periods": 23,
+    "years": 1.8398735086962772
+  },
+  "fixed_ratios": {
+    "20/80": {
+      "cagr": 0.02222603058043049,
+      "annualized_mean": 0.02182084488152153,
+      "total_return": 0.06440217109962942,
+      "annualized_vol": 0.028866918534644678,
+      "sharpe": 0.7559118184136352,
+      "max_drawdown": -0.03441385882450332,
+      "calmar": 0.6458453466021989,
+      "n_periods": 35,
+      "years": 2.8392095662470824
+    },
+    "50/50": {
+      "cagr": 0.034277975681355155,
+      "annualized_mean": 0.03364202457086098,
+      "total_return": 0.10041954676034859,
+      "annualized_vol": 0.04072364392429389,
+      "sharpe": 0.8261054593592414,
+      "max_drawdown": -0.034682970590558804,
+      "calmar": 0.9883229463247334,
+      "n_periods": 35,
+      "years": 2.8392095662470824
+    },
+    "80/19": {
+      "cagr": 0.04620949931749618,
+      "annualized_mean": 0.04546320426020044,
+      "total_return": 0.13684559749040104,
+      "annualized_vol": 0.05491602922043918,
+      "sharpe": 0.8278676536809676,
+      "max_drawdown": -0.03495262199365179,
+      "calmar": 1.3220610266631472,
+      "n_periods": 35,
+      "years": 2.8392095662470824
+    }
+  },
+  "n_bonds_total": 4,
+  "period": {
+    "start": "2022-02-28",
+    "end": "2024-12-31",
+    "n_months": 35
+  },
+  "config": {
+    "train_months": 12,
+    "oos_months": 3,
+    "cost_bps": 10,
+    "hrp_lookback": 252
+  }
+}

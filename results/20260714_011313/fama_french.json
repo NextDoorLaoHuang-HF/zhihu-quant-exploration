@@ -1,0 +1,54 @@
+{
+  "description": "A 股样本上的 Fama-French 风格因子构造",
+  "note": "不与 Kenneth French 官方因子直接比较",
+  "method": {
+    "market_cap": "未复权收盘价 × 流通股本",
+    "bm_ratio": "上一财年正账面净资产 / 当年6月末流通市值",
+    "book_equity_lag": "按公告日期滞后（年报4月30日前披露，5月起用上年Q4）",
+    "size_split": "市值中位数分 Small/Big",
+    "bm_split": "B/M 30%/70% 分位数分 Low/Medium/High",
+    "weighting": "组合内市值加权",
+    "rebalance": "每年6月末重新分组，持有到次年6月",
+    "data_source": "akshare stock_zcfz_em 批量资产负债表（股东权益合计）"
+  },
+  "start_year": 2020,
+  "end_year": 2024,
+  "n_months": 60,
+  "factors": {
+    "MKT": {
+      "annualized_mean": 0.024753,
+      "annualized_std": 0.174592,
+      "sharpe": 0.1418,
+      "t_stat": 0.317,
+      "p_value": 0.752346,
+      "n_months": 60
+    },
+    "SMB": {
+      "annualized_mean": 0.097721,
+      "annualized_std": 0.166251,
+      "sharpe": 0.5878,
+      "t_stat": 1.3143,
+      "p_value": 0.193817,
+      "n_months": 60
+    },
+    "HML": {
+      "annualized_mean": 0.074319,
+      "annualized_std": 0.121716,
+      "sharpe": 0.6106,
+      "t_stat": 1.3653,
+      "p_value": 0.177332,
+      "n_months": 60
+    }
+  },
+  "data_coverage": {
+    "total_stocks": 5804,
+    "with_book_equity": 5224,
+    "with_market_cap": 5202,
+    "note": "退市股无 outstanding_share，不参与市值排序和分组"
+  },
+  "factor_correlations": {
+    "MKT_SMB": 0.1038,
+    "MKT_HML": -0.4029,
+    "SMB_HML": -0.3357
+  }
+}

@@ -1,3 +1,13 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Large data caches (not in git, see README for generation instructions)
+data/live_daily_cache/
+data/qfq_cache/
+data/universe_cache.pkl
+data/qfq_cache.pkl
+data/qfq_prices.pkl
+data/book_equity_all.pkl
+data/delist_prices.pkl
+data/delist_prices_all.pkl

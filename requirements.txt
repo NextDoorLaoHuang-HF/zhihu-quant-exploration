@@ -5,3 +5,4 @@ matplotlib>=3.7.0
 scipy>=1.10.0
 bt>=1.0.0
 playwright>=1.40.0
+pyarrow>=14.0.0
