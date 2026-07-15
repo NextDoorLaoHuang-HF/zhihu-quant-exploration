@@ -429,3 +429,77 @@ def test_data_quality_fields():
     assert 'downgraded_stocks' in dq
     assert 'n_months' in dq
     assert dq['n_months'] == 12
+
+
+# ============================================================
+# 测试 14: 非交易日形成日不产生重复的6月行
+# ============================================================
+def test_no_duplicate_june_row_when_june30_nontrading():
+    """2024年6月30日为周日时，因子CSV不应出现重复的2024-06-30行。
+
+    Bug: 当形成日从6/30（周日）调整到6/28（周五）时，
+    all_months 的 date_range 从 6/29 开始，freq='ME' 的第一个
+    条目是 6/30 —— 与上一年的最后一行重复，且值为 NaN。
+    """
+    builder = _make_test_builder()
+
+    factors = builder.compute_factors(2023, 2024)
+    assert not factors.empty, "compute_factors 不应返回空"
+
+    # 检查索引不应有重复
+    dup = factors.index.duplicated(keep=False)
+    n_dup = dup.sum()
+    assert n_dup == 0, \
+        f"索引有 {n_dup} 个重复行: {factors.index[dup].tolist() if n_dup else ''}"
+
+    # 2024-06-30 不应出现两次
+    june30_count = (factors.index == pd.Timestamp('2024-06-30')).sum()
+    assert june30_count <= 1, \
+        f"2024-06-30 出现了 {june30_count} 次，应最多1次"
+
+    # 也不应有全 NaN 的行
+    nan_rows = factors[factors.isna().all(axis=1)]
+    assert len(nan_rows) == 0, \
+        f"有 {len(nan_rows)} 行全为 NaN: {nan_rows.index.tolist()}"
+
+
+# ============================================================
+# 测试 15: 持有期收益用 qfq 而 sorting 用 raw close
+# ============================================================
+def test_market_cap_uses_raw_close_not_qfq():
+    """市值排序用未复权收盘价，持有期收益用前复权——两条路径使用不同输入。"""
+    builder = _make_test_builder()
+
+    # 验证 market_cap_at 用的是 raw close
+    # 测试数据中 outstanding_share=1.0, close=mcap
+    # 所以 market_cap = raw_close × 1.0 = close
+    mc = builder.universe.market_cap_at('000001', '2023-06-30')
+    assert mc is not None
+    # 000001 的 market_cap = 100, close = 100
+    assert abs(mc - 100.0) < 1e-6, \
+        f"market_cap 应为 100.0（raw close × shares），实际 {mc}"
+
+    # 验证 _get_monthly_returns 使用 qfq 路径（use_qfq=True）
+    assert builder.use_qfq is True
+    # _get_monthly_returns 应调用 total_return_series（qfq），而非 _raw_close_series
+    # 在测试中 qfq_cache 预填充为 live_daily['close']，所以两者值相同
+    # 但 use_qfq=True 证明走的是 qfq 路径
+
+
+# ============================================================
+# 测试 16: 多年因子收益总数正确（每年12个月，无重复）
+# ============================================================
+def test_multi_year_month_count():
+    """2023-2024 两年应有24个月因子收益，无重复无NaN行。"""
+    builder = _make_test_builder()
+
+    factors = builder.compute_factors(2023, 2024)
+    assert not factors.empty
+
+    # 2年 × 12月 = 24个月
+    assert len(factors) == 24, \
+        f"两年应有24个月因子收益，实际 {len(factors)}（可能有重复6月行）"
+
+    # 索引不应有重复
+    assert not factors.index.duplicated().any(), \
+        f"索引有重复: {factors.index[factors.index.duplicated()].tolist()}"

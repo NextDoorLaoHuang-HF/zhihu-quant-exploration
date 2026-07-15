@@ -177,9 +177,15 @@ class FamaFrenchBuilder:
             for r in records:
                 all_dates_flat.append(r.get('announce_date', ''))
         statutory_count = sum(1 for d in all_dates_flat if d.endswith('-04-30'))
+        # 统计有多少只股票至少有一条降级记录
+        stocks_with_downgrade = sum(
+            1 for code, records in book_equity_data.items()
+            if any(r.get('announce_date', '').endswith('-04-30') for r in records)
+        )
         source = 'actual' if statutory_count < total_records * 0.5 else 'statutory'
         if downgraded_count > 0:
-            source = f'actual ({downgraded_count} stocks downgraded to statutory)'
+            source = (f'actual ({downgraded_count} records across '
+                      f'{stocks_with_downgrade} stocks downgraded to statutory)')
 
         # 缓存（含元数据）
         import pickle
@@ -189,6 +195,7 @@ class FamaFrenchBuilder:
                 'announce_date_source': source,
                 'total_stocks': len(book_equity_data),
                 'downgraded_count': downgraded_count,
+                'stocks_with_downgrade': stocks_with_downgrade,
             },
         }
         with open(cache_path, 'wb') as f:
@@ -408,9 +415,10 @@ class FamaFrenchBuilder:
                 )
 
             # 逐月计算组合收益
-            # 使用日历6/30作为月末上界（确保6月被包含），而非交易日
+            # 持有期：7月到次年6月，共12个月
+            # 使用 (year, 7, 1) 作为起始避免形成日调整导致重复6月行
             all_months = pd.date_range(
-                formation_date + pd.Timedelta(days=1),
+                pd.Timestamp(year=year, month=7, day=1),
                 pd.Timestamp(year=year + 1, month=6, day=30),
                 freq='ME',
             )

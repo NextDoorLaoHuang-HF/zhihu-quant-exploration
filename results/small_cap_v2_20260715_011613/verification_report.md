@@ -2,7 +2,7 @@
 
 - JSON: `results/small_cap_v2_20260715_011613/small_cap.json`
 - Return series: `results/small_cap_v2_20260715_011613/return_series.parquet`
-- Audit timestamp: 2026-07-15T14:28:34.441401
+- Audit timestamp: 2026-07-15T15:46:53.513319
 
 ## 0. Artifact integrity
 

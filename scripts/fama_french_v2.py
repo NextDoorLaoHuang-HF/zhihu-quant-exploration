@@ -63,26 +63,44 @@ def main():
     print(f'  输出目录: {results_dir}')
     print('=' * 70)
 
-    # Step 1: 构建股票池（优先从缓存加载）
+    # Step 1: 构建股票池（优先从 parquet 缓存加载，回退到 pickle）
     print('\n[1/3] 构建股票池...')
     cache_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
         'data', 'universe_cache.pkl'
     )
-    if os.path.exists(cache_path):
-        print('  从缓存加载...')
-        universe = load_pickle_compat(cache_path)
-        # 兼容旧缓存：确保新字段存在
-        if not hasattr(universe, '_qfq_failed'):
-            universe._qfq_failed = set()
-        if not hasattr(universe, '_qfq_degraded'):
-            universe._qfq_degraded = set()
-    else:
+    live_cache_dir = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        'data', 'live_daily_cache'
+    )
+    live_meta_path = os.path.join(live_cache_dir, '_meta.json')
+
+    universe = None
+    # 优先使用 parquet 缓存（避免 pickle 版本兼容问题）
+    if os.path.exists(live_meta_path):
+        print('  从 parquet 缓存加载...')
+        try:
+            universe = StockUniverse.build_from_parquet(verbose=True)
+        except Exception as e:
+            print(f'  parquet 加载失败: {e}')
+            universe = None
+
+    if universe is None and os.path.exists(cache_path):
+        print('  从 pickle 缓存加载...')
+        try:
+            universe = load_pickle_compat(cache_path)
+        except Exception as e:
+            print(f'  pickle 加载失败: {e}')
+
+    if universe is None:
         print('  从数据源构建（首次较慢）...')
         universe = StockUniverse.build(max_live=args.max_live)
-        with open(cache_path, 'wb') as f:
-            pickle.dump(universe, f)
-        print(f'  已缓存到 {cache_path}')
+
+    # 兼容旧缓存：确保新字段存在
+    if not hasattr(universe, '_qfq_failed'):
+        universe._qfq_failed = set()
+    if not hasattr(universe, '_qfq_degraded'):
+        universe._qfq_degraded = set()
 
     report = universe.coverage_report()
     print(f'  A 股: {report["a_shares"]} 只')

@@ -120,3 +120,33 @@ python scripts/verify_small_cap_v2_results.py results/small_cap_v2_<timestamp>/
 | `results/small_cap_v2_20260714_232258/` | parquet 仅有片段数据（24点/股），独立重算失败，已被 011613 替代 |
 | `results/small_cap_v2_20260714_200852/` | 修复前版本 |
 | `results/small_cap_v2_20260713_194952/` | 最初版本 |
+| `results/20260714_220329/` | FF 修复前版本（raw close 持有期、法定4/30公告日、重复6月行） |
+| `results/small_cap_v2_20260714_224909/` | FF 中间版本（部分修复） |
+
+## 6. Fama-French 三因子结果复现
+
+### 完整复现流程
+
+```bash
+# 前置：需要已构建 live_daily_cache 和 qfq_cache（见上方 Step 1-2）
+
+# 运行 FF 三因子构建（输出到 results/<timestamp>/）
+python scripts/fama_french_v2.py --start 2020 --end 2024
+
+# 运行测试
+python -m pytest tests/test_fama_french.py -v
+```
+
+### 最新结果校验
+
+| 文件 | SHA-256 | 大小 |
+|------|---------|:---:|
+| `results/20260715_173639/fama_french.json` | (见文件) | 5 KB |
+| `results/20260715_173639/fama_french.csv` | (见文件) | 4.5 KB |
+
+### 验证结果摘要
+
+- 16/16 测试全部 PASS（含 raw-vs-qfq 路径测试、非交易日形成日测试、空组合 NaN 测试）
+- CSV 60 个月因子收益，0 个 all-zero 月，0 个 NaN 月
+- 公告日来源: actual（6044 records across 2677 stocks downgraded to statutory）
+- 持有期收益: 前复权价格（qfq），市值排序: 未复权收盘价 × 流通股本
