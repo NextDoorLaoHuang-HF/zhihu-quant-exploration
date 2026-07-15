@@ -1,5 +1,12 @@
 """
-scripts/lib/hybrid.py — 可转债+ETF混合策略回测模块
+scripts/lib/hybrid.py — 可转债等权/CB-HRP混合策略回测模块
+
+策略：混合两个可转债组合的收益：
+1. CB等权：动态池中所有在交易可转债的等权月收益
+2. CB-HRP：用层次风险平价(HRP)分配权重的可转债组合月收益
+混合比例通过 walk-forward OOS 估计。
+
+ETF（511380 可转债ETF）仅用于日期对齐和基准对比，不参与策略收益计算。
 
 替代 01_grid_etf_premium.py 中 run_hybrid_strategy() 的三个问题：
 1. 可转债收益是随机噪声缩放到23%目标年化 → 改用真实可转债价格
@@ -7,10 +14,10 @@ scripts/lib/hybrid.py — 可转债+ETF混合策略回测模块
 3. 混合比例在全样本扫描0%-100%后报"最佳" → 改用 walk-forward OOS 估计
 
 数据源策略：
-- ak.bond_zh_cov() / bond_zh_cov_info_ths() 获取可转债列表（含上市日、到期日）
-- ak.bond_zh_cov_value_analysis() 获取每只可转债历史收盘价
-- 已退出券的最后价格从元信息中获取（到期赎回价/强赎价格）
-- ETF日收益从外部传入（调用方负责拉取）
+- ak.bond_zh_cov() 获取可转债列表（含上市日）
+- ak.bond_zh_hs_cov_daily() 获取每只可转债历史日K线
+- 已退出券的最后收盘价作为退出最终价（代理值，非实际赎回/强赎结算价）
+- ETF日收益仅用于日期对齐（调用方负责拉取）
 
 依赖：numpy, pandas, scipy（已在 requirements.txt 中）
 """
@@ -55,8 +62,8 @@ class CBPool:
         monthly_ret = pool.monthly_returns()
 
     注意：
-    - exit_final_price 是最后交易日收盘价（代理值），不是实际到期赎回价。
-      数据源 ak.bond_zh_hs_cov_daily 只返回日线，退出原因和结算价无法获取。
+    - exit_final_price 是最后交易日收盘价（代理值），不是实际到期赎回/强赎结算价。
+      数据源 ak.bond_zh_hs_cov_daily 只返回OHLCV，退出原因和结算价无法获取。
     - 部分退出券的 exit_final_price 可能为 0 或 NaN，这些在 monthly_returns
       中会被处理：0 → 真实0收益（合法），NaN → 该券退出月收益为NaN。
     """
@@ -513,18 +520,24 @@ class HRPOptimizer:
 
 class HybridBacktest:
     """
-    可转债+ETF混合策略 walk-forward 回测。
+    可转债等权/CB-HRP混合策略 walk-forward 回测。
+
+    策略：混合两个可转债组合的收益：
+    - CB等权：动态池中所有在交易可转债的等权月收益
+    - CB-HRP：用层次风险平价(HRP)分配权重的可转债组合月收益
+    ETF仅用于日期对齐，不参与策略收益计算。
 
     流程：
-    1. 训练窗口（如3年）→ 选择 CB/HRP 比例（按训练窗口内夏普最大化）
+    1. 训练窗口（如3年）→ 选择 CB等权/CB-HRP 比例（按训练窗口内夏普最大化）
     2. 下一段（如1年）作为 OOS → 用训练出的比例计算混合收益
     3. 滚动拼接所有 OOS 收益
-    4. 同时报告固定比例（20/80, 50/50等）的对比
+    4. 同时报告固定比例（20/80, 50/50, 80/20）的对比
 
     关键：
     - 比例在OOS段开始前已确定，不是全样本优化
     - 扣除真实交易成本（双边 cost_bps）
     - 不使用 np.random.normal 或缩放操作
+    - ETF仅用于日期对齐，不参与收益计算
     """
 
     def __init__(
@@ -539,7 +552,7 @@ class HybridBacktest:
         """
         参数：
             cb_pool: 可转债池
-            etf_returns: ETF日收益序列（pd.Series, index=Date）
+            etf_returns: ETF日收益序列（仅用于日期对齐，不参与策略收益）
             train_months: 训练窗口长度（月）
             oos_months: 每段OOS长度（月）
             cost_bps: 单边交易成本（基点），默认10bps=0.1%
@@ -563,6 +576,7 @@ class HybridBacktest:
         - fixed_ratios: 固定比例对比（{ratio: metrics}）
         - cb_monthly: 可转债等权月收益
         - hrp_monthly: HRP组合月收益
+        - etf_monthly: ETF月收益（仅用于基准对比）
         """
         # 获取可转债月度收益面板
         cb_monthly_panel = self.cb_pool.monthly_returns()
@@ -687,7 +701,18 @@ class HybridBacktest:
 
         # 退出券异常值统计
         exited_bonds = [c for c, m in self.cb_pool.meta.items() if m.get('delist_date')]
-        exit_anomalies = {'zero_return': 0, 'nan_return': 0, 'total_exited': len(exited_bonds)}
+        exit_anomalies = {
+            'zero_return': 0,
+            'nan_return': 0,
+            'total_exited': len(exited_bonds),
+        }
+        # 统计 exit_final_price 为 0 或 NaN 的退出券
+        for code in exited_bonds:
+            efp = self.cb_pool.meta[code].get('exit_final_price')
+            if efp is None or (isinstance(efp, float) and np.isnan(efp)):
+                exit_anomalies['nan_return'] += 1
+            elif efp == 0:
+                exit_anomalies['zero_return'] += 1
 
         return {
             'oos_segments': oos_segments,
@@ -703,7 +728,9 @@ class HybridBacktest:
             'exit_anomalies': exit_anomalies,
             'exit_final_price_note': (
                 'exit_final_price is last daily close (proxy), not actual redemption/settlement price. '
-                'Data source ak.bond_zh_hs_cov_daily only provides OHLCV, no exit reason or settlement value.'
+                'Data source ak.bond_zh_hs_cov_daily only provides OHLCV; '
+                'exit reason and settlement value are not available from this source. '
+                'Actual settlement may differ (e.g. redemption at par ~100, forced redemption at ~100-110).'
             ),
             'period': {
                 'start': str(common_idx[0].date()) if len(common_idx) > 0 else None,
@@ -793,12 +820,12 @@ class HybridBacktest:
 
     def _optimize_ratio(self, cb_returns: pd.Series, hrp_returns: pd.Series) -> float:
         """
-        在训练窗口内选择最优 CB/HRP 比例。
+        在训练窗口内选择最优 CB等权/CB-HRP 比例。
 
         优化目标：最大化夏普比率。
         扫描范围：0% 到 100%，步长5%。
 
-        返回最优 CB 比例。
+        返回最优 CB等权 比例。
         """
         best_sharpe = -np.inf
         best_ratio = 0.5  # 默认50/50

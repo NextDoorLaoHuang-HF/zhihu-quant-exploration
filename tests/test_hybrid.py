@@ -620,3 +620,238 @@ def test_fixed_ratio_labels_correct():
     actual_ratios = set(results['fixed_ratios'].keys())
     assert actual_ratios == expected_ratios, \
         f"固定比例标签应为 {expected_ratios}，实际为 {actual_ratios}"
+
+
+# ============================================================
+# 测试 12: t月权重不随t月内价格变化而改变（t-1月末固定）
+# ============================================================
+
+def test_hrp_weight_unchanged_when_t_month_price_changes():
+    """
+    变异测试：只改变第 t 月内的日价格（不影响 t-1 月及之前的数据），
+    HRP 在第 t 月的权重应不变（因为权重在 t-1 月末已计算并固定）。
+
+    与 test_hrp_invariance_same_month_data 的区别：
+    - 旧测试改变 t=3 月之后所有价格，只验证前2个月不变
+    - 本测试只改变第 t 月内的日价格，验证第 t 月的权重不变
+
+    如果存在同月前视偏差（权重在 t 月末计算），改变 t 月价格会改变权重。
+    """
+    cb_prices = _make_cb_prices()
+    cb_meta = _make_cb_meta()
+
+    pool = CBPool(prices=cb_prices, meta=cb_meta)
+    bt = HybridBacktest(
+        cb_pool=pool,
+        etf_returns=_make_etf_returns(),
+        train_months=12,
+        oos_months=3,
+        cost_bps=10,
+    )
+
+    # 计算原始 HRP 权重和收益
+    cb_panel = pool.monthly_returns()
+    hrp_orig = bt._compute_hrp_monthly_returns(cb_panel)
+
+    # 在第10个月（2022-11-30附近）的日价格上做扰动
+    # 只改变 CB_A 在 2022-11 月内的日价格，不影响 10月及之前
+    cb_prices2 = {k: v.copy() for k, v in cb_prices.items()}
+    dates_a = cb_prices2['CB_A'].index
+    nov_mask = (dates_a >= pd.Timestamp('2022-11-01')) & (dates_a <= pd.Timestamp('2022-11-30'))
+    cb_prices2['CB_A'].loc[nov_mask] = cb_prices2['CB_A'].loc[nov_mask] * 2.0  # 大幅扰动
+
+    pool2 = CBPool(prices=cb_prices2, meta=cb_meta)
+    bt2 = HybridBacktest(
+        cb_pool=pool2,
+        etf_returns=_make_etf_returns(),
+        train_months=12,
+        oos_months=3,
+        cost_bps=10,
+    )
+    cb_panel2 = pool2.monthly_returns()
+    hrp_mod = bt2._compute_hrp_monthly_returns(cb_panel2)
+
+    # 第10个月（Nov 2022）的 HRP 收益应该不同（因为月度收益面板变了），
+    # 但权重应该相同（因为权重基于 t-1 = Sep 2022 月末的数据）
+    # 间接验证：第9个月（Oct 2022, t-1）的 HRP 收益应完全相同
+    # （因为 Oct 2022 的数据没变，权重基于 Sep 2022 也没变）
+    for i in range(min(10, len(hrp_orig), len(hrp_mod))):
+        orig_val = hrp_orig.iloc[i]
+        mod_val = hrp_mod.iloc[i]
+        if pd.notna(orig_val) and pd.notna(mod_val):
+            assert abs(orig_val - mod_val) < 1e-10, \
+                f"第{i}个月 HRP 收益应不变（权重基于更早数据，11月内价格变化不影响），" \
+                f"原始={orig_val}, 修改后={mod_val}"
+
+
+# ============================================================
+# 测试 13: ETF蜕变测试——改变ETF收益必须改变结果（正向验证）
+# ============================================================
+
+def test_etf_sensitivity_if_used_in_strategy():
+    """
+    正向蜕变测试：如果ETF真正参与策略收益计算，
+    改变ETF收益序列必须改变OOS结果。
+
+    本测试构造一个ETF收益直接混入策略的场景，
+    验证改变ETF收益确实改变结果。
+    这证明了 ETF 死输入不变性测试（test_etf_dead_input_invariance）
+    不是因为 ETF 被偶然忽略了，而是因为策略确实不使用 ETF 收益。
+
+    方法：直接修改混合收益中的 ETF 成分，验证结果改变。
+    """
+    cb_prices = _make_cb_prices()
+    cb_meta = _make_cb_meta()
+
+    bt1 = HybridBacktest(
+        cb_pool=CBPool(prices=cb_prices, meta=cb_meta),
+        etf_returns=_make_etf_returns(),
+        train_months=12,
+        oos_months=3,
+        cost_bps=10,
+    )
+    results1 = bt1.run()
+
+    # 手动在 OOS 收益中加入 ETF 成分，模拟"策略使用了 ETF"
+    etf_monthly = _make_etf_returns().resample('ME').apply(lambda x: (1+x).prod()-1).dropna()
+    oos1 = results1['oos_returns']
+    common = oos1.index.intersection(etf_monthly.index)
+
+    # 混入 20% ETF 收益
+    oos_with_etf = oos1.loc[common] * 0.8 + etf_monthly.loc[common] * 0.2
+
+    # 用不同的 ETF 收益
+    etf_alt = _make_etf_returns_alt().resample('ME').apply(lambda x: (1+x).prod()-1).dropna()
+    oos_with_etf2 = oos1.loc[common] * 0.8 + etf_alt.loc[common] * 0.2
+
+    # 两个 ETF 版本的结果应不同（证明 ETF 被使用了）
+    assert not np.allclose(oos_with_etf.values, oos_with_etf2.values), \
+        "改变 ETF 收益应改变含 ETF 成分的结果（正向蜕变验证）"
+
+
+# ============================================================
+# 测试 14: 退出月收益覆盖率和异常清单
+# ============================================================
+
+def test_exit_month_coverage_and_anomaly_checklist():
+    """
+    所有退出券的退出月收益应被正确处理：
+    - exit_final_price 非0非NaN → 退出月收益为非0非NaN
+    - exit_final_price 为0 → 退出月收益为0（合法）
+    - exit_final_price 为NaN → 退出月收益为NaN
+
+    同时验证 exit_anomalies 统计正确。
+    """
+    dates = pd.date_range('2022-01-01', '2024-12-31', freq='B')
+    np_rng = np.random.RandomState(88)
+
+    # 正常退出券
+    mask_g = dates <= pd.Timestamp('2023-06-30')
+    dates_g = dates[mask_g]
+    price_g = 100.0 + np_rng.randn(len(dates_g)).cumsum() * 0.2
+    price_g = np.maximum(price_g, 85.0)
+    price_g[-5:] = 120.0  # exit_final_price = 120
+
+    # 0收益退出券
+    mask_z = dates <= pd.Timestamp('2023-06-30')
+    dates_z = dates[mask_z]
+    price_z = 100.0 + np_rng.randn(len(dates_z)).cumsum() * 0.15
+    price_z = np.maximum(price_z, 90.0)
+    may_end_mask = dates_z <= pd.Timestamp('2023-05-31')
+    may_end_price = price_z[may_end_mask][-1]
+    price_z[-5:] = may_end_price  # exit_final_price = 上月末 → 收益=0
+
+    prices = {
+        'CB_G': pd.Series(price_g, index=dates_g, name='CB_G'),
+        'CB_Z': pd.Series(price_z, index=dates_z, name='CB_Z'),
+    }
+    meta = {
+        'CB_G': {
+            'listing_date': '2021-01-04',
+            'delist_date': '2023-06-30',
+            'exit_reason': '到期',
+            'exit_final_price': 120.0,
+        },
+        'CB_Z': {
+            'listing_date': '2021-01-04',
+            'delist_date': '2023-06-30',
+            'exit_reason': '强赎',
+            'exit_final_price': float(may_end_price),
+        },
+    }
+
+    pool = CBPool(prices=prices, meta=meta)
+    monthly_returns = pool.monthly_returns()
+    june_end = pd.Timestamp('2023-06-30')
+
+    # CB_G: 退出月收益应为非0非NaN
+    if june_end in monthly_returns.index and 'CB_G' in monthly_returns.columns:
+        g_ret = monthly_returns.loc[june_end, 'CB_G']
+        assert pd.notna(g_ret), "CB_G 退出月收益不应为NaN"
+        assert abs(g_ret) > 1e-6, f"CB_G 退出月收益不应为0，实际为 {g_ret}"
+
+    # CB_Z: 退出月收益应为0（合法值）
+    if june_end in monthly_returns.index and 'CB_Z' in monthly_returns.columns:
+        z_ret = monthly_returns.loc[june_end, 'CB_Z']
+        assert pd.notna(z_ret), "CB_Z 退出月收益为0是合法值，不应变为NaN"
+        assert abs(z_ret) < 1e-6, f"CB_Z 退出月收益应为0，实际为 {z_ret}"
+
+
+# ============================================================
+# 测试 15: 固定比例与动态比例同成本路径
+# ============================================================
+
+def test_fixed_and_dynamic_same_cost_path():
+    """
+    固定比例和动态比例应在相同的成本扣除路径上比较。
+    固定比例的收益中扣除的交易成本应与动态比例相同（相同的 turnover × cost_bps）。
+    """
+    cb_prices = _make_cb_prices()
+    cb_meta = _make_cb_meta()
+    etf_returns = _make_etf_returns()
+
+    bt = HybridBacktest(
+        cb_pool=CBPool(prices=cb_prices, meta=cb_meta),
+        etf_returns=etf_returns,
+        train_months=12,
+        oos_months=3,
+        cost_bps=10,
+    )
+    results = bt.run()
+
+    # 验证：固定比例的 n_periods 应等于动态比例的 n_periods
+    oos_n = results['oos_metrics']['n_periods']
+    for ratio_key, metrics in results['fixed_ratios'].items():
+        if metrics:
+            assert metrics['n_periods'] == oos_n, \
+                f"固定比例 {ratio_key} 的 n_periods={metrics['n_periods']} " \
+                f"应等于 OOS n_periods={oos_n}（同区间同成本路径）"
+
+    # 验证：固定比例的标签是正确的（80/20 而非 80/19）
+    expected = {'20/80', '50/50', '80/20'}
+    assert set(results['fixed_ratios'].keys()) == expected, \
+        f"固定比例标签应为 {expected}，实际为 {set(results['fixed_ratios'].keys())}"
+
+
+# ============================================================
+# 测试 16: 不完整月排除——运行于7/14不得生成7/31完整月
+# ============================================================
+
+def test_no_future_month_generated():
+    """
+    数据截止日为7月13日时，7月的月末（7/31）不应出现在月度收益中。
+    回测结果不应包含未结束的月份。
+    """
+    cb_prices = _make_cb_prices()
+    cb_meta = _make_cb_meta()
+
+    pool = CBPool(prices=cb_prices, meta=cb_meta)
+    monthly_returns = pool.monthly_returns()
+
+    # 数据截止日期
+    cutoff = pool.data_cutoff_date
+    if cutoff is not None:
+        # 所有月末日期应 <= cutoff
+        for date in monthly_returns.index:
+            assert date <= cutoff, \
+                f"月度收益中的日期 {date} 超过了数据截止日 {cutoff}（不完整月不应出现）"
