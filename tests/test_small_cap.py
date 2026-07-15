@@ -25,6 +25,8 @@ from small_cap_v2 import (
     select_by_low_price,
     run_monthly_backtest,
     build_equal_weight_benchmark,
+    build_full_return_series,
+    _get_month_end_dates,
     BACKTEST_PARAMS,
 )
 
@@ -135,7 +137,7 @@ def _make_test_universe() -> StockUniverse:
         '600432': ['G吉恩', '吉恩镍业', '*ST吉恩', '退市J', '吉恩5'],
     }
 
-    return StockUniverse.from_cache(
+    universe = StockUniverse.from_cache(
         stock_meta=stock_meta,
         live_daily=live_daily,
         delist_prices=delist_prices,
@@ -143,6 +145,18 @@ def _make_test_universe() -> StockUniverse:
         name_history=name_history,
         st_precise=False,
     )
+
+    # 注入 qfq 缓存（模拟 parquet 加载成功，避免网络拉取）
+    for code, _, _, _, _, delist_date, _ in stock_configs:
+        if delist_date is not None:
+            continue  # 退市股用 delist_prices，不需要 qfq 缓存
+        if code in live_daily:
+            universe._qfq_cache[code] = live_daily[code]['close'].copy()
+
+    universe._qfq_parquet_loaded = True
+    universe._qfq_parquet_available = set(live_daily.keys())
+
+    return universe
 
 
 # ============================================================
@@ -298,3 +312,213 @@ def test_benchmark_is_dynamic():
     # （除非所有股票每月收益一样，这在随机数据中不可能）
     assert bench_rets.std() > 0, \
         "基准月度收益标准差为0，可能使用了固定股票池"
+
+
+# ============================================================
+# 测试 6: 不完整的当月数据被排除
+# ============================================================
+
+def test_get_month_end_dates_excludes_partial_month():
+    """_get_month_end_dates 不得包含不完整的当月。"""
+    # 模拟"今天"是 2024-07-15（7月还没结束）
+    # end_date 设为 2024-07-15，7月的月末是 7-31 > 7-15 → 被排除
+    month_ends = _get_month_end_dates('2020-01-01', '2024-07-15')
+    last_me = month_ends[-1]
+    assert last_me.month != 7 or last_me.day == 31, \
+        f"end_date=7/15 时最后一个月末不应是7月的不完整月，实际 {last_me}"
+    # 最后一个月末应该是 6-30
+    assert last_me == pd.Timestamp('2024-06-30'), \
+        f"最后一个月末应为 2024-06-30，实际 {last_me}"
+
+    # 即使 end_date 恰好是当月月末（如 7-31），但当前日期还没到 7-31
+    # 也要排除当月 — 用 today() 截断
+    # 模拟 today 在 7-15：end=7/31 但 today=7-15 → 7月应被排除
+    import small_cap_v2 as sc
+    orig_today = sc._TODAY
+    try:
+        sc._TODAY = pd.Timestamp('2024-07-15')
+        month_ends = _get_month_end_dates('2020-01-01', '2024-07-31')
+        last_me = month_ends[-1]
+        assert last_me.month != 7, \
+            f"today=7/15 且 end=7/31 时，7月不完整应被排除，实际最后月末 {last_me}"
+        assert last_me == pd.Timestamp('2024-06-30'), \
+            f"最后一个月末应为 2024-06-30，实际 {last_me}"
+    finally:
+        sc._TODAY = orig_today
+
+
+# ============================================================
+# 测试 7: 回测返回 per-symbol qfq 收益序列
+# ============================================================
+
+def test_run_backtest_returns_return_series():
+    """run_monthly_backtest 应返回 return_series dict，包含每只股票的 qfq 序列。"""
+    universe = _make_test_universe()
+    results = run_monthly_backtest(
+        universe,
+        start_date='2020-01-01',
+        end_date='2024-06-30',
+        top_n=3,
+        sort_by='market_cap',
+        filter_low_price=False,
+    )
+
+    assert 'return_series' in results, \
+        "回测结果应包含 return_series（per-symbol qfq 序列）"
+    rs = results['return_series']
+    assert isinstance(rs, dict), "return_series 应为 dict"
+    assert len(rs) > 0, "return_series 不应为空"
+
+    # 每个 value 应为 pd.Series（qfq 收盘价序列）
+    for code, s in rs.items():
+        assert isinstance(s, pd.Series), \
+            f"return_series['{code}'] 应为 pd.Series，实际 {type(s)}"
+        assert len(s) > 0, f"return_series['{code}'] 不应为空"
+
+
+# ============================================================
+# 测试 8: 保存的收益序列能重算组合收益
+# ============================================================
+
+def test_saved_series_recomputes_portfolio_returns():
+    """用 return_series 重算的组合收益应与回测输出的 returns 一致。"""
+    universe = _make_test_universe()
+    results = run_monthly_backtest(
+        universe,
+        start_date='2020-01-01',
+        end_date='2024-06-30',
+        top_n=3,
+        sort_by='market_cap',
+        filter_low_price=False,
+    )
+
+    port_rets = results['returns']
+    rs = results['return_series']
+    selected_history = results['selected_history']
+
+    # 逐月重算
+    for entry in selected_history:
+        date_str = entry['date']
+        selected = entry['selected']
+        # 找到对应的 next_date 收益
+        rebalance_date = pd.Timestamp(date_str)
+        # 下一个月末
+        month_ends = _get_month_end_dates('2020-01-01', '2024-06-30')
+        idx = month_ends.index(rebalance_date)
+        next_date = month_ends[idx + 1]
+
+        # 用 return_series 重算每只股票的持有期收益
+        stock_rets = []
+        for code in selected:
+            if code in rs:
+                s = rs[code]
+                sliced = s[(s.index >= rebalance_date) & (s.index <= next_date)]
+                if len(sliced) >= 2 and sliced.iloc[0] > 0:
+                    r = float(sliced.iloc[-1] / sliced.iloc[0] - 1)
+                    stock_rets.append(r)
+
+        if len(stock_rets) > 0:
+            recomputed = float(np.mean(stock_rets))
+            # 找到 port_rets 中对应 next_date 的收益
+            if next_date in port_rets.index:
+                original = port_rets.loc[next_date]
+                assert abs(recomputed - original) < 1e-8, \
+                    f"用 return_series 重算的收益 {recomputed:.8f} " \
+                    f"与原始 {original:.8f} 不一致（{date_str}）"
+
+
+# ============================================================
+# 测试 9: build_full_return_series 用完整 qfq 序列替换片段
+# ============================================================
+
+def test_build_full_return_series_uses_full_qfq_not_fragments():
+    """build_full_return_series 必须返回完整 qfq 序列，而非持有期片段。
+
+    回测中 all_return_series 收集的是 total_return_series 返回的切片
+    （仅覆盖约1个月的持有期），如果直接保存会导致 parquet 只有片段，
+    无法独立复现跨月收益。build_full_return_series 必须用 universe 的
+    完整 qfq 序列替换每个片段。
+    """
+    universe = _make_test_universe()
+    results = run_monthly_backtest(
+        universe,
+        start_date='2020-01-01',
+        end_date='2024-06-30',
+        top_n=3,
+        sort_by='market_cap',
+        filter_low_price=False,
+    )
+
+    # all_return_series 模拟 main() 中收集的片段
+    all_return_series = results['return_series']
+    assert len(all_return_series) > 0
+
+    # 片段应该很短（~1个月 ≈ 20-24 个交易日）
+    fragment_lens = [len(s) for s in all_return_series.values()]
+    max_fragment = max(fragment_lens)
+    # 片段不可能覆盖完整回测期（2020-2024 = 数百个交易日）
+    assert max_fragment < 30, \
+        f"片段应仅约1个月（<30天），但最长片段有 {max_fragment} 天"
+
+    # 用 build_full_return_series 重建完整序列
+    full_series = build_full_return_series(universe, all_return_series)
+
+    # 重建后每只存活股的序列应该远长于片段
+    for code, s in full_series.items():
+        if code in universe._qfq_cache or code in universe.delist_prices:
+            # 存活股或退市股：应有完整序列
+            assert len(s) > max_fragment, \
+                f"code {code}: 重建后序列长度 {len(s)} 不应短于片段长度 {max_fragment}"
+            # 完整序列应覆盖多个持有期
+            assert len(s) >= 100, \
+                f"code {code}: 完整 qfq 序列应覆盖 ≥100 天，实际 {len(s)}"
+
+
+def test_build_full_return_series_handles_empty_qfq_cache():
+    """即使 _qfq_cache 为空，build_full_return_series 也应通过
+    _get_qfq_close() 显式拉取完整序列，而非保留片段。"""
+    universe = _make_test_universe()
+
+    # 清空 _qfq_cache 模拟原始 bug（缓存未被预加载）
+    universe._qfq_cache = {}
+
+    results = run_monthly_backtest(
+        universe,
+        start_date='2020-01-01',
+        end_date='2024-06-30',
+        top_n=3,
+        sort_by='market_cap',
+        filter_low_price=False,
+    )
+    all_return_series = results['return_series']
+
+    # 片段长度
+    fragment_lens = [len(s) for s in all_return_series.values()]
+
+    # 重建 — 即使 _qfq_cache 为空，_get_qfq_close 应从 parquet 重新加载
+    full_series = build_full_return_series(universe, all_return_series)
+
+    # 重建后，存活股应有完整序列（_get_qfq_close 会从 _qfq_parquet_available 加载）
+    for code, s in full_series.items():
+        if code in universe._qfq_parquet_available or code in universe.delist_prices:
+            assert len(s) > max(fragment_lens), \
+                f"code {code}: _qfq_cache 为空时也应通过 _get_qfq_close 获取完整序列，" \
+                f"实际 {len(s)} <= 片段 {max(fragment_lens)}"
+
+
+def test_build_full_return_series_all_codes_present():
+    """build_full_return_series 的输出应包含 all_return_series 中的所有 code。"""
+    universe = _make_test_universe()
+    results = run_monthly_backtest(
+        universe,
+        start_date='2020-01-01',
+        end_date='2024-06-30',
+        top_n=3,
+        sort_by='market_cap',
+        filter_low_price=False,
+    )
+    all_return_series = results['return_series']
+    full_series = build_full_return_series(universe, all_return_series)
+
+    assert set(full_series.keys()) == set(all_return_series.keys()), \
+        "build_full_return_series 的输出 code 集合应与输入一致"

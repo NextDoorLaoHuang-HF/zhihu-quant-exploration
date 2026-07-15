@@ -523,13 +523,16 @@ class FamaFrenchBuilder:
         # 数据质量统计
         monthly_counts = {}
         empty_ports = {}
+        port_cols = [c for c in ['SL', 'SM', 'SH', 'BL', 'BM', 'BH']
+                    if c in port_rets.columns]
         for date in port_rets.index:
             row = port_rets.loc[date]
-            # 统计有多少组合有有效收益（非NaN）
-            valid = row[[c for c in ['SL', 'SM', 'SH', 'BL', 'BM', 'BH']
-                        if c in row.index]].notna().sum()
-            monthly_counts[str(date.date())] = int(valid)
-            empty_ports[str(date.date())] = int(6 - valid)
+            # 处理可能的重复索引（返回DataFrame的情况）
+            if isinstance(row, pd.DataFrame):
+                row = row.iloc[0]
+            valid_count = int(row[port_cols].notna().sum())
+            monthly_counts[str(date.date())] = valid_count
+            empty_ports[str(date.date())] = 6 - valid_count
 
         # 降级股票数
         downgraded = len(getattr(self.universe, '_qfq_failed', set()))

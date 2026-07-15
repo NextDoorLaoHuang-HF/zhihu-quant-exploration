@@ -744,8 +744,9 @@ class StockUniverse:
         """
         返回前复权收盘价序列（含分红再投资收益）。
 
-        存活股：优先用 parquet 缓存或 akshare adjust='qfq' 的前复权收盘价，
-               拉取失败时降级为 live_daily 的未复权 close（记入 _qfq_degraded）。
+        存活股：优先用 parquet 缓存或 akshare adjust='qfq' 的前复权收盘价。
+               拉取失败且无缓存时，返回空序列并记入 _qfq_failed
+               （不静默降级为 raw close — 避免分红除权日收益计算错误）。
         退市股：delist_prices 已经是前复权收盘价。
         """
         start_dt = pd.Timestamp(start)
@@ -760,16 +761,15 @@ class StockUniverse:
             if qfq is not None:
                 return qfq[(qfq.index >= start_dt) & (qfq.index <= end_dt)]
 
-            self._qfq_degraded.add(code)
+            # 网络失败且无缓存 — 不返回 raw close，返回空序列
+            self._qfq_failed.add(code)
             import warnings as _w
             _w.warn(
-                f"存活股 {code} 前复权数据拉取失败，降级使用未复权 close。"
-                f"分红除权日的收益计算可能不准确。",
+                f"存活股 {code} 前复权数据拉取失败且无缓存，"
+                f"返回空序列（不降级为 raw close）。该股票将被排除。",
                 stacklevel=2,
             )
-            df = self.live_daily[code]
-            s = df['close']
-            return s[(s.index >= start_dt) & (s.index <= end_dt)]
+            return pd.Series(dtype=float)
 
         return pd.Series(dtype=float)
 

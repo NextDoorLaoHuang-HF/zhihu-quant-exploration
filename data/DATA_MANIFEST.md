@@ -63,8 +63,8 @@
 
 ## 4. 回测结果
 
-- 最新结果: `results/small_cap_v2_20260714_200852/small_cap.json`
-- 旧结果（暂停引用）: `results/small_cap_v2_20260713_194952/small_cap.json`
+- 最新结果: `results/small_cap_v2_20260715_011613/small_cap.json`（生成时间 2026-07-15 01:27，含 `return_series.parquet`）
+- 旧结果（暂停引用）: `results/small_cap_v2_20260714_232258/`、`results/small_cap_v2_20260714_200852/` 和 `results/small_cap_v2_20260713_194952/`
 - 生成命令:
   ```bash
   # 先构建缓存（约15分钟）

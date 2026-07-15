@@ -1,6 +1,13 @@
 __pycache__/
 *.pyc
 .DS_Store
+.pytest_cache/
+
+# Wrangler cache (Cloudflare CLI artifact)
+.wrangler/
+
+# Debug scripts
+_debug*.py
 
 # Large data caches (not in git, see README for generation instructions)
 data/live_daily_cache/
@@ -11,3 +18,4 @@ data/qfq_prices.pkl
 data/book_equity_all.pkl
 data/delist_prices.pkl
 data/delist_prices_all.pkl
+04.a-share/cb_cache/

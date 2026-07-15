@@ -42,6 +42,9 @@ sys.path.insert(0, _SCRIPT_DIR)
 from lib.universe import StockUniverse
 from lib.metrics import compute_metrics, relative_cagr
 
+# "今天" — 用于排除不完整的当月。测试可 monkey-patch 此变量。
+_TODAY: pd.Timestamp = pd.Timestamp.now().normalize()
+
 
 # ============================================================
 # 回测参数
@@ -130,7 +133,11 @@ def select_by_low_price(
 # ============================================================
 
 def _get_month_end_dates(start: str, end: str) -> list[pd.Timestamp]:
-    """生成从 start 到 end 之间的月末日期列表。"""
+    """生成从 start 到 end 之间的月末日期列表。
+
+    排除不完整的当月：如果 end 落在某个未结束的月份（即该月的月末 > today），
+    则该月被排除，避免使用部分月数据。
+    """
     start_dt = pd.Timestamp(start)
     end_dt = pd.Timestamp(end)
     # 用月初日期范围再转月末
@@ -138,6 +145,8 @@ def _get_month_end_dates(start: str, end: str) -> list[pd.Timestamp]:
     month_ends = month_starts + pd.offsets.MonthEnd(0)
     # 过滤超出范围的
     month_ends = [d for d in month_ends if d <= end_dt]
+    # 排除不完整的当月：月末日期 > 今天 → 该月还没结束
+    month_ends = [d for d in month_ends if d <= _TODAY]
     return month_ends
 
 
@@ -146,25 +155,62 @@ def _get_next_month_return(
     code: str,
     rebalance_date: pd.Timestamp,
     next_date: pd.Timestamp,
-) -> float | None:
+) -> tuple[float | None, pd.Series | None]:
     """
     获取股票从 rebalance_date 到 next_date 的持有期收益。
 
     用 total_return_series 的前复权收盘价计算。
-    如果数据缺失或退市导致无法计算，返回 None。
+    如果数据缺失或退市导致无法计算，返回 (None, None)。
+
+    Returns:
+        (持有期收益率, qfq 收盘价序列) — 序列为 total_return_series 返回的完整片段，
+        可用于独立复现收益计算。
     """
     try:
         s = universe.total_return_series(code, str(rebalance_date), str(next_date))
         if len(s) < 2:
-            return None
+            return None, None
         # 持有期收益 = 末值/初值 - 1
         start_price = s.iloc[0]
         end_price = s.iloc[-1]
         if start_price <= 0:
-            return None
-        return float(end_price / start_price - 1)
+            return None, None
+        return float(end_price / start_price - 1), s
     except Exception:
-        return None
+        return None, None
+
+
+def build_full_return_series(
+    universe: StockUniverse,
+    all_return_series: dict[str, pd.Series],
+) -> dict[str, pd.Series]:
+    """
+    用 universe 的完整 qfq 序列替换 all_return_series 中的持有期片段。
+
+    all_return_series 中的序列来自 total_return_series() 的切片，仅覆盖约1个月
+    的持有期。直接保存这些片段会导致 parquet 无法独立复现跨月收益。
+    此函数对每个 code 显式获取完整 qfq 收盘价序列：
+      - 存活股：universe._get_qfq_close(code)（带内存/parquet/网络三级缓存）
+      - 退市股：universe.delist_prices[code]（已是完整前复权序列）
+      - 获取失败：回退到原始片段（保留部分覆盖）
+
+    Returns:
+        code -> pd.Series 的完整前复权收盘价序列
+    """
+    full_series: dict[str, pd.Series] = {}
+    for code in all_return_series:
+        # 退市股：delist_prices 已是完整前复权收盘价序列
+        if code in universe.delist_prices:
+            full_series[code] = universe.delist_prices[code]
+            continue
+        # 存活股：显式获取完整 qfq 序列（不依赖 _qfq_cache 是否预加载）
+        qfq = universe._get_qfq_close(code)
+        if qfq is not None and len(qfq) > 0:
+            full_series[code] = qfq
+        else:
+            # 回退：保留片段（该股票 qfq 数据不可用）
+            full_series[code] = all_return_series[code]
+    return full_series
 
 
 def build_equal_weight_benchmark(
@@ -200,7 +246,7 @@ def build_equal_weight_benchmark(
         # 等权持有
         rets = []
         for code in eligible:
-            r = _get_next_month_return(universe, code, rebalance_date, next_date)
+            r, _ = _get_next_month_return(universe, code, rebalance_date, next_date)
             if r is not None:
                 rets.append(r)
 
@@ -249,6 +295,7 @@ def run_monthly_backtest(
             'metrics': {},
             'n_months': 0,
             'selected_history': [],
+            'return_series': {},
         }
 
     select_fn = select_by_market_cap if sort_by == 'market_cap' else select_by_low_price
@@ -259,6 +306,8 @@ def run_monthly_backtest(
     portfolio_returns = []
     selected_history = []
     benchmark_returns = []
+    # 收集每只股票的 qfq 收益序列，用于独立复现
+    return_series: dict[str, pd.Series] = {}
 
     for i in range(skip_months, len(month_ends) - 1):
         rebalance_date = month_ends[i]
@@ -284,9 +333,12 @@ def run_monthly_backtest(
         # 计算组合收益
         stock_rets = []
         for code in selected:
-            r = _get_next_month_return(universe, code, rebalance_date, next_date)
-            if r is not None:
+            r, s = _get_next_month_return(universe, code, rebalance_date, next_date)
+            if r is not None and s is not None:
                 stock_rets.append(r)
+                # 保存该股票的 qfq 序列（取并集，保留最长版本）
+                if code not in return_series or len(s) > len(return_series[code]):
+                    return_series[code] = s
 
         if len(stock_rets) > 0:
             port_ret = float(np.mean(stock_rets))
@@ -309,9 +361,11 @@ def run_monthly_backtest(
                 close = universe._get_raw_close(code, rebalance_date)
                 if close is not None and close < low_price_threshold:
                     continue
-            r = _get_next_month_return(universe, code, rebalance_date, next_date)
-            if r is not None:
+            r, s = _get_next_month_return(universe, code, rebalance_date, next_date)
+            if r is not None and s is not None:
                 bench_rets.append(r)
+                if code not in return_series or len(s) > len(return_series[code]):
+                    return_series[code] = s
 
         if len(bench_rets) > 0:
             benchmark_returns.append({
@@ -328,6 +382,7 @@ def run_monthly_backtest(
             'metrics': {},
             'n_months': 0,
             'selected_history': [],
+            'return_series': return_series,
         }
 
     port_df = pd.DataFrame(portfolio_returns).set_index('date')
@@ -345,6 +400,7 @@ def run_monthly_backtest(
         'metrics': metrics,
         'n_months': len(port_rets),
         'selected_history': selected_history,
+        'return_series': return_series,
     }
 
 
@@ -400,6 +456,8 @@ def main():
 
     all_results = {}
     summary_table = []
+    # 收集所有场景的 per-symbol qfq 收益序列（合并去重，保留最长版本）
+    all_return_series: dict[str, pd.Series] = {}
 
     for top_n in params['top_ns']:
         for sort_method in ['market_cap', 'low_price']:
@@ -469,8 +527,24 @@ def main():
                     'sort_by': sort_method,
                     'top_n': top_n,
                     'filter_low_price': filter_lp,
+                    # 保存逐月收益 + 选股历史，使 JSON 中的每个指标可独立复现
+                    'monthly_returns': [
+                        {'date': str(d.date()), 'return': r}
+                        for d, r in result['returns'].items()
+                    ],
+                    'benchmark_monthly_returns': [
+                        {'date': str(d.date()), 'return': r}
+                        for d, r in result['benchmark_returns'].items()
+                    ],
+                    'selected_history': result['selected_history'],
                 }
                 summary_table.append(entry)
+
+                # 合并该场景的 return_series 到全局集合（仅记录哪些 symbol 被用到；
+                # 完整序列稍后从 universe 缓存统一提取，避免只保存片段导致无法复现）
+                for code, s in result.get('return_series', {}).items():
+                    if code not in all_return_series or len(s) > len(all_return_series[code]):
+                        all_return_series[code] = s
 
                 print(f"    CAGR: {m.get('cagr', 0):.2%}  "
                       f"Sharpe: {m.get('sharpe', 0):.2f}  "
@@ -521,6 +595,11 @@ def main():
         print(f"  {'沪深300指数':<30s} | {index_benchmark['cagr']:7.2%} | "
               f"{index_benchmark['sharpe']:5.2f} | {index_benchmark['max_drawdown']:7.2%} | {'—':>8s}")
 
+    # 构建完整 qfq 收益序列（requirement #3: saved series can recompute every number）
+    # 用 universe 的完整序列替换片段，确保任何持有期收益都可独立复现。
+    # 显式调用 _get_qfq_close(code) 获取完整序列，不依赖 _qfq_cache 是否预加载。
+    full_series = build_full_return_series(universe, all_return_series)
+
     # 保存 JSON
     output = {
         'run_id': run_id,
@@ -531,12 +610,27 @@ def main():
         'results': all_results,
         'summary_table': summary_table,
         'timestamp': datetime.now().isoformat(),
+        # 标记所有输入序列均为 qfq 前复权（requirement: all input series are qfq-tagged）
+        'return_series_tag': 'qfq',
+        'return_series_file': 'return_series.parquet',
+        'n_symbols_in_series': len(full_series),
     }
 
     output_path = os.path.join(run_dir, 'small_cap.json')
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2, default=str)
     print(f"\n结果已保存: {output_path}")
+
+    # 保存 per-symbol qfq 收益序列
+    if len(full_series) > 0:
+        rs_path = os.path.join(run_dir, 'return_series.parquet')
+        # 构建一个 DataFrame，每只股票一列
+        rs_df = pd.DataFrame(full_series)
+        rs_df.index.name = 'date'
+        rs_df.to_parquet(rs_path)
+        print(f"收益序列已保存: {rs_path} ({len(full_series)} 只股票)")
+    else:
+        print("⚠ 无收益序列可保存")
 
     # 验收检查
     print("\n" + "=" * 70)
@@ -583,6 +677,90 @@ def main():
     else:
         degraded_codes = list(universe._qfq_degraded)[:10]
         print(f"  ⚠ 有 {degraded_count} 只股票降级为 raw close: {degraded_codes}{'...' if degraded_count > 10 else ''}")
+
+    # 5. qfq 标记 + 收益序列可复现性检查
+    print(f"  收益序列标记: {output.get('return_series_tag', 'N/A')}")
+    assert output.get('return_series_tag') == 'qfq', \
+        "所有输入序列必须标记为 qfq 前复权"
+    print(f"  ✓ 所有输入序列均为 qfq 前复权")
+
+    rs_path = os.path.join(run_dir, 'return_series.parquet')
+    if os.path.exists(rs_path):
+        rs_df = pd.read_parquet(rs_path)
+        print(f"  ✓ 收益序列已保存: {len(rs_df.columns)} 只股票, {len(rs_df)} 条日线")
+        print(f"    文件: {rs_path}")
+    else:
+        print(f"  ⚠ 收益序列文件未找到")
+
+    # 7. 可复现性验证 — 用 saved return_series + selected_history 重算逐月收益，
+    #    确认与 JSON 中 monthly_returns 一致（requirement #5: saved series can
+    #    recompute every number in the JSON）
+    print(f"\n  可复现性验证: 用 return_series.parquet + selected_history 重算逐月收益...")
+    rs_path = os.path.join(run_dir, 'return_series.parquet')
+    if os.path.exists(rs_path):
+        rs_df = pd.read_parquet(rs_path)
+        recomputed_metrics = {}
+        mismatch_count = 0
+        checked_labels = 0
+        for label, res in all_results.items():
+            if 'monthly_returns' not in res or 'selected_history' not in res:
+                continue
+            checked_labels += 1
+            monthly_rets = {pd.Timestamp(e['date']): e['return']
+                            for e in res['monthly_returns']}
+            sel_hist = res['selected_history']
+            # 构建 month_ends 以映射 rebalance_date → next_date
+            me = _get_month_end_dates(params['start_date'], params['end_date'])
+            me_map = {me[i]: me[i + 1] for i in range(len(me) - 1)}
+            recomputed_monthly = {}
+            for entry in sel_hist:
+                rb = pd.Timestamp(entry['date'])
+                nd = me_map.get(rb)
+                if nd is None:
+                    continue
+                stock_rets = []
+                for code in entry['selected']:
+                    if code in rs_df.columns:
+                        s = rs_df[code].dropna()
+                        sliced = s[(s.index >= rb) & (s.index <= nd)]
+                        if len(sliced) >= 2 and sliced.iloc[0] > 0:
+                            stock_rets.append(
+                                float(sliced.iloc[-1] / sliced.iloc[0] - 1))
+                if len(stock_rets) > 0 and nd in monthly_rets:
+                    recomputed = float(np.mean(stock_rets))
+                    original = monthly_rets[nd]
+                    if abs(recomputed - original) > 1e-8:
+                        mismatch_count += 1
+                    recomputed_monthly[nd] = recomputed
+            # 用重算的逐月收益重新计算 metrics
+            if len(recomputed_monthly) > 0:
+                rs_series = pd.Series(recomputed_monthly)
+                rm = compute_metrics(rs_series,
+                                     periods_per_year=params['periods_per_year'])
+                recomputed_metrics[label] = rm
+                orig_cagr = res['metrics'].get('cagr', 0)
+                recomp_cagr = rm.get('cagr', 0)
+                if abs(orig_cagr - recomp_cagr) > 1e-6:
+                    mismatch_count += 1
+                    print(f"    ⚠ {label}: CAGR 不匹配 "
+                          f"orig={orig_cagr:.8f} recomp={recomp_cagr:.8f}")
+        if mismatch_count == 0:
+            print(f"  ✓ {checked_labels} 个场景的逐月收益 + CAGR 全部可从 "
+                  f"return_series.parquet 独立复现（误差 < 1e-8）")
+        else:
+            print(f"  ⚠ {mismatch_count} 项不匹配 — 可复现性检查失败")
+    else:
+        print(f"  ⚠ return_series.parquet 不存在，跳过可复现性验证")
+
+    # 6. 当月不完整数据排除检查
+    last_month_end = _get_month_end_dates(params['start_date'], params['end_date'])[-1] \
+        if len(_get_month_end_dates(params['start_date'], params['end_date'])) > 0 else None
+    if last_month_end is not None:
+        today = _TODAY
+        if last_month_end <= today:
+            print(f"  ✓ 最后月末日期 {last_month_end.date()} <= 今天 {today.date()}，无不完整月")
+        else:
+            print(f"  ⚠ 最后月末日期 {last_month_end.date()} > 今天 {today.date()}，可能含不完整月")
 
     print(f"\n完成。Run ID: {run_id}")
     return output

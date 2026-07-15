@@ -82,7 +82,7 @@ def test_qfq_differs_from_raw_close():
 # ============================================================
 
 def test_degrade_is_tracked():
-    """qfq 拉取失败时，股票被记入 _qfq_degraded，不静默降级。"""
+    """qfq 拉取失败且无缓存时，不应静默降级为 raw close — 应返回空序列并标记排除。"""
     dates = pd.date_range('2023-01-01', '2023-12-31', freq='B')
 
     stock_meta = {
@@ -118,22 +118,21 @@ def test_degrade_is_tracked():
             raise Exception("mock network error")
     _sys.modules['akshare'] = FakeAk
 
-    # 调用 total_return_series — 应降级为 raw close
-    import warnings
-    with warnings.catch_warnings(record=True) as w:
-        warnings.simplefilter("always")
-        s = universe.total_return_series('600001', '2023-06-01', '2023-06-30')
-        assert len(w) == 1, "应产生一个降级 warning"
-        assert "降级" in str(w[0].message) or "fallback" in str(w[0].message).lower()
+    # 调用 total_return_series — 网络失败且无缓存，不应返回 raw close
+    s = universe.total_return_series('600001', '2023-06-01', '2023-06-30')
 
-    # 确认被记入 _qfq_degraded
-    assert '600001' in universe._qfq_degraded, \
-        "qfq 拉取失败的股票应被记入 _qfq_degraded"
+    # 必须返回空序列，不能返回 raw close 价格
+    assert len(s) == 0, \
+        "网络失败且无缓存时，total_return_series 必须返回空序列，不应静默降级为 raw close"
 
-    # 覆盖率报告应显示降级
+    # 确认被记入 _qfq_failed（拉取失败，不可用于主结果）
+    assert '600001' in universe._qfq_failed, \
+        "qfq 拉取失败的股票应被记入 _qfq_failed"
+
+    # 覆盖率报告应显示失败（不是降级 — 降级是有 stale 缓存的情况）
     report = universe.qfq_coverage_report()
-    assert report['degraded'] == 1, \
-        f"降级计数应为1，实际 {report['degraded']}"
+    assert report['qfq_failed'] >= 1, \
+        f"失败计数应>=1，实际 {report['qfq_failed']}"
 
 
 # ============================================================

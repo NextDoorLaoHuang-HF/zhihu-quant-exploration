@@ -41,8 +41,17 @@ zhihu-quant-exploration/
 │   ├── small_cap_v2.py               # 真实流通市值排序+全市场动态池+CAGR
 │   ├── build_live_daily_cache.py      # 并行构建存活股日线缓存（parquet格式）
 │   ├── build_qfq_cache.py             # 并行构建前复权缓存（parquet格式）
+│   ├── fama_french_v2.py              # 真实Fama-French三因子（批量资产负债表）
+│   ├── dividend_v2.py                 # 分红事件处理v2
+│   ├── fetch_cb_data.py               # 可转债数据拉取
+│   ├── grid_v2.py                     # 网格交易v2（walk-forward）
+│   ├── run_hybrid_v2.py               # CB/HRP混合策略v2
+│   ├── verify_reproducibility.py      # 从parquet独立重算CAGR/Sharpe验证
+│   ├── verify_small_cap_v2_results.py # 小市值v2全量审计脚本
 │   ├── lib/universe.py               # 点时股票池构建器
 │   ├── lib/metrics.py                # 绩效指标计算
+│   ├── lib/qfq_cache.py              # 前复权缓存模块（覆盖率追踪+降级保护）
+│   ├── lib/fama_french.py            # Fama-French因子计算
 │   └── verify_issues.py               # 验证幸存者偏差+网格交易矛盾
 ├── data/
 │   ├── delist_prices.pkl              # 退市股前复权日线（腾讯API）
@@ -51,8 +60,21 @@ zhihu-quant-exploration/
 │   ├── qfq_cache/                     # 前复权收盘价缓存（parquet，4590只）
 │   └── backtest_fixed_all.json        # 修复后回测结果
 ├── results/
-│   └── small_cap_v2_20260714_200852/ # 最新回测结果（qfq修复后）
-│       └── small_cap.json
+│   └── small_cap_v2_20260715_011613/ # 最新回测结果（qfq修复后，2026-07-15 01:27 生成）
+│       ├── small_cap.json
+│       ├── return_series.parquet
+│       └── verification_report.md
+├── tests/                            # 测试套件（96 tests）
+│   ├── test_small_cap.py             # 小市值回测测试
+│   ├── test_raw_close_guard.py       # 原始收盘价降级守卫+变异测试
+│   ├── test_qfq_cache.py             # 前复权缓存单元测试
+│   ├── test_qfq_integration.py      # 前复权集成测试
+│   ├── test_universe.py              # 股票池构建测试
+│   ├── test_metrics.py               # 绩效指标测试
+│   ├── test_fama_french.py           # Fama-French因子测试
+│   ├── test_hybrid.py                # CB/HRP混合策略测试
+│   ├── test_grid_engine.py          # 网格引擎测试
+│   └── test_dividend_event.py       # 分红事件测试
 ├── charts/                            # 回测结果图表
 │   ├── chart1_overview.png            # 策略总览表
 │   ├── chart2_heatmap.png             # 双均线夏普热力图
@@ -125,8 +147,41 @@ HTTP_PROXY=PROXY_PLACEHOLDER HTTPS_PROXY=PROXY_PLACEHOLDER python 04_div_fill_ri
 4. **滑点**：基础回测仅扣佣金（万2.5双边）。文章中有滑点敏感性分析，T5微盘月换手率5.5%，滑点影响约0.4%年化。
 5. **幸存者偏差（重要）** ⚠️暂停引用：新浪源 `stock_info_a_code_name()` 不含已退市股票。用腾讯API补充退市股数据（`scripts/fetch_delist_tx.py` 上交所 + `scripts/fetch_delist_sz.py` 深交所，合计199只），按真实比例（150只中6只退市股）重跑（`scripts/rerun_fixed.py`）：T5 年化从 23.9% 降至 -12.9%（含退市无过滤），加 ST过滤+<2元过滤后恢复到 19.0%。幸存者偏差将真实收益高估了约5个百分点。详见 `data/backtest_fixed_all.json`。**注意：19.0% 仍含幸存者偏差，且选股用最低股价而非最小市值，数字暂停引用。**
 6. **回测引擎修复** ⚠️暂停引用：三个 bug 修复——①`pct_change(fill_method=None)` 修复退市后收益被pad填充为0%的问题，退市月收益手动设为-100%；②ST过滤改用退市股一律排除（旧版用当前名称做历史过滤存在前视偏差）；③补充深交所退市股（旧版仅有上交所78只）。修复后 T5 含退市+ST+<2元 = 19.0%（旧版为21.9%）。详见 `scripts/rerun_fixed.py` 和 `data/backtest_fixed_all.json`。**注意：修复后的 19.0% 仍存在选股用最低股价而非最小市值的问题，数字暂停引用。**
-7. **前复权数据修复（Issue #2）** ⚠️暂停引用：存活股持有期收益从"未复权收盘价"改为"前复权收盘价"（qfq close）。旧版把分红除权日股价下调当成亏损，系统性低估小市值策略收益。为全市场4590只存活股持久化parquet格式qfq缓存（`scripts/build_qfq_cache.py` + `scripts/build_live_daily_cache.py`），覆盖率100%、0降级。重跑后 T5 市值排序 CAGR 从 19.82% → 35.68%（+15.86个百分点），T10 从 17.98% → 26.40%，T20 从 11.70% → 20.70%。价格排序策略受影响极小（+0.15%~0.93%）。详见 `results/small_cap_v2_20260714_200852/small_cap.json`，旧结果 `results/small_cap_v2_20260713_194952/` 暂停引用。**注意：新数字仍含幸存者偏差，标记 ⚠️暂停引用。**
+7. **前复权数据修复（Issue #2）** ⚠️暂停引用：存活股持有期收益从"未复权收盘价"改为"前复权收盘价"（qfq close）。旧版把分红除权日股价下调当成亏损，系统性低估小市值策略收益。为全市场4590只存活股持久化parquet格式qfq缓存（`scripts/build_qfq_cache.py` + `scripts/build_live_daily_cache.py`），qfq覆盖率 100%（4590/4590 缓存成功，0 失败，0 降级）。重跑后 T5 市值排序 CAGR 从 19.82% → 35.68%（+15.86个百分点），T10 从 17.98% → 26.40%，T20 从 11.70% → 20.70%。价格排序策略受影响极小（+0.15%~0.93%）。最新结果：`results/small_cap_v2_20260715_011613/small_cap.json`（生成时间 2026-07-15 01:27，含 `return_series.parquet` 月度收益序列，`return_series_tag: qfq`）；旧结果 `results/small_cap_v2_20260714_200852/` 和 `results/small_cap_v2_20260713_194952/` 暂停引用。**注意：新数字仍含幸存者偏差，标记 ⚠️暂停引用。**
 8. **网格交易结论更正** ⚠️暂停引用：原文章称"一组都没跑赢"有误。实际 72 组中 21 组网格跑赢买持（胜率 29%），集中在震荡品种（创业板 +5.3%、中证1000 +3.1%、科创50 +4.4%）。单边上涨品种（纳指 -6.0%）网格跑输。`strategy_grid.png` 图中策略线在基准线上方，与原结论矛盾。**注意：网格回测存在卖出记账错误、参数稳定性检验和成本影响等多相邻问题，数字暂停引用。**
+
+## 数据缓存与复现
+
+`data/live_daily_cache/`、`data/qfq_cache/` 及若干 `.pkl` 文件体积较大（合计约 650 MB），已通过 `.gitignore` 排除，不在 Git 仓库中。首次复现需自行生成，步骤如下：
+
+```bash
+# 1. 构建存活股未复权日线缓存（raw close，parquet，4590 只，约 328 MB）
+python scripts/build_live_daily_cache.py --workers 10
+
+# 2. 构建前复权缓存（qfq close，parquet，4590 只，约 325 MB）
+python scripts/build_qfq_cache.py --workers 10
+
+# 3. 运行小市值回测（自动读取上述缓存，输出到 results/small_cap_v2_<timestamp>/）
+python scripts/small_cap_v2.py
+```
+
+两个缓存脚本均为增量构建：已缓存的股票会自动跳过（除非加 `--no-skip-existing`），断点续跑友好。`--max-stocks N` 可用于小批量测试。
+
+### 缓存与结果校验摘要
+
+| 路径 | 文件数 | 大小 | 说明 |
+|------|:---:|:---:|------|
+| `data/live_daily_cache/` | 4590 | ~328 MB | 存活股 raw close 日线（parquet，git-excluded） |
+| `data/qfq_cache/` | 4590 | ~325 MB | 存活股前复权 close 日线（parquet，git-excluded，覆盖率 100%） |
+
+最新回测结果（已提交 Git）：
+
+| 文件 | SHA-256 | 大小 |
+|------|---------|:---:|
+| `results/small_cap_v2_20260715_011613/small_cap.json` | `d7716c3b1e882fb47bfe5a3deadac8a29f00e0ecb632d1797132bce8cf0b975c` | 456 KB |
+| `results/small_cap_v2_20260715_011613/return_series.parquet` | `b10b8d8af3fce0506d60d38de8ea7d66778acb07830af8a43cad247b40e593e3` | 24 MB |
+
+`small_cap.json` 顶层字段 `run_id`、`timestamp`（2026-07-15T01:27:13）、`qfq_coverage`（100%）、`return_series_tag`（`qfq`）可用于校验数据来源。验证脚本 `scripts/verify_reproducibility.py <results_dir>` 可从 `return_series.parquet` 独立重算 CAGR/Sharpe/MaxDD 并与 JSON 比对。独立审计报告 `results/small_cap_v2_20260715_011613/verification_report.md` 确认全部 12 个场景的独立重算结果与 JSON 精确匹配（Δ=0.00e+00）。
 
 ## 图表生成
 
