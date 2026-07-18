@@ -47,7 +47,8 @@ indices['标普500'] = get_yf('^GSPC')
 indices['纳斯达克'] = get_yf('^IXIC')
 
 # ========== 回测函数 ==========
-def run_dca(df, monthly=1000, start=None, end=None):
+def run_dca(df, monthly=1000, start=None, end=None, cost_rate=0.00025):
+    """定投回测，cost_rate为单边佣金（默认A股ETF万2.5）"""
     data = df[(df['date'] >= pd.Timestamp(start)) & (df['date'] <= pd.Timestamp(end))].copy()
     if len(data) < 24: return None
     data = data.sort_values('date').reset_index(drop=True)
@@ -57,32 +58,38 @@ def run_dca(df, monthly=1000, start=None, end=None):
     units, invested = 0, 0
     rows = []
     for _, r in monthly_data.iterrows():
-        units += monthly / r['close']
+        # 每次买入扣佣金
+        units += monthly * (1 - cost_rate) / r['close']
         invested += monthly
         rows.append({'date': r['date'], 'nav': units * r['close'], 'invested': invested})
     df_out = pd.DataFrame(rows)
     return df_out
 
-def run_lump(df, total, start=None, end=None):
+def run_lump(df, total, start=None, end=None, cost_rate=0.00025):
+    """一次性投入，cost_rate为单边佣金"""
     data = df[(df['date'] >= pd.Timestamp(start)) & (df['date'] <= pd.Timestamp(end))].copy()
     if len(data) < 2: return None
     data = data.sort_values('date').reset_index(drop=True)
-    units = total / data['close'].iloc[0]
+    # 买入扣佣金
+    units = total * (1 - cost_rate) / data['close'].iloc[0]
     data['nav'] = units * data['close']
     return data[['date','nav']].copy()
 
-def metrics(nav_series, invested, dates=None):
+def metrics(nav_series, invested, dates=None, cost_rate=0.00025):
+    """计算策略指标，cost_rate为卖出佣金"""
     final = nav_series.iloc[-1]
+    # 期末卖出扣佣金
+    final_after_cost = final * (1 - cost_rate)
     if dates is not None:
         years = (dates.max() - dates.min()).days / 365.25
     else:
         years = len(nav_series) / 12
-    cagr = (final / invested) ** (1 / max(years, 0.5)) - 1
+    cagr = (final_after_cost / invested) ** (1 / max(years, 0.5)) - 1
     peak = nav_series.expanding().max()
     max_dd = ((nav_series - peak) / peak).min()
     mr = nav_series.pct_change().dropna()
     sharpe = (mr.mean() / mr.std()) * np.sqrt(12) if mr.std() > 0 else 0
-    return {'cagr': cagr*100, 'max_dd': max_dd*100, 'sharpe': sharpe, 'final_value': final, 'years': years}
+    return {'cagr': cagr*100, 'max_dd': max_dd*100, 'sharpe': sharpe, 'final_value': final_after_cost, 'years': years}
 
 # ========== 生成图表 ==========
 
