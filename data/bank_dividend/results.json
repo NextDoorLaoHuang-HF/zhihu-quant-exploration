@@ -1,0 +1,232 @@
+{
+ "meta": {
+  "end_date": "2026-07-28",
+  "commission": "万2.5最低5元",
+  "tax_rule": "红利税:持有>1年0%,1月-1年10%,<1月20%",
+  "note": "分红按除权日收盘价再投;沪深300为价格指数(未含股息,实际ETF约+1.5-2pp/年)"
+ },
+ "lump_sum": [
+  {
+   "stock": "工商银行",
+   "start": "2007-11-01",
+   "invested": 100000,
+   "final_value": 224973.0,
+   "cagr": 4.42,
+   "max_drawdown": -60.4,
+   "min_value": 39550.0,
+   "recover_date": "2017-07-26",
+   "total_div_gross": 86533.0,
+   "total_div_tax": 366.0,
+   "commission": 130.0,
+   "years": 18.7
+  },
+  {
+   "stock": "工商银行",
+   "start": "2015-06-08",
+   "invested": 100000,
+   "final_value": 253678.0,
+   "cagr": 8.71,
+   "max_drawdown": -34.5,
+   "min_value": 71532.0,
+   "recover_date": "2017-05-25",
+   "total_div_gross": 77945.0,
+   "total_div_tax": 1100.0,
+   "commission": 95.0,
+   "years": 11.1
+  },
+  {
+   "stock": "工商银行",
+   "start": "2018-01-24",
+   "invested": 100000,
+   "final_value": 168204.0,
+   "cagr": 6.3,
+   "max_drawdown": -34.5,
+   "min_value": 68631.0,
+   "recover_date": "2024-02-22",
+   "total_div_gross": 42836.0,
+   "total_div_tax": 451.0,
+   "commission": 80.0,
+   "years": 8.5
+  },
+  {
+   "stock": "工商银行",
+   "start": "2021-02-18",
+   "invested": 100000,
+   "final_value": 206758.0,
+   "cagr": 14.28,
+   "max_drawdown": -19.1,
+   "min_value": 86480.0,
+   "recover_date": "未深套(未跌破8万)",
+   "total_div_gross": 39610.0,
+   "total_div_tax": 626.0,
+   "commission": 65.0,
+   "years": 5.4
+  },
+  {
+   "stock": "民生银行",
+   "start": "2007-10-16",
+   "invested": 100000,
+   "final_value": 95482.0,
+   "cagr": -0.25,
+   "max_drawdown": -71.0,
+   "min_value": 30442.0,
+   "recover_date": "2024-10-08",
+   "total_div_gross": 65029.0,
+   "total_div_tax": 187.0,
+   "commission": 140.0,
+   "years": 18.8
+  },
+  {
+   "stock": "招商银行",
+   "start": "2007-10-16",
+   "invested": 100000,
+   "final_value": 242394.0,
+   "cagr": 4.82,
+   "max_drawdown": -74.9,
+   "min_value": 27089.0,
+   "recover_date": "2017-06-27",
+   "total_div_gross": 84870.0,
+   "total_div_tax": 340.0,
+   "commission": 110.0,
+   "years": 18.8
+  }
+ ],
+ "dca": [
+  {
+   "stock": "工商银行",
+   "start": "2007-10-08",
+   "total_invested": 319000.0,
+   "final_value": 946570.0,
+   "xirr": 10.1,
+   "max_drawdown": -32.4,
+   "n_months": 225,
+   "n_dip_months": 94,
+   "total_div_gross": 277443.0,
+   "total_div_tax": 2868.0,
+   "commission": 1132.0,
+   "bench_hs300": {
+    "stock": "沪深300(价格指数)",
+    "start": "2007-10-08",
+    "total_invested": 365000.0,
+    "final_value": 516240.0,
+    "xirr": 3.42,
+    "max_drawdown": -43.2
+   },
+   "bench_deposit3": 435599.0,
+   "bench_deposit4": 485898.0
+  },
+  {
+   "stock": "工商银行",
+   "start": "2015-06-01",
+   "total_invested": 182000.0,
+   "final_value": 392489.0,
+   "xirr": 12.38,
+   "max_drawdown": -24.4,
+   "n_months": 134,
+   "n_dip_months": 48,
+   "total_div_gross": 81814.0,
+   "total_div_tax": 1352.0,
+   "commission": 670.0,
+   "bench_hs300": {
+    "stock": "沪深300(价格指数)",
+    "start": "2015-06-01",
+    "total_invested": 207000.0,
+    "final_value": 246627.0,
+    "xirr": 3.01,
+    "max_drawdown": -25.9
+   },
+   "bench_deposit3": 218865.0,
+   "bench_deposit4": 233181.0
+  },
+  {
+   "stock": "工商银行",
+   "start": "2018-01-02",
+   "total_invested": 137000.0,
+   "final_value": 263352.0,
+   "xirr": 13.76,
+   "max_drawdown": -14.7,
+   "n_months": 102,
+   "n_dip_months": 35,
+   "total_div_gross": 45402.0,
+   "total_div_tax": 947.0,
+   "commission": 510.0,
+   "bench_hs300": {
+    "stock": "沪深300(价格指数)",
+    "start": "2018-01-02",
+    "total_invested": 157000.0,
+    "final_value": 180347.0,
+    "xirr": 3.16,
+    "max_drawdown": -18.1
+   },
+   "bench_deposit3": 158058.0,
+   "bench_deposit4": 165960.0
+  },
+  {
+   "stock": "工商银行",
+   "start": "2021-02-01",
+   "total_invested": 78000.0,
+   "final_value": 137701.0,
+   "xirr": 19.88,
+   "max_drawdown": -14.0,
+   "n_months": 66,
+   "n_dip_months": 12,
+   "total_div_gross": 17291.0,
+   "total_div_tax": 531.0,
+   "commission": 330.0,
+   "bench_hs300": {
+    "stock": "沪深300(价格指数)",
+    "start": "2021-02-01",
+    "total_invested": 106000.0,
+    "final_value": 118077.0,
+    "xirr": 3.59,
+    "max_drawdown": -13.8
+   },
+   "bench_deposit3": 85159.0,
+   "bench_deposit4": 87732.0
+  }
+ ],
+ "dca_compare": [
+  {
+   "stock": "民生银行",
+   "start": "2007-10-08",
+   "total_invested": 362000.0,
+   "final_value": 435593.0,
+   "xirr": 1.88,
+   "max_drawdown": -36.3,
+   "n_months": 225,
+   "n_dip_months": 137,
+   "total_div_gross": 211131.0,
+   "total_div_tax": 2125.0,
+   "commission": 1126.0
+  },
+  {
+   "stock": "招商银行",
+   "start": "2007-10-08",
+   "total_invested": 370000.0,
+   "final_value": 1280459.0,
+   "xirr": 11.48,
+   "max_drawdown": -49.4,
+   "n_months": 225,
+   "n_dip_months": 145,
+   "total_div_gross": 396888.0,
+   "total_div_tax": 2997.0,
+   "commission": 1161.0
+  }
+ ],
+ "dca_combo": {
+  "start": "2010-08-02",
+  "total_invested": 263250.0,
+  "final_value": 797358.0,
+  "xirr": 12.36,
+  "max_drawdown": -32.9,
+  "bench_hs300": {
+   "stock": "沪深300(价格指数)",
+   "start": "2010-08-02",
+   "total_invested": 303000.0,
+   "final_value": 417302.0,
+   "xirr": 3.77,
+   "max_drawdown": -42.0
+  },
+  "bench_deposit3": 341301.0
+ }
+}
