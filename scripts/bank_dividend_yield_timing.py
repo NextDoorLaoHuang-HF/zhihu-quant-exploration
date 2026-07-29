@@ -27,9 +27,13 @@ def div_events_all(div):
 
 
 def ttm_yield(events, d, price):
-    """过去365天已除权派息之和 / 当日价"""
+    """过去365天已除权派息之和 / 当日价。修正接缝伪影：跨年除权日错位导致
+    窗口短暂无派息时（如2021-07-01），沿用最近一次除权派息（市场通用口径）。"""
     ttm = sum(ps for exd, ps, sg, zh in events
               if d - pd.Timedelta(days=TTM_DAYS) < exd <= d)
+    if ttm == 0:
+        past = [ps for exd, ps, sg, zh in events if exd <= d]
+        ttm = past[-1] if past else 0.0
     return ttm / price if price > 0 else 0.0
 
 
