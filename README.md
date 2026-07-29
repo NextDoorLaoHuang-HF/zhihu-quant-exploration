@@ -224,7 +224,12 @@ with sync_playwright() as p:
 python3 scripts/fetch_bank_data.py        # 拉取数据→data/bank_dividend/（仓库已含快照，可跳过）
 python3 scripts/bank_dividend_backtest.py # 回测→results.json + series.pkl
 python3 scripts/bank_dividend_charts.py   # 6张图→charts/bank_*.png
+python3 scripts/bank_dividend_yield_timing.py  # 读者提问变体：股息率择时定投
 ```
+
+**读者提问变体：只在股息率≥5%时定投**（`bank_dividend_yield_timing.py`，回答评论区提问）：
+
+每月定投日 TTM 股息率（过去365天已除权派息之和 ÷ 当日价）≥5% 才买入，不足则当月预算攒成场外现金（0收益）等触发时一并投入。结果（工行，2007-11大顶起点，每月1000）：择时 XIRR **11.13%** vs 无脑定投 **10.16%**（+0.97pct；同投入22.5万，终值65.7万 vs 63.9万）。有效的原因：2007年大顶股息率仅0.18%，首笔买入自动推迟至2010-06（股息率7.9%），避开了最贵的一段。但幅度有限——近15年工行股息率大半时间在5%附近以上，择时版仍买入48%的月份。阈值4.5%~6%结果在11.0%~11.4%之间，不挑参数。⚠️ 后视镜规则：股息率长期低于5%的品种（如沪深300，常年1-2%）该策略永远不出手；场外现金闲置期收益为0（XIRR已计入此拖累）。四行组合（2010-08起）择时全面小胜0.6~0.9pct。
 
 数据快照 `data/bank_dividend/`（回测截止 2026-07-28）：6 家银行不复权/后复权日线、分红明细、沪深300指数、results.json。
 
