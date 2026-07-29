@@ -2,16 +2,20 @@
 "剔除负业绩" 过滤测试
 用 stock_yjbb_em 获取季度业绩报表，每月调仓时排除最新季度亏损的股票
 """
+import os
 import akshare as ak
 import pandas as pd
 import numpy as np
 import os, json, warnings
 warnings.filterwarnings('ignore')
 
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
-DATA_DIR = 'PROJECT_ROOT/data'
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # ============================================================
 # 1. 加载季度业绩数据

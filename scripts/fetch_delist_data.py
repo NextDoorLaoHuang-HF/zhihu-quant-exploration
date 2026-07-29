@@ -12,11 +12,14 @@ import time
 import warnings
 warnings.filterwarnings('ignore')
 
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
 # 读取退市股列表
-with open('PROJECT_ROOT/data/delist_codes.json') as f:
+with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'delist_codes.json')) as f:
     delist_codes = json.load(f)
 
 print(f"退市股票数: {len(delist_codes)}")
@@ -86,12 +89,12 @@ print(f"\n获取完成: 成功{success}, 失败{fail}")
 print(f"成功率: {success}/{len(delist_codes)} = {success/len(delist_codes):.1%}")
 
 # 保存价格数据
-prices_path = 'PROJECT_ROOT/data/delist_prices.pkl'
+prices_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'delist_prices.pkl')
 pd.to_pickle(delist_prices, prices_path)
 print(f"价格数据已保存: {prices_path}")
 
 # 保存元数据
-info_path = 'PROJECT_ROOT/data/delist_info.json'
+info_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'delist_info.json')
 with open(info_path, 'w', encoding='utf-8') as f:
     json.dump(delist_info, f, ensure_ascii=False, indent=2)
 print(f"元数据已保存: {info_path}")

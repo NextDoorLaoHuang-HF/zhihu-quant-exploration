@@ -6,13 +6,14 @@
 3. 月度收益计算是否有bug（如NaN被跳过）
 4. 前复权价格对退市股的影响
 """
+import os
 import pandas as pd
 import numpy as np
 import json
 import warnings
 warnings.filterwarnings('ignore')
 
-DATA_DIR = 'PROJECT_ROOT/data'
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # 加载数据
 delist_prices = pd.read_pickle(f'{DATA_DIR}/delist_prices.pkl')

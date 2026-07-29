@@ -118,17 +118,15 @@ pip install -r requirements.txt
 
 ### 代理设置
 
-如果在中国电信网络下运行，需要在运行前设置环境变量：
+如果在中国电信网络下运行，需要在运行前设置代理环境变量：
 
 ```bash
-export HTTP_PROXY=PROXY_PLACEHOLDER
-export HTTPS_PROXY=PROXY_PLACEHOLDER
+export HTTP_PROXY=http://your-proxy:port
+export HTTPS_PROXY=http://your-proxy:port
 python scripts/04_div_fill_rights.py
 ```
 
-如果你的代理地址不同，修改对应的 host:port。
-
-前三个脚本（01-03）使用新浪源，无需代理。第四个脚本（分红填权）需要东财源。
+脚本会从环境变量读取代理地址，不再硬编码。前三个脚本（01-03）使用新浪源，无需代理。第四个脚本（分红填权）需要东财源。
 
 ## 运行脚本
 
@@ -147,7 +145,7 @@ python 02_conventional_dualma_ff.py
 python 03_retail_edge_microcap.py
 
 # 第四轮：高股息填权（需代理 + 东财源）
-HTTP_PROXY=PROXY_PLACEHOLDER HTTPS_PROXY=PROXY_PLACEHOLDER python 04_div_fill_rights.py
+HTTP_PROXY=http://your-proxy:port HTTPS_PROXY=http://your-proxy:port python 04_div_fill_rights.py
 ```
 
 ## 复现注意事项
@@ -293,7 +291,7 @@ python3 scripts/bank_dividend_yield_band.py    # 读者提问变体2：股息率
 
 ```bash
 python3 scripts/dca_backtest.py   # 5指数×6时段回测+3图→charts/dca_*.png
-# 注：脚本内置代理 PROXY_PLACEHOLDER（硬编码），代理端口不同需先改脚本前两行
+# 注：脚本从环境变量 HTTP_PROXY/HTTPS_PROXY 读取代理地址，未设置则直连
 ```
 
 图表：`charts/dca_comparison_bars.png`、`dca_vs_lump_all.png`、`dca_win_rate.png`。

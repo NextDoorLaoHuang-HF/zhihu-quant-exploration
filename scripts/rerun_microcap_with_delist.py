@@ -10,10 +10,13 @@ import json
 import warnings
 warnings.filterwarnings('ignore')
 
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
-DATA_DIR = 'PROJECT_ROOT/data'
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # ============================================================
 # 1. 加载退市股数据

@@ -35,9 +35,10 @@ import pandas as pd
 warnings.filterwarnings('ignore')
 
 # 代理设置（akshare 需要访问新浪/东财）
-_PROXY = 'PROXY_PLACEHOLDER'
-os.environ.setdefault('HTTP_PROXY', _PROXY)
-os.environ.setdefault('HTTPS_PROXY', _PROXY)
+_PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _PROXY:
+    os.environ.setdefault('HTTP_PROXY', _PROXY)
+    os.environ.setdefault('HTTPS_PROXY', _PROXY)
 
 # 项目根目录
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

@@ -127,7 +127,7 @@ def select_stock_pool(div_detail: pd.DataFrame, start_date: str = '2020-01-01', 
 def _ensure_proxy():
     """东财源在中国电信网络下可能被屏蔽，设置代理。"""
     if 'HTTP_PROXY' not in os.environ and 'HTTPS_PROXY' not in os.environ:
-        proxy = os.environ.get('DIVIDEND_PROXY', 'PROXY_PLACEHOLDER')
+        proxy = os.environ.get('DIVIDEND_PROXY') or os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
         os.environ['HTTP_PROXY'] = proxy
         os.environ['HTTPS_PROXY'] = proxy
 

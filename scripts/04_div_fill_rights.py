@@ -2,8 +2,8 @@ import os
 # 如果设置了代理环境变量则使用，否则直连（东财源在中国电信网络下可能被屏蔽）
 if 'HTTP_PROXY' not in os.environ and 'HTTPS_PROXY' not in os.environ:
     # 如需代理，取消下面两行的注释并修改地址
-    # os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-    # os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+    # os.environ['HTTP_PROXY'] = 'http://your-proxy:port'
+    # os.environ['HTTPS_PROXY'] = 'http://your-proxy:port'
     pass
 import akshare as ak
 import pandas as pd

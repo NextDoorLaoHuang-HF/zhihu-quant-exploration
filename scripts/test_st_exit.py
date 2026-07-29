@@ -6,13 +6,14 @@
 注：季度财报数据需要东财API（当前代理不稳定），所以负面业绩过滤
     暂用"排除当前ST股"作为近似（ST通常伴随亏损）
 """
+import os
 import akshare as ak
 import pandas as pd
 import numpy as np
 import os, json, warnings
 warnings.filterwarnings('ignore')
 
-DATA_DIR = 'PROJECT_ROOT/data'
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # 加载退市股
 delist_prices = pd.read_pickle(f'{DATA_DIR}/delist_prices.pkl')

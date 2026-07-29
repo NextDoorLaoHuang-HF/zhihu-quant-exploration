@@ -11,8 +11,11 @@ import numpy as np
 import os, warnings, json
 warnings.filterwarnings('ignore')
 
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
 # ============================================================
 # 方案1: 原始错误复权（当前代码做的事）

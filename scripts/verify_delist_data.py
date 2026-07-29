@@ -6,8 +6,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 设置代理
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
 print("=== 验证东财接口能否获取退市股票 ===")
 

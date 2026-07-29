@@ -6,16 +6,20 @@ T5/T10 + 各种复杂度改进：
 4. 质量筛选（ROE、市盈率）
 5. 组合打分（市值+动量综合排名）
 """
+import os
 import akshare as ak
 import pandas as pd
 import numpy as np
 import os, json, warnings
 warnings.filterwarnings('ignore')
 
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
-DATA_DIR = 'PROJECT_ROOT/data'
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # 加载退市股
 delist_prices = pd.read_pickle(f'{DATA_DIR}/delist_prices.pkl')

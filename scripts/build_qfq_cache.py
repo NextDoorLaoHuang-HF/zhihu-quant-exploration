@@ -36,9 +36,10 @@ _DATA_DIR = os.path.join(_PROJECT_ROOT, 'data')
 _QFQ_CACHE_DIR = os.path.join(_DATA_DIR, 'qfq_cache')
 
 # 代理设置
-_PROXY = 'PROXY_PLACEHOLDER'
-os.environ.setdefault('HTTP_PROXY', _PROXY)
-os.environ.setdefault('HTTPS_PROXY', _PROXY)
+_PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _PROXY:
+    os.environ.setdefault('HTTP_PROXY', _PROXY)
+    os.environ.setdefault('HTTPS_PROXY', _PROXY)
 
 
 def _is_a_share(code: str) -> bool:

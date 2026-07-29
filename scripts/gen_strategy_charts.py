@@ -206,9 +206,11 @@ draw_comparison(grid_mth, cyb_mth,
 # ═══════════════════════════════════════════════════════
 print('\n5. 高股息填权...')
 # 需要代理
-if 'HTTP_PROXY' not in os.environ:
-    os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-    os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
 div_rank = ak.stock_history_dividend()
 div_rank = div_rank[~div_rank['名称'].str.contains('ST', na=False)]

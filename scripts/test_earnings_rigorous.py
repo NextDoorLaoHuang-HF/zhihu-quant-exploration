@@ -4,16 +4,20 @@
 财报公布规则：年报/一季报4月30日前，半年报8月31日前，三季报10月31日前。
 简化：每年5月起用上年度Q4数据（年报），1-4月用再上年度Q4（年报未出）。
 """
+import os
 import akshare as ak
 import pandas as pd
 import numpy as np
 import os, json, warnings
 warnings.filterwarnings('ignore')
 
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
-DATA_DIR = 'PROJECT_ROOT/data'
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # ============================================================
 # 1. 逐季拉取财报数据

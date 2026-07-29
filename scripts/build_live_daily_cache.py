@@ -31,9 +31,10 @@ _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _DATA_DIR = os.path.join(_PROJECT_ROOT, 'data')
 _LIVE_CACHE_DIR = os.path.join(_DATA_DIR, 'live_daily_cache')
 
-_PROXY = 'PROXY_PLACEHOLDER'
-os.environ.setdefault('HTTP_PROXY', _PROXY)
-os.environ.setdefault('HTTPS_PROXY', _PROXY)
+_PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _PROXY:
+    os.environ.setdefault('HTTP_PROXY', _PROXY)
+    os.environ.setdefault('HTTPS_PROXY', _PROXY)
 
 
 def _is_a_share(code: str) -> bool:

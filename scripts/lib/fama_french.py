@@ -29,9 +29,10 @@ if TYPE_CHECKING:
 
 warnings.filterwarnings('ignore')
 
-_PROXY = 'PROXY_PLACEHOLDER'
-os.environ.setdefault('HTTP_PROXY', _PROXY)
-os.environ.setdefault('HTTPS_PROXY', _PROXY)
+_PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _PROXY:
+    os.environ.setdefault('HTTP_PROXY', _PROXY)
+    os.environ.setdefault('HTTPS_PROXY', _PROXY)
 
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 _RESULTS_DIR = os.path.join(_PROJECT_ROOT, 'results')

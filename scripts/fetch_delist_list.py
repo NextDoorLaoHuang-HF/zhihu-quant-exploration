@@ -9,8 +9,11 @@ import warnings
 import time
 warnings.filterwarnings('ignore')
 
-os.environ['HTTP_PROXY'] = 'PROXY_PLACEHOLDER'
-os.environ['HTTPS_PROXY'] = 'PROXY_PLACEHOLDER'
+# 代理设置：从环境变量读取，不硬编码
+_proxy = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
+if _proxy:
+    os.environ.setdefault('HTTP_PROXY', _proxy)
+    os.environ.setdefault('HTTPS_PROXY', _proxy)
 
 print("=== 获取退市股票完整列表 ===")
 
@@ -52,7 +55,7 @@ print(f"  上交所: {len(sh_codes)}")
 print(f"  深交所: {len(sz_codes)}")
 
 # 保存
-with open('PROJECT_ROOT/data/delist_codes.json', 'w') as f:
+with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'delist_codes.json'), 'w') as f:
     json.dump(all_delist_codes, f)
 print(f"已保存到 data/delist_codes.json")
 
