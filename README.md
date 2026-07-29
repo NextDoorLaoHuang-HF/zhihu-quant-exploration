@@ -6,6 +6,7 @@
 |------|---------|------|
 | [A. 个人做量化交易是否可行](#项目a个人做量化交易是否可行) | [Q529408913](https://www.zhihu.com/question/529408913) | ✅ 7+4 项问题已修复（[Issue #1](https://github.com/NextDoorLaoHuang-HF/zhihu-quant-exploration/issues/1)/[#2](https://github.com/NextDoorLaoHuang-HF/zhihu-quant-exploration/issues/2)），104 测试通过 |
 | [B. 银行股分红养老](#银行股分红回测知乎-q4439190432026-07) | [Q443919043](https://www.zhihu.com/question/443919043) | ✅ 关键数字经双源互验 |
+| [C. 指数基金定投 vs 一次性](#项目c指数基金定投-vs-一次性) | [Q810847946](https://www.zhihu.com/question/810847946) | ✅ 已发布 |
 
 ---
 
@@ -23,6 +24,7 @@
 | T10微盘 | 26.40% | — | | ✅ |
 | T20小盘 | 20.70% | — | 回撤反而更大(-29.1%) | ✅ |
 | T5+国债各半 | 19.1% | 0.97 | 回撤-14.7%，稳健替代 | ✅ |
+| T5(8%)+ETF-HRP(92%) | 12.1% | **1.79** | 回撤-7.1%，持有体验最优（文章后新演进，未入正文） | ✅ |
 | CB等权/HRP混合 | 6.62% | 0.59 | 回撤-15.7%，200+策略里最稳 | ✅ |
 | 网格交易 | — | — | 胜率29%（21/72），震荡品种有效 | ⚠️ 有限 |
 | 高股息填权 | 60天+2.79%超额 | — | 修复后结论反转，但幅度小 | ⚠️ |
@@ -43,71 +45,57 @@
 ```
 zhihu-quant-exploration/
 ├── README.md
-├── article.md                         # 文章正文
+├── MANIFEST.md                        # 缓存生成命令+校验摘要
+├── article.md                         # 项目A文章正文
 ├── requirements.txt
 ├── scripts/
+│   ├── ── 项目A：量化可行性 ──
 │   ├── 01_grid_etf_premium.py         # 网格交易 + ETF折溢价 + CB/HRP混合
-│   ├── 02_conventional_dualma_ff.py   # 双均线 + Fama-French三因子 + 趋势跟踪
-│   ├── 03_retail_edge_microcap.py     # T5极端微盘 + ST/冷门/退市 + 策略轮动
+│   ├── 02_conventional_dualma_ff.py   # 双均线 + FF三因子 + 趋势跟踪
+│   ├── 03_retail_edge_microcap.py     # T5极端微盘 + ST/冷门/退市
 │   ├── 04_div_fill_rights.py          # 高股息填权
-│   ├── fetch_delist_tx.py             # 获取上交所退市股日线数据（腾讯API前复权）
-│   ├── fetch_delist_sz.py             # 获取深交所退市股日线数据
-│   ├── rerun_microcap_v2.py           # 含退市股重跑T5/T10/T20回测
-│   ├── rerun_fixed.py                 # 修复版回测（pct_change+ST过滤+退市处理）
-│   ├── small_cap_v2.py               # 真实流通市值排序+全市场动态池+CAGR
-│   ├── build_live_daily_cache.py      # 并行构建存活股日线缓存（parquet格式）
-│   ├── build_qfq_cache.py             # 并行构建前复权缓存（parquet格式）
-│   ├── fama_french_v2.py              # 真实Fama-French三因子（批量资产负债表）
-│   ├── dividend_v2.py                 # 分红事件处理v2
-│   ├── fetch_cb_data.py               # 可转债数据拉取
-│   ├── grid_v2.py                     # 网格交易v2（walk-forward）
-│   ├── run_hybrid_v2.py               # CB/HRP混合策略v2
-│   ├── fetch_bank_data.py             # 【项目B】银行股/沪深300数据拉取
-│   ├── bank_dividend_backtest.py      # 【项目B】主回测引擎（真实价+逐笔分红手工模拟）
-│   ├── bank_dividend_charts.py        # 【项目B】6张图
-│   ├── bank_dividend_yield_timing.py  # 【项目B】变体1：股息率≥5%才定投
-│   ├── bank_dividend_yield_band.py    # 【项目B】变体2：股息率仓位管理（含卖出）
-│   ├── verify_reproducibility.py      # 从parquet独立重算CAGR/Sharpe验证
-│   ├── verify_small_cap_v2_results.py # 小市值v2全量审计脚本
-│   ├── lib/universe.py               # 点时股票池构建器
-│   ├── lib/metrics.py                # 绩效指标计算
-│   ├── lib/qfq_cache.py              # 前复权缓存模块（覆盖率追踪+降级保护）
-│   ├── lib/fama_french.py            # Fama-French因子计算
-│   └── verify_issues.py               # 验证幸存者偏差+网格交易矛盾
+│   ├── small_cap_v2.py                # 真实流通市值排序+全市场动态池（最终版）
+│   ├── fama_french_v2.py              # 标准FF三因子
+│   ├── dividend_v2.py                 # 分红事件研究v2
+│   ├── grid_v2.py / run_hybrid_v2.py  # 网格/CB-HRP v2
+│   ├── build_live_daily_cache.py      # 存活股日线缓存构建（parquet）
+│   ├── build_qfq_cache.py             # 前复权缓存构建（parquet）
+│   ├── rerun_fixed.py / rerun_microcap_*.py   # 修复链（历史中间态）
+│   ├── t5_hrp_combo.py                # T5+ETF-HRP组合（文章后新演进）
+│   ├── fetch_*.py / verify_*.py / gen_*.py    # 数据拉取/校验/图表生成
+│   ├── lib/
+│   │   ├── universe.py               # 点时股票池构建器（全市场动态池）
+│   │   ├── metrics.py                # 绩效指标（CAGR/夏普/回撤/Calmar）
+│   │   ├── qfq_cache.py              # 前复权缓存模块
+│   │   ├── fama_french.py            # FF因子计算
+│   │   ├── grid_engine.py            # 网格统一引擎（资金守恒）
+│   │   ├── hybrid.py                 # CB/HRP混合策略
+│   │   └── pickle_compat.py          # pickle 兼容层
+│   ├── ── 项目B：银行股分红 ──
+│   ├── fetch_bank_data.py             # 银行股/沪深300数据拉取
+│   ├── bank_dividend_backtest.py      # 主回测引擎（真实价+逐笔分红手工模拟）
+│   ├── bank_dividend_charts.py        # 6张图
+│   ├── bank_dividend_yield_timing.py  # 变体1：股息率≥5%才定投
+│   ├── bank_dividend_yield_band.py    # 变体2：股息率仓位管理（含卖出）
+│   └── ── 项目C：定投 vs 一次性 ──
+│       └── dca_backtest.py            # 5指数×6时段回测+3图
 ├── data/
-│   ├── delist_prices.pkl              # 退市股前复权日线（腾讯API）
-│   ├── delist_info.json               # 退市股元信息
-│   ├── bank_dividend/                 # 【项目B】6银行不复权/后复权日线+分红明细+沪深300+results.json
-│   ├── live_daily_cache/              # 存活股日线缓存（parquet，4590只）
-│   ├── qfq_cache/                     # 前复权收盘价缓存（parquet，4590只）
-│   └── backtest_fixed_all.json        # 修复后回测结果
+│   ├── bank_dividend/                 # 项目B数据快照（6银行+沪深300）
+│   ├── live_daily_cache/              # 存活股日线缓存（parquet，4590只，git-excluded）
+│   ├── qfq_cache/                     # 前复权缓存（parquet，4590只，git-excluded）
+│   ├── delist_prices.pkl / delist_info.json   # 退市股数据
+│   └── backtest_fixed_all.json        # 修复链结果
 ├── results/
-│   └── small_cap_v2_20260715_011613/ # 最新回测结果（qfq修复后，2026-07-15 01:27 生成）
-│       ├── small_cap.json
-│       ├── return_series.parquet
-│       └── verification_report.md
-├── tests/                            # 测试套件（96 tests）
-│   ├── test_small_cap.py             # 小市值回测测试
-│   ├── test_raw_close_guard.py       # 原始收盘价降级守卫+变异测试
-│   ├── test_qfq_cache.py             # 前复权缓存单元测试
-│   ├── test_qfq_integration.py      # 前复权集成测试
-│   ├── test_universe.py              # 股票池构建测试
-│   ├── test_metrics.py               # 绩效指标测试
-│   ├── test_fama_french.py           # Fama-French因子测试
-│   ├── test_hybrid.py                # CB/HRP混合策略测试
-│   ├── test_grid_engine.py          # 网格引擎测试
-│   └── test_dividend_event.py       # 分红事件测试
-├── charts/                            # 回测结果图表
-│   ├── chart1_overview.png            # 策略总览表
-│   ├── chart2_heatmap.png             # 双均线夏普热力图
-│   ├── chart3_smallcap.png            # 小市值vs基准
-│   ├── chart4_trend.png               # 趋势跟踪vs买持
-│   ├── chart5_ff3factor.png           # FF三因子
-│   ├── chart6_quadrant.png            # 四象限总结
-│   ├── retail_edge_strategies.png     # T5微盘策略四合图
-│   └── bank_*.png                     # 【项目B】银行股回测6图
+│   ├── small_cap_v2_20260715_011613/  # ✅ 权威小市值结果（qfq口径，SHA-256校验见下文）
+│   ├── t5_hrp_combo/                  # T5+ETF-HRP组合结果+图
+│   └── （其余时间戳目录为历史迭代，已废弃）
+├── tests/                             # 测试套件（104 tests）
+├── charts/
+│   ├── chart1-6 + strategy_* + cover.png      # 项目A图表
+│   ├── bank_*.png                     # 项目B图表（6张）
+│   └── dca_*.png                      # 项目C图表（3张）
 └── html/
-    └── zhihu_article_charts.html      # 图表HTML源文件
+    └── zhihu_article_charts.html      # 项目A图表HTML源文件
 ```
 
 ## 环境要求
@@ -292,6 +280,23 @@ python3 scripts/bank_dividend_yield_band.py    # 读者提问变体2：股息率
 - ⚠️ **TTM接缝伪影**：初版缓冲带曾显示11.16%，追查调仓明细发现1.6pct来自数据伪影（跨年除权日错位→365天窗口无派息→股息率瞬间为0→2015/2021两次"神级逃顶"）；修正口径后优势消失。**择时策略的回测优势，常藏在数据伪影和参数运气里**
 
 数据快照 `data/bank_dividend/`（回测截止 2026-07-28）：6 家银行不复权/后复权日线、分红明细、沪深300指数、results.json。
+
+---
+
+## 项目C：指数基金定投 vs 一次性
+
+对应知乎问题[「为什么说定投是最愚蠢的？」](https://www.zhihu.com/question/810847946)的回答复现材料。
+
+**核心结论**：30 组回测（5 指数 × 6 时段）定投胜出仅 6 组（**胜率 20%**）——定投的数学劣势真实存在（沪深300 自2005：定投 2.8% vs 一次性 7.3%；纳指 9.0% vs 12.2%），但它的价值在行为学（让拿不住的人拿得住），不在收益。
+
+**复现**：
+
+```bash
+python3 scripts/dca_backtest.py   # 5指数×6时段回测+3图→charts/dca_*.png
+# 注：脚本内置代理 PROXY_PLACEHOLDER（硬编码），代理端口不同需先改脚本前两行
+```
+
+图表：`charts/dca_comparison_bars.png`、`dca_vs_lump_all.png`、`dca_win_rate.png`。
 
 ## 许可
 
